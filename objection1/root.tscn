@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://ck8mpkq1ek0li"]
+
+[ext_resource type="Script" path="res://evidence.gd" id="1_8cl4h"]
+[ext_resource type="Script" path="res://LoadScene.gd" id="1_qgp6q"]
+[ext_resource type="Script" path="res://place.gd" id="2_aa0wt"]
+[ext_resource type="Script" path="res://person.gd" id="3_04ct3"]
+[ext_resource type="Script" path="res://evidence_object.gd" id="4_f51p7"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Model" type="Node" parent="."]
+
+[node name="Evidence" type="Node2D" parent="Model"]
+script = ExtResource("1_8cl4h")
+metadata/evidenceName = ""
+metadata/isDiscovered = false
+metadata/evidenceType = ""
+
+[node name="Place" type="Node2D" parent="Model/Evidence"]
+script = ExtResource("2_aa0wt")
+metadata/evidenceName = ""
+metadata/isDiscovered = false
+metadata/evidenceType = "PLACE"
+
+[node name="Person" type="Node2D" parent="Model/Evidence"]
+script = ExtResource("3_04ct3")
+metadata/evidenceName = ""
+metadata/isDiscovered = false
+metadata/evidenceType = "PERSON"
+
+[node name="EvidenceObject" type="Node2D" parent="Model/Evidence"]
+script = ExtResource("4_f51p7")
+metadata/evidenceName = ""
+metadata/isDiscovered = false
+metadata/evidenceType = "OBJECT"
+
+[node name="View" type="Node" parent="."]
+
+[node name="Level" type="Node2D" parent="View"]
+metadata/levelData = ""
+
+[node name="Platforms" type="Node2D" parent="View/Level"]
+
+[node name="Controller" type="Node" parent="."]
+
+[node name="SceneManager" type="Node2D" parent="Controller"]
+script = ExtResource("1_qgp6q")
