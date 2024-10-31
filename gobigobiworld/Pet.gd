@@ -1,5 +1,15 @@
 extends Node2D
 
+class_name Pet
+
+@export var petName: String
+@export var skin: String
+@export var isSick: bool
+@export var isHungry: bool
+@export var isThirsty: bool
+@export var isBored: bool
+	
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -7,12 +17,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
-
-func _load(_levelData: String) -> void:
-	pass
-
-func _restart() -> void:
+func _process(delta: float) -> void:
 	pass

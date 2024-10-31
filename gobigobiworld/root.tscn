@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=3 uid="uid://jffpucmllqxn"]
+
+[ext_resource type="Script" path="res://GameManager.gd" id="1_e6y6o"]
+[ext_resource type="Script" path="res://PetControls.gd" id="2_8uo7g"]
+[ext_resource type="Script" path="res://PetManager.gd" id="3_lbfna"]
+
+[node name="Root" type="Node2D"]
+
+[node name="Game" type="Node2D" parent="."]
+script = ExtResource("1_e6y6o")
+metadata/pets = []
+metadata/bubblegum = 0
+metadata/playMeter = 0
+metadata/hungerMeter = 0
+metadata/bathroomMeter = 0
+metadata/sicknessChance = 0.0
+
+[node name="GameController" type="Node2D" parent="Game"]
+script = ExtResource("2_8uo7g")
+
+[node name="Pet" type="Node2D" parent="Game"]
+script = ExtResource("3_lbfna")
+
+[node name="UI" type="CanvasGroup" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="UI"]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="Display" type="HBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BubblegumDisplay" type="Panel" parent="UI/Display"]
+layout_mode = 2
+
+[node name="BubblegumAmount" type="RichTextLabel" parent="UI/Display/BubblegumDisplay"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BubblegumIcon" type="Sprite2D" parent="UI/Display/BubblegumDisplay"]
+
+[node name="HungerDisplay" type="Panel" parent="UI/Display"]
+layout_mode = 2
+
+[node name="HungerAmount" type="RichTextLabel" parent="UI/Display/HungerDisplay"]
+layout_mode = 0
+offset_left = -4.0
+offset_right = 36.0
+offset_bottom = 40.0
+
+[node name="HungerIcon" type="Sprite2D" parent="UI/Display/HungerDisplay"]
+position = Vector2(-4, 0)
+
+[node name="ThirstDisplay" type="Panel" parent="UI/Display"]
+layout_mode = 2
+
+[node name="ThirstAmount" type="RichTextLabel" parent="UI/Display/ThirstDisplay"]
+layout_mode = 0
+offset_left = -8.0
+offset_right = 32.0
+offset_bottom = 40.0
+
+[node name="ThirstIcon" type="Sprite2D" parent="UI/Display/ThirstDisplay"]
+position = Vector2(-8, 0)
+
+[node name="PlayDisplay" type="Panel" parent="UI/Display"]
+layout_mode = 2
+
+[node name="PlayAmount" type="RichTextLabel" parent="UI/Display/PlayDisplay"]
+layout_mode = 0
+offset_left = -12.0
+offset_right = 28.0
+offset_bottom = 40.0
+
+[node name="PlayIcon" type="Sprite2D" parent="UI/Display/PlayDisplay"]
+position = Vector2(-12, 0)
+
+[node name="BathroomDisplay" type="Panel" parent="UI/Display"]
+layout_mode = 2
+
+[node name="BathroomAmount" type="RichTextLabel" parent="UI/Display/BathroomDisplay"]
+layout_mode = 0
+offset_left = -16.0
+offset_right = 24.0
+offset_bottom = 40.0
+
+[node name="BathroomIcon" type="Sprite2D" parent="UI/Display/BathroomDisplay"]
+position = Vector2(-16, 0)
+
+[node name="GameView" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MiniGames" type="Node2D" parent="."]
+
+[node name="BubbleDrop" type="Node2D" parent="MiniGames"]
+
+[node name="Bubble" type="Sprite2D" parent="MiniGames/BubbleDrop"]
+
+[node name="DropZone" type="Area2D" parent="MiniGames/BubbleDrop"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MiniGames/BubbleDrop/DropZone"]
+polygon = PackedVector2Array(465, 622, 470, 442, 690, 598)
+disabled = true
+
+[node name="Pachinko" type="Node2D" parent="MiniGames"]
+
+[node name="Board" type="Node2D" parent="MiniGames/Pachinko"]
+
+[node name="Slot" type="Sprite2D" parent="MiniGames/Pachinko/Board"]
+
+[node name="Ball" type="Sprite2D" parent="MiniGames/Pachinko"]
