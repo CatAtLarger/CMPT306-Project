@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://c52tckh8ku8tv"]
+
+[ext_resource type="Script" path="res://layer_0.gd" id="1_qv7yq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnojt"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[node name="Root" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Layer0" type="AnimatedSprite2D" parent="Background"]
+sprite_frames = SubResource("SpriteFrames_tnojt")
+animation = &"new_animation_1"
+script = ExtResource("1_qv7yq")
