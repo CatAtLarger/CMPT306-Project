@@ -1042,9 +1042,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m8o3o")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 8.0
+"speed": 12.0
 }]
 
 [node name="Root" type="Node2D"]
@@ -1070,7 +1070,7 @@ rotation = -0.753805
 scale = Vector2(2.68, 2.68)
 sprite_frames = SubResource("SpriteFrames_pa64q")
 autoplay = "default"
-frame_progress = 0.622564
+frame_progress = 0.297296
 
 [node name="Earth" type="AnimatedSprite2D" parent="Background/Layer1"]
 position = Vector2(2656.41, 1044.87)
@@ -1078,7 +1078,7 @@ rotation = -0.0581084
 scale = Vector2(5.83148, 5.83148)
 sprite_frames = SubResource("SpriteFrames_d1h88")
 autoplay = "default"
-frame_progress = 0.872533
+frame_progress = 0.469516
 
 [node name="Layer2" type="Node2D" parent="Background"]
 
@@ -1087,7 +1087,8 @@ position = Vector2(210.244, 497.714)
 rotation = -0.294919
 scale = Vector2(5.95649, 5.95649)
 sprite_frames = SubResource("SpriteFrames_qbdf3")
-frame_progress = 0.794472
+frame = 10
+frame_progress = 1.0
 
 [node name="Star5" type="AnimatedSprite2D" parent="Background/Layer2"]
 position = Vector2(3427.31, 985.54)

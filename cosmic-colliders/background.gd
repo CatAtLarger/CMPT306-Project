@@ -1,12 +1,11 @@
-extends Node2D  # Make sure this matches your node type
+extends Node2D  # Ensure this matches your node type
 
 func _ready():
+	loop_star_animations()
 
-	for star in $Layer2.get_children():
-		var delay = randf() * 2.0
-		start_animation_with_delay(star, delay)
-
-
-func start_animation_with_delay(animated_sprite: AnimatedSprite2D, delay: float):
-	await get_tree().create_timer(delay).timeout
-	animated_sprite.play("default") 
+func loop_star_animations():
+	while true:
+		for star in $Layer2.get_children():
+			var delay = randf() * 2.0  # Generate a random delay
+			star.play("default")
+			await get_tree().create_timer(delay).timeout  # Wait for 2 seconds before repeating
