@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjd7u41a3mfs1"
-path="res://.godot/imported/earthspin-sheet.png-1a005856e4474853818807b0b05700ab.ctex"
+uid="uid://c40wciq1j4lau"
+path="res://.godot/imported/Space Background.png-a46bf41e24c8bd5ae8cf0390423c8381.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://earthspin-sheet.png"
-dest_files=["res://.godot/imported/earthspin-sheet.png-1a005856e4474853818807b0b05700ab.ctex"]
+source_file="res://BackgroundImages/Space Background.png"
+dest_files=["res://.godot/imported/Space Background.png-a46bf41e24c8bd5ae8cf0390423c8381.ctex"]
 
 [params]
 

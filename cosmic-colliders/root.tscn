@@ -1,7 +1,7 @@
-[gd_scene load_steps=182 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=183 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
-[ext_resource type="Script" path="res://background.gd" id="1_t7md6"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
 [ext_resource type="Texture2D" uid="uid://blan7yj41j7kq" path="res://BackgroundImages/layer0sprites/Starry background2.png" id="2_swges"]
 [ext_resource type="Texture2D" uid="uid://br3p56favdpvn" path="res://BackgroundImages/layer0sprites/Starry background3.png" id="3_sahhh"]
 [ext_resource type="Texture2D" uid="uid://cnyf6jc12imvk" path="res://BackgroundImages/layer0sprites/Starry background4.png" id="4_6yur6"]
@@ -77,8 +77,9 @@
 [ext_resource type="Texture2D" uid="uid://j50m7v5wtkar" path="res://BackgroundImages/Moon/58.png" id="74_wfr1c"]
 [ext_resource type="Texture2D" uid="uid://qoe2xjicjgf" path="res://BackgroundImages/Moon/59.png" id="75_vl3dm"]
 [ext_resource type="Texture2D" uid="uid://darrsgneleg06" path="res://BackgroundImages/Moon/60.png" id="76_25pxa"]
-[ext_resource type="Texture2D" uid="uid://bjd7u41a3mfs1" path="res://earthspin-sheet.png" id="77_uidrr"]
+[ext_resource type="Texture2D" uid="uid://bjd7u41a3mfs1" path="res://BackgroundImages/earthspin-sheet.png" id="77_uidrr"]
 [ext_resource type="Texture2D" uid="uid://bc8i82vvdolji" path="res://BackgroundImages/S001_nyknck.png" id="78_tnqsk"]
+[ext_resource type="Texture2D" uid="uid://beotw2y3wj778" path="res://BackgroundImages/Space Background(1).png" id="80_06c7q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1070,7 +1071,7 @@ rotation = -0.753805
 scale = Vector2(2.68, 2.68)
 sprite_frames = SubResource("SpriteFrames_pa64q")
 autoplay = "default"
-frame_progress = 0.297296
+frame_progress = 0.763764
 
 [node name="Earth" type="AnimatedSprite2D" parent="Background/Layer1"]
 position = Vector2(2656.41, 1044.87)
@@ -1078,7 +1079,7 @@ rotation = -0.0581084
 scale = Vector2(5.83148, 5.83148)
 sprite_frames = SubResource("SpriteFrames_d1h88")
 autoplay = "default"
-frame_progress = 0.469516
+frame_progress = 0.284145
 
 [node name="Layer2" type="Node2D" parent="Background"]
 
@@ -1124,6 +1125,19 @@ rotation = 0.530754
 scale = Vector2(6.2009, 6.2009)
 sprite_frames = SubResource("SpriteFrames_qbdf3")
 frame_progress = 0.897086
+
+[node name="Layer3" type="Node2D" parent="Background"]
+
+[node name="SpaceDust2" type="Sprite2D" parent="Background/Layer3"]
+position = Vector2(3867.82, 1081.13)
+rotation = 3.14159
+scale = Vector2(2.06792, 2.06792)
+texture = ExtResource("80_06c7q")
+
+[node name="SpaceDust1" type="Sprite2D" parent="Background/Layer3"]
+position = Vector2(50.0581, 1058.05)
+scale = Vector2(2.06792, 2.06792)
+texture = ExtResource("80_06c7q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1920, 1080)
