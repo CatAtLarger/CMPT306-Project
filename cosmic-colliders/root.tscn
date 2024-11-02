@@ -1054,6 +1054,7 @@ scale = Vector2(0.299652, 0.303387)
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("1_t7md6")
+scroll_speed = 1000.0
 
 [node name="Layer0" type="AnimatedSprite2D" parent="Background"]
 modulate = Color(0.877611, 0.957972, 1, 1)
@@ -1127,16 +1128,16 @@ sprite_frames = SubResource("SpriteFrames_qbdf3")
 frame_progress = 0.897086
 
 [node name="Layer3" type="Node2D" parent="Background"]
-modulate = Color(1, 1, 1, 0.376471)
+modulate = Color(1, 1, 1, 0.117647)
 
 [node name="SpaceDust2" type="Sprite2D" parent="Background/Layer3"]
-position = Vector2(3867.82, 1081.13)
+position = Vector2(5833.43, 1137.16)
 rotation = 3.14159
 scale = Vector2(2.06792, 2.06792)
 texture = ExtResource("80_06c7q")
 
 [node name="SpaceDust1" type="Sprite2D" parent="Background/Layer3"]
-position = Vector2(50.0581, 1058.05)
+position = Vector2(1972.29, 1140.46)
 scale = Vector2(2.06792, 2.06792)
 texture = ExtResource("80_06c7q")
 
