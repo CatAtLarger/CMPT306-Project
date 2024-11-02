@@ -1478,11 +1478,12 @@ animations = [{
 }]
 
 [node name="Root" type="Node2D"]
-position = Vector2(1, -1)
-scale = Vector2(0.299652, 0.303387)
+scale = Vector2(0.99, 1)
 
 [node name="Background" type="Node2D" parent="."]
+scale = Vector2(0.317837, 0.317837)
 script = ExtResource("1_t7md6")
+comet_speed = 20.0
 
 [node name="Layer0" type="AnimatedSprite2D" parent="Background"]
 modulate = Color(0.877611, 0.957972, 1, 1)
@@ -1495,11 +1496,11 @@ frame_progress = 0.794415
 [node name="Layer1" type="Node2D" parent="Background"]
 
 [node name="Comet" type="AnimatedSprite2D" parent="Background/Layer1"]
-position = Vector2(1248.11, 721.85)
+position = Vector2(3157, 1044.87)
 scale = Vector2(5.13813, 5.13813)
 sprite_frames = SubResource("SpriteFrames_2xt7g")
 autoplay = "default"
-frame_progress = 0.133366
+frame_progress = 0.480637
 
 [node name="Moon" type="AnimatedSprite2D" parent="Background/Layer1"]
 position = Vector2(3293.82, 507.602)
@@ -1515,7 +1516,7 @@ rotation = -0.0581084
 scale = Vector2(5.83148, 5.83148)
 sprite_frames = SubResource("SpriteFrames_d1h88")
 autoplay = "default"
-frame_progress = 0.1404
+frame_progress = 0.314875
 
 [node name="Layer2" type="Node2D" parent="Background"]
 
@@ -1577,5 +1578,5 @@ scale = Vector2(2.06792, 2.06792)
 texture = ExtResource("80_06c7q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1920, 1080)
+position = Vector2(607.071, 339)
 limit_right = 9999945

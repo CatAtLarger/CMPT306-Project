@@ -6,7 +6,7 @@ extends Node2D  # Ensure this matches your node type
 @onready var foreground2 = $Layer3/SpaceDust2
 
 
-@export var comet_speed: float = 30.0
+@export var comet_speed: float
 @onready var comet = $Layer1/Comet
 
 var comet_direction_x: float = randf_range(-(2 * PI), 2 * PI)
@@ -18,17 +18,24 @@ func _ready():
 	
 	
 	while true:
-		await get_tree().create_timer(10.0).timeout
-		comet_direction_x = randf_range(0, 2 * PI)
-		comet_direction_y = randf_range(0, 2 * PI)
-		comet.rotation = atan2(comet_direction_y, comet_direction_x) + PI
-		shoot_comet(comet_speed)
+		await get_tree().create_timer(2.0).timeout
+		#only if out of screen bounds
+		if (comet.position.x < -300 || comet.position.x > (get_viewport().size.x*2)) &&  (comet.position.y < -300 || comet.position.y > (get_viewport().size.y *2 )):
+			
+			comet_direction_x = randf_range(-( 2 * PI), 2 * PI)
+			comet_direction_y = randf_range(-( 2 * PI), 2 * PI)
+			comet.rotation = atan2(comet_direction_y, comet_direction_x) + PI
+			set_comet_start_position(comet_direction_x, comet_direction_y)
 	
 func _process(delta: float) -> void:
 	move_foreground(delta)
-	
+
 	comet.position.x += comet_direction_x * delta * comet_speed
+
+
 	comet.position.y += comet_direction_y * delta * comet_speed
+
+	
 	
 	
 	
@@ -58,31 +65,33 @@ func move_foreground(delta: float) -> void:
 		foreground2.position.x = (foreground1.position.x + width1) * 1.5
 
 
+# Function to set the comet's starting position based on direction
+func set_comet_start_position(direction_x: float, direction_y: float) -> void:
+	
 
-func shoot_comet(speed: float) -> void:
-
+	# Define the screen dimensions
 	var screen_size = get_viewport().size
 
-	# Choose a random direction (0 to 360 degrees)
-	var angle = randf_range(0, 2 * PI)
-
-	# Calculate the starting position off-screen
-	var start_position = Vector2()
-
-	if angle < PI / 2:
-		# Top-right quadrant
-		start_position = Vector2(screen_size.x + 100, -100)  # right side
-	elif angle < PI:
-		# Top-left quadrant
-		start_position = Vector2(-100, -100)  # left side
-	elif angle < 3 * PI / 2:
-		# Bottom-left quadrant
-		start_position = Vector2(-100, screen_size.y + 100)  # left side
+	if direction_x > 0:
+		comet.position.x = -300 
+		  # Start off the right side
 	else:
-		# Bottom-right quadrant
-		start_position = Vector2(screen_size.x + 100, screen_size.y + 100)  # right side
+		
+		comet.position.x = screen_size.x*2 + 300 # Start off the left side
 
-	var comet = $Layer1/Comet
+	if direction_y > 0:
+		comet.position.y = -300
+		  # Start off the bottom side
+	else:
+		comet.position.y = screen_size.y*2 + 300
+		  # Start off the top side
+
+
+
+	
+		
+
+
 
 
 	
