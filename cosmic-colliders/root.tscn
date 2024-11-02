@@ -1127,6 +1127,7 @@ sprite_frames = SubResource("SpriteFrames_qbdf3")
 frame_progress = 0.897086
 
 [node name="Layer3" type="Node2D" parent="Background"]
+modulate = Color(1, 1, 1, 0.376471)
 
 [node name="SpaceDust2" type="Sprite2D" parent="Background/Layer3"]
 position = Vector2(3867.82, 1081.13)
