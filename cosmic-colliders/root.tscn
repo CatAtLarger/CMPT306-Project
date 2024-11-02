@@ -1496,11 +1496,11 @@ frame_progress = 0.794415
 [node name="Layer1" type="Node2D" parent="Background"]
 
 [node name="Comet" type="AnimatedSprite2D" parent="Background/Layer1"]
-position = Vector2(3157, 1044.87)
+position = Vector2(3807.3, -833.761)
 scale = Vector2(5.13813, 5.13813)
 sprite_frames = SubResource("SpriteFrames_2xt7g")
 autoplay = "default"
-frame_progress = 0.480637
+frame_progress = 0.394759
 
 [node name="Moon" type="AnimatedSprite2D" parent="Background/Layer1"]
 position = Vector2(3293.82, 507.602)
@@ -1516,7 +1516,7 @@ rotation = -0.0581084
 scale = Vector2(5.83148, 5.83148)
 sprite_frames = SubResource("SpriteFrames_d1h88")
 autoplay = "default"
-frame_progress = 0.314875
+frame_progress = 0.271949
 
 [node name="Layer2" type="Node2D" parent="Background"]
 

@@ -20,7 +20,7 @@ func _ready():
 	while true:
 		await get_tree().create_timer(2.0).timeout
 		#only if out of screen bounds
-		if (comet.position.x < -300 || comet.position.x > (get_viewport().size.x*2)) &&  (comet.position.y < -300 || comet.position.y > (get_viewport().size.y *2 )):
+		if (comet.position.x < -300 || comet.position.x > (get_viewport().size.x*2 )) &&  (comet.position.y < -300 || comet.position.y > (get_viewport().size.y *2 )):
 			
 			comet_direction_x = randf_range(-( 2 * PI), 2 * PI)
 			comet_direction_y = randf_range(-( 2 * PI), 2 * PI)
