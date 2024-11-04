@@ -7,6 +7,7 @@ extends Node2D  # Ensure this matches your node type
 
 
 @export var comet_speed: float
+@export var comet_timeout_seconds: float
 @onready var comet = $Layer1/Comet
 
 var comet_direction_x: float = randf_range(-(2 * PI), 2 * PI)
@@ -14,11 +15,29 @@ var comet_direction_y: float = randf_range(-(2 * PI), 2 * PI)
 
 
 func _ready():
+	
 	loop_star_animations()
 	
 	
+	# comet loop
+	comet.rotation = atan2(comet_direction_y, comet_direction_x) + PI
+	loop_comet()
+	
+	
+	
+func _process(delta: float) -> void:
+	
+	move_foreground(delta)
+
+	# move comet
+	comet.position.x += comet_direction_x * delta * comet_speed
+	comet.position.y += comet_direction_y * delta * comet_speed
+
+	
+	
+func loop_comet():
 	while true:
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(comet_timeout_seconds).timeout
 		#only if out of screen bounds
 		if (comet.position.x < -300 || comet.position.x > (get_viewport().size.x*2 )) &&  (comet.position.y < -300 || comet.position.y > (get_viewport().size.y *2 )):
 			
@@ -26,17 +45,6 @@ func _ready():
 			comet_direction_y = randf_range(-( 2 * PI), 2 * PI)
 			comet.rotation = atan2(comet_direction_y, comet_direction_x) + PI
 			set_comet_start_position(comet_direction_x, comet_direction_y)
-	
-func _process(delta: float) -> void:
-	move_foreground(delta)
-
-	comet.position.x += comet_direction_x * delta * comet_speed
-
-
-	comet.position.y += comet_direction_y * delta * comet_speed
-
-	
-	
 	
 	
 

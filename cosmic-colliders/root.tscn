@@ -1,4 +1,4 @@
-[gd_scene load_steps=245 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=246 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
@@ -1477,13 +1477,16 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_okeih"]
+
 [node name="Root" type="Node2D"]
 scale = Vector2(0.99, 1)
 
 [node name="Background" type="Node2D" parent="."]
 scale = Vector2(0.317837, 0.317837)
 script = ExtResource("1_t7md6")
-comet_speed = 20.0
+comet_speed = 30.0
+comet_timeout_seconds = 2.0
 
 [node name="Layer0" type="AnimatedSprite2D" parent="Background"]
 modulate = Color(0.877611, 0.957972, 1, 1)
@@ -1580,3 +1583,22 @@ texture = ExtResource("80_06c7q")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(607.071, 339)
 limit_right = 9999945
+
+[node name="GlassContainer" type="Node2D" parent="."]
+position = Vector2(433.333, 179)
+scale = Vector2(7.74748, 9.26435)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="GlassContainer"]
+position = Vector2(0.159486, 0.157901)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GlassContainer/RigidBody2D"]
+position = Vector2(-1.33289, 39.5642)
+scale = Vector2(1, 1)
+build_mode = 1
+polygon = PackedVector2Array(40, 0, 0, -40, 2, -40, 42, -40)
+
+[node name="TextureRect" type="TextureRect" parent="GlassContainer"]
+modulate = Color(0.698039, 1, 1, 0.196078)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("CanvasTexture_okeih")
