@@ -1500,7 +1500,7 @@ position = Vector2(3807.3, -833.761)
 scale = Vector2(5.13813, 5.13813)
 sprite_frames = SubResource("SpriteFrames_2xt7g")
 autoplay = "default"
-frame_progress = 0.394759
+frame_progress = 0.503535
 
 [node name="Moon" type="AnimatedSprite2D" parent="Background/Layer1"]
 position = Vector2(3293.82, 507.602)
@@ -1564,7 +1564,7 @@ sprite_frames = SubResource("SpriteFrames_qbdf3")
 frame_progress = 0.897086
 
 [node name="Layer3" type="Node2D" parent="Background"]
-modulate = Color(1, 1, 1, 0.117647)
+modulate = Color(1, 1, 1, 0.196078)
 
 [node name="SpaceDust2" type="Sprite2D" parent="Background/Layer3"]
 position = Vector2(5833.43, 1137.16)
