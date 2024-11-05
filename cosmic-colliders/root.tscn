@@ -1,4 +1,4 @@
-[gd_scene load_steps=246 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=252 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
@@ -81,6 +81,9 @@
 [ext_resource type="Texture2D" uid="uid://bc8i82vvdolji" path="res://BackgroundImages/S001_nyknck.png" id="78_tnqsk"]
 [ext_resource type="Texture2D" uid="uid://dnej3eucc8wbl" path="res://Fires/Fireball_68x9.png" id="79_0k0io"]
 [ext_resource type="Texture2D" uid="uid://beotw2y3wj778" path="res://BackgroundImages/Space Background(1).png" id="80_06c7q"]
+[ext_resource type="Texture2D" uid="uid://bu3ekkmlhu4gs" path="res://BackgroundImages/Earth/Earth-Like planet1.png" id="82_0cpwx"]
+[ext_resource type="Script" path="res://boxarea.gd" id="82_jlpw4"]
+[ext_resource type="Script" path="res://BallPhysics.gd" id="83_rqjyl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1477,7 +1480,15 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkmco"]
+size = Vector2(40.026, 39.1825)
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_okeih"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gkkt4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
+radius = 13.1693
 
 [node name="Root" type="Node2D"]
 scale = Vector2(0.99, 1)
@@ -1588,17 +1599,34 @@ limit_right = 9999945
 position = Vector2(433.333, 179)
 scale = Vector2(7.74748, 9.26435)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="GlassContainer"]
-position = Vector2(0.159486, 0.157901)
+[node name="Area2D" type="Area2D" parent="GlassContainer"]
+position = Vector2(0.159489, 0.1579)
+script = ExtResource("82_jlpw4")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GlassContainer/RigidBody2D"]
-position = Vector2(-1.33289, 39.5642)
-scale = Vector2(1, 1)
-build_mode = 1
-polygon = PackedVector2Array(40, 0, 0, -40, 2, -40, 42, -40)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlassContainer/Area2D"]
+position = Vector2(19.8536, 20.8366)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_vkmco")
 
 [node name="TextureRect" type="TextureRect" parent="GlassContainer"]
 modulate = Color(0.698039, 1, 1, 0.196078)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 0.130418
+offset_top = 1.07941
+offset_right = 40.1304
+offset_bottom = 41.0794
 texture = SubResource("CanvasTexture_okeih")
+
+[node name="Ball" type="Node2D" parent="."]
+position = Vector2(571.717, 118)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Ball"]
+physics_material_override = SubResource("PhysicsMaterial_gkkt4")
+script = ExtResource("83_rqjyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/RigidBody2D"]
+shape = SubResource("CircleShape2D_vad4u")
+
+[node name="Earth-likePlanet1" type="Sprite2D" parent="Ball/RigidBody2D"]
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(0.0707071, 0.0707071)
+texture = ExtResource("82_0cpwx")

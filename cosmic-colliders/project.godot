@@ -14,3 +14,8 @@ config/name="Cosmic Colliders"
 run/main_scene="res://root.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[physics]
+
+2d/physics_engine="GodotPhysics2D"
+common/physics_interpolation=true
