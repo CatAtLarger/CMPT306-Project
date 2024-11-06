@@ -1,87 +1,87 @@
-[gd_scene load_steps=250 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=251 format=3 uid="uid://c52tckh8ku8tv"]
 
-[ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
+[ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
-[ext_resource type="Texture2D" uid="uid://blan7yj41j7kq" path="res://BackgroundImages/layer0sprites/Starry background2.png" id="2_swges"]
-[ext_resource type="Texture2D" uid="uid://br3p56favdpvn" path="res://BackgroundImages/layer0sprites/Starry background3.png" id="3_sahhh"]
-[ext_resource type="Texture2D" uid="uid://cnyf6jc12imvk" path="res://BackgroundImages/layer0sprites/Starry background4.png" id="4_6yur6"]
-[ext_resource type="Texture2D" uid="uid://ifrvnml27cgq" path="res://BackgroundImages/layer0sprites/Starry background5.png" id="5_l5752"]
-[ext_resource type="Texture2D" uid="uid://ucsab0ip4kwe" path="res://BackgroundImages/layer0sprites/Starry background6.png" id="6_0f0s8"]
-[ext_resource type="Texture2D" uid="uid://cs4ar6fxohpsb" path="res://BackgroundImages/layer0sprites/Starry background7.png" id="7_82gln"]
-[ext_resource type="Texture2D" uid="uid://cm8tidovuosg2" path="res://BackgroundImages/layer0sprites/Starry background8.png" id="8_bntqo"]
-[ext_resource type="Texture2D" uid="uid://enth3vhr8h5w" path="res://BackgroundImages/layer0sprites/Starry background9.png" id="9_l38bp"]
-[ext_resource type="Texture2D" uid="uid://b7hwoek6wtxku" path="res://BackgroundImages/layer0sprites/Starry background10.png" id="10_7bkv4"]
-[ext_resource type="Texture2D" uid="uid://b1oycj011r0w3" path="res://BackgroundImages/layer0sprites/Starry background11.png" id="11_7nwdh"]
-[ext_resource type="Texture2D" uid="uid://d27lxde8kg0ta" path="res://BackgroundImages/layer0sprites/Starry background12.png" id="12_ndl0w"]
-[ext_resource type="Texture2D" uid="uid://bn5j0v0bdvt5f" path="res://BackgroundImages/layer0sprites/Starry background13.png" id="13_fjr3d"]
-[ext_resource type="Texture2D" uid="uid://cltskuhokuuht" path="res://BackgroundImages/layer0sprites/Starry background14.png" id="14_pmuni"]
-[ext_resource type="Texture2D" uid="uid://bdajmho816o5j" path="res://BackgroundImages/layer0sprites/Starry background15.png" id="15_d47v1"]
-[ext_resource type="Texture2D" uid="uid://cq27c1b8cqk2q" path="res://BackgroundImages/layer0sprites/Starry background16.png" id="16_uur83"]
-[ext_resource type="Texture2D" uid="uid://dqkoyisw7e6o7" path="res://BackgroundImages/Moon/1.png" id="17_k8f8l"]
-[ext_resource type="Texture2D" uid="uid://3asmlk72e5lm" path="res://BackgroundImages/Moon/2.png" id="18_ger7l"]
-[ext_resource type="Texture2D" uid="uid://c3vyrqj1rtyov" path="res://BackgroundImages/Moon/3.png" id="19_w1fb4"]
-[ext_resource type="Texture2D" uid="uid://vayeugakwpgp" path="res://BackgroundImages/Moon/4.png" id="20_qn4xb"]
-[ext_resource type="Texture2D" uid="uid://di64mwit1cq10" path="res://BackgroundImages/Moon/5.png" id="21_w7awh"]
-[ext_resource type="Texture2D" uid="uid://dyclyrljbfv0r" path="res://BackgroundImages/Moon/6.png" id="22_dy53v"]
-[ext_resource type="Texture2D" uid="uid://vmb7heup6qsq" path="res://BackgroundImages/Moon/7.png" id="23_m75t4"]
-[ext_resource type="Texture2D" uid="uid://bnowpl1mx330" path="res://BackgroundImages/Moon/8.png" id="24_blilf"]
-[ext_resource type="Texture2D" uid="uid://ds8g6qkc72qy0" path="res://BackgroundImages/Moon/9.png" id="25_ecbir"]
-[ext_resource type="Texture2D" uid="uid://xvpb62o7r2lw" path="res://BackgroundImages/Moon/10.png" id="26_ta8ii"]
-[ext_resource type="Texture2D" uid="uid://dgoiaivu4puyq" path="res://BackgroundImages/Moon/11.png" id="27_uayck"]
-[ext_resource type="Texture2D" uid="uid://u78cohl0ftge" path="res://BackgroundImages/Moon/12.png" id="28_de4wx"]
-[ext_resource type="Texture2D" uid="uid://dxolk3skiwe01" path="res://BackgroundImages/Moon/13.png" id="29_p6exf"]
-[ext_resource type="Texture2D" uid="uid://cfx86d1q3k1yt" path="res://BackgroundImages/Moon/14.png" id="30_da873"]
-[ext_resource type="Texture2D" uid="uid://cj0i6p7covqen" path="res://BackgroundImages/Moon/15.png" id="31_42dj4"]
-[ext_resource type="Texture2D" uid="uid://ca4f2xxruh3ws" path="res://BackgroundImages/Moon/16.png" id="32_6p05n"]
-[ext_resource type="Texture2D" uid="uid://bivbmgb5a44ud" path="res://BackgroundImages/Moon/17.png" id="33_ufj52"]
-[ext_resource type="Texture2D" uid="uid://cwki7ybrxrotb" path="res://BackgroundImages/Moon/18.png" id="34_2y1ch"]
-[ext_resource type="Texture2D" uid="uid://c4brkjaxswhso" path="res://BackgroundImages/Moon/19.png" id="35_416xi"]
-[ext_resource type="Texture2D" uid="uid://c5n3ilpxdlfso" path="res://BackgroundImages/Moon/20.png" id="36_cw8ui"]
-[ext_resource type="Texture2D" uid="uid://bpu8mp1sxmhwf" path="res://BackgroundImages/Moon/21.png" id="37_88rcm"]
-[ext_resource type="Texture2D" uid="uid://dql177tf0m18e" path="res://BackgroundImages/Moon/22.png" id="38_ie1u3"]
-[ext_resource type="Texture2D" uid="uid://bw648svonpr0l" path="res://BackgroundImages/Moon/23.png" id="39_bbplx"]
-[ext_resource type="Texture2D" uid="uid://d21c11bfcaasi" path="res://BackgroundImages/Moon/24.png" id="40_8xriq"]
-[ext_resource type="Texture2D" uid="uid://biyfcjcrhg8q1" path="res://BackgroundImages/Moon/25.png" id="41_hxfpa"]
-[ext_resource type="Texture2D" uid="uid://o4qotmu8cqxf" path="res://BackgroundImages/Moon/26.png" id="42_8d3rx"]
-[ext_resource type="Texture2D" uid="uid://daydglaeipq20" path="res://BackgroundImages/Moon/27.png" id="43_gwmvg"]
-[ext_resource type="Texture2D" uid="uid://bgtjma3ergimp" path="res://BackgroundImages/Moon/28.png" id="44_1co1j"]
-[ext_resource type="Texture2D" uid="uid://4uwcub5hamsb" path="res://BackgroundImages/Moon/29.png" id="45_acrsk"]
-[ext_resource type="Texture2D" uid="uid://08fm1lso4nx0" path="res://BackgroundImages/Moon/30.png" id="46_bc7eo"]
-[ext_resource type="Texture2D" uid="uid://d0cccx2dls3se" path="res://BackgroundImages/Moon/31.png" id="47_akdsr"]
-[ext_resource type="Texture2D" uid="uid://cqpi843orehtj" path="res://BackgroundImages/Moon/32.png" id="48_sgbay"]
-[ext_resource type="Texture2D" uid="uid://dh54p1c3f56xt" path="res://BackgroundImages/Moon/33.png" id="49_rn6mg"]
-[ext_resource type="Texture2D" uid="uid://bo5l8ojn714ii" path="res://BackgroundImages/Moon/34.png" id="50_m4jn8"]
-[ext_resource type="Texture2D" uid="uid://ovjb1ah3p6yr" path="res://BackgroundImages/Moon/35.png" id="51_1fdjv"]
-[ext_resource type="Texture2D" uid="uid://dwr27k4u71qtt" path="res://BackgroundImages/Moon/36.png" id="52_roxl0"]
-[ext_resource type="Texture2D" uid="uid://dxavbmsdxoroo" path="res://BackgroundImages/Moon/37.png" id="53_06cxq"]
-[ext_resource type="Texture2D" uid="uid://vq40ra82otj7" path="res://BackgroundImages/Moon/38.png" id="54_gedw7"]
-[ext_resource type="Texture2D" uid="uid://cov2uluu36hyn" path="res://BackgroundImages/Moon/39.png" id="55_58jcw"]
-[ext_resource type="Texture2D" uid="uid://dhirh4ywapybv" path="res://BackgroundImages/Moon/40.png" id="56_7syya"]
-[ext_resource type="Texture2D" uid="uid://b8ykvyrhvpsur" path="res://BackgroundImages/Moon/41.png" id="57_2ala3"]
-[ext_resource type="Texture2D" uid="uid://b5q54pheuwmky" path="res://BackgroundImages/Moon/42.png" id="58_4p1hw"]
-[ext_resource type="Texture2D" uid="uid://byhep3mt12vy0" path="res://BackgroundImages/Moon/43.png" id="59_ynflb"]
-[ext_resource type="Texture2D" uid="uid://blt4v1b7ppkr2" path="res://BackgroundImages/Moon/44.png" id="60_xrom1"]
-[ext_resource type="Texture2D" uid="uid://dk7tkmcs8xmay" path="res://BackgroundImages/Moon/45.png" id="61_60qsq"]
-[ext_resource type="Texture2D" uid="uid://fmfwjpri02v6" path="res://BackgroundImages/Moon/46.png" id="62_iox18"]
-[ext_resource type="Texture2D" uid="uid://cngygqs40ebo8" path="res://BackgroundImages/Moon/47.png" id="63_64nbg"]
-[ext_resource type="Texture2D" uid="uid://b1edi2iprodv5" path="res://BackgroundImages/Moon/48.png" id="64_4y6e0"]
-[ext_resource type="Texture2D" uid="uid://dv6cpick10l62" path="res://BackgroundImages/Moon/49.png" id="65_8c2mh"]
-[ext_resource type="Texture2D" uid="uid://c3uksftplfu56" path="res://BackgroundImages/Moon/50.png" id="66_igqxc"]
-[ext_resource type="Texture2D" uid="uid://duy75q63jtjwn" path="res://BackgroundImages/Moon/51.png" id="67_nco6b"]
-[ext_resource type="Texture2D" uid="uid://cws7bfn0s2wj2" path="res://BackgroundImages/Moon/52.png" id="68_4c5oa"]
-[ext_resource type="Texture2D" uid="uid://bb6djilqta6nq" path="res://BackgroundImages/Moon/53.png" id="69_yq5bx"]
-[ext_resource type="Texture2D" uid="uid://3860kxcpl4t7" path="res://BackgroundImages/Moon/54.png" id="70_a8xai"]
-[ext_resource type="Texture2D" uid="uid://bo55b5pe6gosr" path="res://BackgroundImages/Moon/55.png" id="71_265y4"]
-[ext_resource type="Texture2D" uid="uid://b86tppheqr1hp" path="res://BackgroundImages/Moon/56.png" id="72_0xdam"]
-[ext_resource type="Texture2D" uid="uid://chfhfpe7q6025" path="res://BackgroundImages/Moon/57.png" id="73_sk27k"]
-[ext_resource type="Texture2D" uid="uid://j50m7v5wtkar" path="res://BackgroundImages/Moon/58.png" id="74_wfr1c"]
-[ext_resource type="Texture2D" uid="uid://qoe2xjicjgf" path="res://BackgroundImages/Moon/59.png" id="75_vl3dm"]
-[ext_resource type="Texture2D" uid="uid://darrsgneleg06" path="res://BackgroundImages/Moon/60.png" id="76_25pxa"]
-[ext_resource type="Texture2D" uid="uid://bjd7u41a3mfs1" path="res://BackgroundImages/earthspin-sheet.png" id="77_uidrr"]
-[ext_resource type="Texture2D" uid="uid://bc8i82vvdolji" path="res://BackgroundImages/S001_nyknck.png" id="78_tnqsk"]
-[ext_resource type="Texture2D" uid="uid://dnej3eucc8wbl" path="res://Fires/Fireball_68x9.png" id="79_0k0io"]
-[ext_resource type="Texture2D" uid="uid://beotw2y3wj778" path="res://BackgroundImages/Space Background(1).png" id="80_06c7q"]
-[ext_resource type="Texture2D" uid="uid://bu3ekkmlhu4gs" path="res://BackgroundImages/Earth/Earth-Like planet1.png" id="82_0cpwx"]
+[ext_resource type="Texture2D" uid="uid://blan7yj41j7kq" path="res://Images/BackgroundImages/layer0sprites/Starry background2.png" id="2_swges"]
+[ext_resource type="Texture2D" uid="uid://br3p56favdpvn" path="res://Images/BackgroundImages/layer0sprites/Starry background3.png" id="3_sahhh"]
+[ext_resource type="Texture2D" uid="uid://cnyf6jc12imvk" path="res://Images/BackgroundImages/layer0sprites/Starry background4.png" id="4_6yur6"]
+[ext_resource type="Texture2D" uid="uid://ifrvnml27cgq" path="res://Images/BackgroundImages/layer0sprites/Starry background5.png" id="5_l5752"]
+[ext_resource type="Texture2D" uid="uid://ucsab0ip4kwe" path="res://Images/BackgroundImages/layer0sprites/Starry background6.png" id="6_0f0s8"]
+[ext_resource type="Texture2D" uid="uid://cs4ar6fxohpsb" path="res://Images/BackgroundImages/layer0sprites/Starry background7.png" id="7_82gln"]
+[ext_resource type="Texture2D" uid="uid://cm8tidovuosg2" path="res://Images/BackgroundImages/layer0sprites/Starry background8.png" id="8_bntqo"]
+[ext_resource type="Texture2D" uid="uid://enth3vhr8h5w" path="res://Images/BackgroundImages/layer0sprites/Starry background9.png" id="9_l38bp"]
+[ext_resource type="Texture2D" uid="uid://b7hwoek6wtxku" path="res://Images/BackgroundImages/layer0sprites/Starry background10.png" id="10_7bkv4"]
+[ext_resource type="Texture2D" uid="uid://b1oycj011r0w3" path="res://Images/BackgroundImages/layer0sprites/Starry background11.png" id="11_7nwdh"]
+[ext_resource type="Texture2D" uid="uid://d27lxde8kg0ta" path="res://Images/BackgroundImages/layer0sprites/Starry background12.png" id="12_ndl0w"]
+[ext_resource type="Texture2D" uid="uid://bn5j0v0bdvt5f" path="res://Images/BackgroundImages/layer0sprites/Starry background13.png" id="13_fjr3d"]
+[ext_resource type="Texture2D" uid="uid://cltskuhokuuht" path="res://Images/BackgroundImages/layer0sprites/Starry background14.png" id="14_pmuni"]
+[ext_resource type="Texture2D" uid="uid://bdajmho816o5j" path="res://Images/BackgroundImages/layer0sprites/Starry background15.png" id="15_d47v1"]
+[ext_resource type="Texture2D" uid="uid://cq27c1b8cqk2q" path="res://Images/BackgroundImages/layer0sprites/Starry background16.png" id="16_uur83"]
+[ext_resource type="Texture2D" uid="uid://dqkoyisw7e6o7" path="res://Images/BackgroundImages/Moon/1.png" id="17_k8f8l"]
+[ext_resource type="Texture2D" uid="uid://3asmlk72e5lm" path="res://Images/BackgroundImages/Moon/2.png" id="18_ger7l"]
+[ext_resource type="Texture2D" uid="uid://c3vyrqj1rtyov" path="res://Images/BackgroundImages/Moon/3.png" id="19_w1fb4"]
+[ext_resource type="Texture2D" uid="uid://vayeugakwpgp" path="res://Images/BackgroundImages/Moon/4.png" id="20_qn4xb"]
+[ext_resource type="Texture2D" uid="uid://di64mwit1cq10" path="res://Images/BackgroundImages/Moon/5.png" id="21_w7awh"]
+[ext_resource type="Texture2D" uid="uid://dyclyrljbfv0r" path="res://Images/BackgroundImages/Moon/6.png" id="22_dy53v"]
+[ext_resource type="Texture2D" uid="uid://vmb7heup6qsq" path="res://Images/BackgroundImages/Moon/7.png" id="23_m75t4"]
+[ext_resource type="Texture2D" uid="uid://bnowpl1mx330" path="res://Images/BackgroundImages/Moon/8.png" id="24_blilf"]
+[ext_resource type="Texture2D" uid="uid://ds8g6qkc72qy0" path="res://Images/BackgroundImages/Moon/9.png" id="25_ecbir"]
+[ext_resource type="Texture2D" uid="uid://xvpb62o7r2lw" path="res://Images/BackgroundImages/Moon/10.png" id="26_ta8ii"]
+[ext_resource type="Texture2D" uid="uid://dgoiaivu4puyq" path="res://Images/BackgroundImages/Moon/11.png" id="27_uayck"]
+[ext_resource type="Texture2D" uid="uid://u78cohl0ftge" path="res://Images/BackgroundImages/Moon/12.png" id="28_de4wx"]
+[ext_resource type="Texture2D" uid="uid://dxolk3skiwe01" path="res://Images/BackgroundImages/Moon/13.png" id="29_p6exf"]
+[ext_resource type="Texture2D" uid="uid://cfx86d1q3k1yt" path="res://Images/BackgroundImages/Moon/14.png" id="30_da873"]
+[ext_resource type="Texture2D" uid="uid://cj0i6p7covqen" path="res://Images/BackgroundImages/Moon/15.png" id="31_42dj4"]
+[ext_resource type="Texture2D" uid="uid://ca4f2xxruh3ws" path="res://Images/BackgroundImages/Moon/16.png" id="32_6p05n"]
+[ext_resource type="Texture2D" uid="uid://bivbmgb5a44ud" path="res://Images/BackgroundImages/Moon/17.png" id="33_ufj52"]
+[ext_resource type="Texture2D" uid="uid://cwki7ybrxrotb" path="res://Images/BackgroundImages/Moon/18.png" id="34_2y1ch"]
+[ext_resource type="Texture2D" uid="uid://c4brkjaxswhso" path="res://Images/BackgroundImages/Moon/19.png" id="35_416xi"]
+[ext_resource type="Texture2D" uid="uid://c5n3ilpxdlfso" path="res://Images/BackgroundImages/Moon/20.png" id="36_cw8ui"]
+[ext_resource type="Texture2D" uid="uid://bpu8mp1sxmhwf" path="res://Images/BackgroundImages/Moon/21.png" id="37_88rcm"]
+[ext_resource type="Texture2D" uid="uid://dql177tf0m18e" path="res://Images/BackgroundImages/Moon/22.png" id="38_ie1u3"]
+[ext_resource type="Texture2D" uid="uid://bw648svonpr0l" path="res://Images/BackgroundImages/Moon/23.png" id="39_bbplx"]
+[ext_resource type="Texture2D" uid="uid://d21c11bfcaasi" path="res://Images/BackgroundImages/Moon/24.png" id="40_8xriq"]
+[ext_resource type="Texture2D" uid="uid://biyfcjcrhg8q1" path="res://Images/BackgroundImages/Moon/25.png" id="41_hxfpa"]
+[ext_resource type="Texture2D" uid="uid://o4qotmu8cqxf" path="res://Images/BackgroundImages/Moon/26.png" id="42_8d3rx"]
+[ext_resource type="Texture2D" uid="uid://daydglaeipq20" path="res://Images/BackgroundImages/Moon/27.png" id="43_gwmvg"]
+[ext_resource type="Texture2D" uid="uid://bgtjma3ergimp" path="res://Images/BackgroundImages/Moon/28.png" id="44_1co1j"]
+[ext_resource type="Texture2D" uid="uid://4uwcub5hamsb" path="res://Images/BackgroundImages/Moon/29.png" id="45_acrsk"]
+[ext_resource type="Texture2D" uid="uid://08fm1lso4nx0" path="res://Images/BackgroundImages/Moon/30.png" id="46_bc7eo"]
+[ext_resource type="Texture2D" uid="uid://d0cccx2dls3se" path="res://Images/BackgroundImages/Moon/31.png" id="47_akdsr"]
+[ext_resource type="Texture2D" uid="uid://cqpi843orehtj" path="res://Images/BackgroundImages/Moon/32.png" id="48_sgbay"]
+[ext_resource type="Texture2D" uid="uid://dh54p1c3f56xt" path="res://Images/BackgroundImages/Moon/33.png" id="49_rn6mg"]
+[ext_resource type="Texture2D" uid="uid://bo5l8ojn714ii" path="res://Images/BackgroundImages/Moon/34.png" id="50_m4jn8"]
+[ext_resource type="Texture2D" uid="uid://ovjb1ah3p6yr" path="res://Images/BackgroundImages/Moon/35.png" id="51_1fdjv"]
+[ext_resource type="Texture2D" uid="uid://dwr27k4u71qtt" path="res://Images/BackgroundImages/Moon/36.png" id="52_roxl0"]
+[ext_resource type="Texture2D" uid="uid://dxavbmsdxoroo" path="res://Images/BackgroundImages/Moon/37.png" id="53_06cxq"]
+[ext_resource type="Texture2D" uid="uid://vq40ra82otj7" path="res://Images/BackgroundImages/Moon/38.png" id="54_gedw7"]
+[ext_resource type="Texture2D" uid="uid://cov2uluu36hyn" path="res://Images/BackgroundImages/Moon/39.png" id="55_58jcw"]
+[ext_resource type="Texture2D" uid="uid://dhirh4ywapybv" path="res://Images/BackgroundImages/Moon/40.png" id="56_7syya"]
+[ext_resource type="Texture2D" uid="uid://b8ykvyrhvpsur" path="res://Images/BackgroundImages/Moon/41.png" id="57_2ala3"]
+[ext_resource type="Texture2D" uid="uid://b5q54pheuwmky" path="res://Images/BackgroundImages/Moon/42.png" id="58_4p1hw"]
+[ext_resource type="Texture2D" uid="uid://byhep3mt12vy0" path="res://Images/BackgroundImages/Moon/43.png" id="59_ynflb"]
+[ext_resource type="Texture2D" uid="uid://blt4v1b7ppkr2" path="res://Images/BackgroundImages/Moon/44.png" id="60_xrom1"]
+[ext_resource type="Texture2D" uid="uid://dk7tkmcs8xmay" path="res://Images/BackgroundImages/Moon/45.png" id="61_60qsq"]
+[ext_resource type="Texture2D" uid="uid://fmfwjpri02v6" path="res://Images/BackgroundImages/Moon/46.png" id="62_iox18"]
+[ext_resource type="Texture2D" uid="uid://cngygqs40ebo8" path="res://Images/BackgroundImages/Moon/47.png" id="63_64nbg"]
+[ext_resource type="Texture2D" uid="uid://b1edi2iprodv5" path="res://Images/BackgroundImages/Moon/48.png" id="64_4y6e0"]
+[ext_resource type="Texture2D" uid="uid://dv6cpick10l62" path="res://Images/BackgroundImages/Moon/49.png" id="65_8c2mh"]
+[ext_resource type="Texture2D" uid="uid://c3uksftplfu56" path="res://Images/BackgroundImages/Moon/50.png" id="66_igqxc"]
+[ext_resource type="Texture2D" uid="uid://duy75q63jtjwn" path="res://Images/BackgroundImages/Moon/51.png" id="67_nco6b"]
+[ext_resource type="Texture2D" uid="uid://cws7bfn0s2wj2" path="res://Images/BackgroundImages/Moon/52.png" id="68_4c5oa"]
+[ext_resource type="Texture2D" uid="uid://bb6djilqta6nq" path="res://Images/BackgroundImages/Moon/53.png" id="69_yq5bx"]
+[ext_resource type="Texture2D" uid="uid://3860kxcpl4t7" path="res://Images/BackgroundImages/Moon/54.png" id="70_a8xai"]
+[ext_resource type="Texture2D" uid="uid://bo55b5pe6gosr" path="res://Images/BackgroundImages/Moon/55.png" id="71_265y4"]
+[ext_resource type="Texture2D" uid="uid://b86tppheqr1hp" path="res://Images/BackgroundImages/Moon/56.png" id="72_0xdam"]
+[ext_resource type="Texture2D" uid="uid://chfhfpe7q6025" path="res://Images/BackgroundImages/Moon/57.png" id="73_sk27k"]
+[ext_resource type="Texture2D" uid="uid://j50m7v5wtkar" path="res://Images/BackgroundImages/Moon/58.png" id="74_wfr1c"]
+[ext_resource type="Texture2D" uid="uid://qoe2xjicjgf" path="res://Images/BackgroundImages/Moon/59.png" id="75_vl3dm"]
+[ext_resource type="Texture2D" uid="uid://darrsgneleg06" path="res://Images/BackgroundImages/Moon/60.png" id="76_25pxa"]
+[ext_resource type="Texture2D" uid="uid://bjd7u41a3mfs1" path="res://Images/BackgroundImages/earthspin-sheet.png" id="77_uidrr"]
+[ext_resource type="Texture2D" uid="uid://bc8i82vvdolji" path="res://Images/BackgroundImages/S001_nyknck.png" id="78_tnqsk"]
+[ext_resource type="Texture2D" uid="uid://dnej3eucc8wbl" path="res://Images/Fires/Fireball_68x9.png" id="79_0k0io"]
+[ext_resource type="Texture2D" uid="uid://beotw2y3wj778" path="res://Images/BackgroundImages/Space Background(1).png" id="80_06c7q"]
+[ext_resource type="Texture2D" uid="uid://bu3ekkmlhu4gs" path="res://Images/BackgroundImages/Earth/Earth-Like planet1.png" id="82_0cpwx"]
 [ext_resource type="Script" path="res://ball.gd" id="82_deayk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
@@ -813,9 +813,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
-radius = 13.1693
-
 [sub_resource type="ImageTexture" id="ImageTexture_fj6vv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aat06"]
@@ -1486,10 +1483,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
+radius = 13.1693
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
+
 [node name="Root" type="Node2D"]
 scale = Vector2(0.99, 1)
 
 [node name="Background" type="Node2D" parent="."]
+show_behind_parent = true
 scale = Vector2(0.317837, 0.317837)
 script = ExtResource("1_t7md6")
 comet_speed = 30.0
@@ -1583,26 +1586,6 @@ texture = ExtResource("80_06c7q")
 position = Vector2(607.071, 339)
 limit_right = 9999945
 
-[node name="Ball" type="Node2D" parent="."]
-position = Vector2(571.717, 118)
-script = ExtResource("82_deayk")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Ball"]
-position = Vector2(-240.404, 106)
-collision_layer = 3
-collision_mask = 3
-mass = 1.425
-gravity_scale = 0.0
-contact_monitor = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/RigidBody2D"]
-shape = SubResource("CircleShape2D_vad4u")
-
-[node name="Earth-likePlanet1" type="Sprite2D" parent="Ball/RigidBody2D"]
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(0.0707071, 0.0707071)
-texture = ExtResource("82_0cpwx")
-
 [node name="CentralMass" type="Node2D" parent="."]
 position = Vector2(577.778, 339)
 scale = Vector2(4.27273, 4.27273)
@@ -1612,9 +1595,10 @@ scale = Vector2(14.989, 14.989)
 texture = SubResource("ImageTexture_fj6vv")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="CentralMass"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CentralMass/AnimatableBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_aat06")
 
 [node name="Earth" type="AnimatedSprite2D" parent="CentralMass"]
@@ -1624,3 +1608,51 @@ scale = Vector2(0.433788, 0.433788)
 sprite_frames = SubResource("SpriteFrames_d1h88")
 autoplay = "default"
 frame_progress = 0.271949
+
+[node name="Ball1" type="RigidBody2D" parent="." groups=["balls"]]
+position = Vector2(529.293, 137)
+collision_layer = 2
+collision_mask = 3
+mass = 0.1
+gravity_scale = 0.0
+contact_monitor = true
+script = ExtResource("82_deayk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball1"]
+shape = SubResource("CircleShape2D_vad4u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball1"]
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(0.0707071, 0.0707071)
+texture = ExtResource("82_0cpwx")
+
+[node name="Area2D" type="Area2D" parent="Ball1"]
+scale = Vector2(1.36363, 1.36363)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball1/Area2D"]
+shape = SubResource("CircleShape2D_aqu2e")
+
+[node name="Ball2" type="RigidBody2D" parent="." groups=["balls"]]
+position = Vector2(480.808, 201)
+collision_layer = 2
+collision_mask = 3
+mass = 0.3
+gravity_scale = 0.0
+contact_monitor = true
+script = ExtResource("82_deayk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2"]
+shape = SubResource("CircleShape2D_vad4u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball2"]
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(0.0707071, 0.0707071)
+texture = ExtResource("82_0cpwx")
+
+[node name="Area2D" type="Area2D" parent="Ball2"]
+scale = Vector2(1.36364, 1.36364)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2/Area2D"]
+shape = SubResource("CircleShape2D_aqu2e")
+
+[connection signal="area_entered" from="Ball1/Area2D" to="Ball2" method="_on_area_2d_area_entered"]
