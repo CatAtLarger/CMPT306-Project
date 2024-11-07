@@ -1,25 +1,42 @@
 extends Node2D
 
-# Variable to track whether the satellite is being dragged
-var is_dragging = false  
-# Define a radius for detecting clicks near the center of the satellite
-@export var drag_radius: float = 50.0  
+# List of ball (celestial object) scenes to load from, representing various celestial bodies
+@export var ball_scenes: Array = [
+	load("res://Ball_Scenes/moon.tscn"),
+	load("res://Ball_Scenes/dwarf_planet.tscn"),
+	load("res://Ball_Scenes/planet.tscn"),
+	load("res://Ball_Scenes/gas_giant.tscn"),
+	load("res://Ball_Scenes/red_dwarf.tscn"),
+	load("res://Ball_Scenes/blue_star.tscn"),
+	load("res://Ball_Scenes/white_giant.tscn")
+]
 
-# This function checks for input events (like mouse clicks)
+# Array to hold the queue of balls to be dropped, initialized to a size of 10
+var balls_queue: Array = []
+
+func _ready() -> void:
+	# Initialize the queue with 10 random celestial bodies
+	for i in range(10):
+		balls_queue.append(ball_scenes[randi() % ball_scenes.size()])
+
+# Detect mouse click input to trigger ball drop
 func _input(event):
-	# Start dragging when the mouse button is pressed
 	if event is InputEventMouseButton and event.pressed:
-		# Check if the click happened within the drag radius from the satellite's center
-		if global_position.distance_to(event.global_position) <= drag_radius:
-			is_dragging = true  # Set dragging to true
+		drop_ball()  # Drop the ball when the mouse button is clicked
 
-	# Stop dragging when the mouse button is released
-	elif event is InputEventMouseButton and not event.pressed:
-		is_dragging = false  # Set dragging to false
+# Function to handle dropping a ball from the queue
+func drop_ball() -> void:
+	# Check if there are balls to drop
+	if balls_queue.size() > 0:
+		# Remove the first ball from the queue and instantiate it
+		var ball_scene = balls_queue.pop_front()
+		var ball_instance = ball_scene.instantiate()
+		
+		# Position the ball at the satellite's position (ready to "drop" into orbit)
+		ball_instance.position = self.position
 
-# Called every frame to update the satellite's position if it's being dragged
-func _process(delta):
-	# Only move the satellite if it's currently being dragged
-	if is_dragging:
-		# Set the satellite's position to the current mouse position
-		global_position = get_viewport().get_mouse_position()
+		# Add the ball to the Balls node in the scene tree to make it part of the orbit
+		get_parent().get_node("Balls").add_child(ball_instance)
+
+		# Add a new random ball to the end of the queue to maintain queue size
+		balls_queue.append(ball_scenes[randi() % ball_scenes.size()])
