@@ -1,37 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://bthn47s1cjswv"]
+[gd_scene load_steps=5 format=3 uid="uid://dn1vkifsyc8i2"]
 
-[ext_resource type="Script" path="res://ball.gd" id="1_7s4co"]
-[ext_resource type="Texture2D" uid="uid://dww02m23jsp6q" path="res://Images/Balls/star_red_giant01.png" id="2_f1vhk"]
+[ext_resource type="Script" path="res://ball.gd" id="1_chdbo"]
+[ext_resource type="Texture2D" uid="uid://mtbil6k0ge8s" path="res://Images/Balls/barren.png" id="2_6e1lw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
 radius = 10.0102
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
 
-[node name="RedDwarf" type="RigidBody2D" groups=["balls"]]
-position = Vector2(539.394, 206)
+[node name="DwarfPlanet" type="RigidBody2D" groups=["balls"]]
+modulate = Color(0.886, 1, 0.62, 1)
+position = Vector2(428.283, 209)
 collision_layer = 2
 collision_mask = 3
 mass = 0.1
 gravity_scale = 0.0
 contact_monitor = true
-script = ExtResource("1_7s4co")
-metadata/value = 1000
+script = ExtResource("1_chdbo")
+metadata/value = 400
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.64646, 1.64646)
+scale = Vector2(0.679893, 0.679893)
 shape = SubResource("CircleShape2D_vad4u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(0.0130195, 0.0130195)
-texture = ExtResource("2_f1vhk")
+position = Vector2(0, 1.45519e-11)
+scale = Vector2(0.132509, 0.132509)
+texture = ExtResource("2_6e1lw")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(1.9309, 1.9309)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.362986, 0.362986)
 shape = SubResource("CircleShape2D_aqu2e")
 debug_color = Color(0.957318, 0, 0.533218, 0.42)
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

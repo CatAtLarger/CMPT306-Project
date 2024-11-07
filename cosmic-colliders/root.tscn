@@ -1,4 +1,4 @@
-[gd_scene load_steps=259 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=256 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
@@ -82,13 +82,12 @@
 [ext_resource type="Texture2D" uid="uid://dnej3eucc8wbl" path="res://Images/Fires/Fireball_68x9.png" id="79_0k0io"]
 [ext_resource type="Texture2D" uid="uid://beotw2y3wj778" path="res://Images/BackgroundImages/Space Background(1).png" id="80_06c7q"]
 [ext_resource type="PackedScene" uid="uid://bthn47s1cjswv" path="res://red_dwarf.tscn" id="82_5s8pb"]
-[ext_resource type="Script" path="res://ball.gd" id="82_deayk"]
-[ext_resource type="Texture2D" uid="uid://dww02m23jsp6q" path="res://Images/Balls/star_red_giant01.png" id="83_y2qw4"]
+[ext_resource type="PackedScene" uid="uid://dg1xdv0rirhvk" path="res://moon.tscn" id="82_gwfll"]
+[ext_resource type="PackedScene" uid="uid://dn1vkifsyc8i2" path="res://dwarf_planet.tscn" id="83_x3rrg"]
+[ext_resource type="PackedScene" uid="uid://rrrpmpfshn2u" path="res://planet.tscn" id="84_2unu0"]
 [ext_resource type="PackedScene" uid="uid://ba5q031s8hapb" path="res://blue_star.tscn" id="85_f34p8"]
-[ext_resource type="Texture2D" uid="uid://d1scnmwe3pdkm" path="res://Images/Balls/star_white_giant04.png" id="85_jxdmm"]
-[ext_resource type="Texture2D" uid="uid://bnri8l5brmfdt" path="res://Images/Balls/barren-charred.png" id="86_un00a"]
-[ext_resource type="Texture2D" uid="uid://mtbil6k0ge8s" path="res://Images/Balls/barren.png" id="87_mqxau"]
-[ext_resource type="Texture2D" uid="uid://ifh4fvcks1t1" path="res://Images/Balls/inferno.png" id="88_le4g5"]
+[ext_resource type="PackedScene" uid="uid://c8oebh14nbd7y" path="res://gas_giant.tscn" id="85_h5bnc"]
+[ext_resource type="PackedScene" uid="uid://7qut4w2gbrbw" path="res://white_giant.tscn" id="88_8tjye"]
 [ext_resource type="Texture2D" uid="uid://cmpe2ahjbt61d" path="res://Images/Balls/7(1).png" id="89_167p3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
@@ -1490,11 +1489,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
-radius = 10.0102
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_28mwc"]
 
 [node name="Root" type="Node2D"]
@@ -1619,190 +1613,42 @@ frame_progress = 0.271949
 
 [node name="Balls" type="Node2D" parent="."]
 
+[node name="Moon" parent="Balls" instance=ExtResource("82_gwfll")]
+
+[node name="DwarfPlanet" parent="Balls" instance=ExtResource("83_x3rrg")]
+celestial_index = 1
+
+[node name="Planet" parent="Balls" instance=ExtResource("84_2unu0")]
+celestial_index = 2
+
+[node name="GasGiant" parent="Balls" instance=ExtResource("85_h5bnc")]
+celestial_index = 3
+
 [node name="RedDwarf" parent="Balls" instance=ExtResource("82_5s8pb")]
-metadata/next_ball_path = "res://blue_star.tscn"
-
-[node name="RedDwarf2" type="RigidBody2D" parent="Balls" groups=["balls"]]
-position = Vector2(582.828, 120)
-collision_layer = 2
-collision_mask = 3
-mass = 0.1
-gravity_scale = 0.0
-contact_monitor = true
-script = ExtResource("82_deayk")
-metadata/next_ball_path = "res://blue_star.tscn"
-metadata/next_ball = NodePath("../BlueStar")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/RedDwarf2"]
-scale = Vector2(1.64646, 1.64646)
-shape = SubResource("CircleShape2D_vad4u")
-
-[node name="Sprite2D" type="Sprite2D" parent="Balls/RedDwarf2"]
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(0.0130195, 0.0130195)
-texture = ExtResource("83_y2qw4")
-
-[node name="Area2D" type="Area2D" parent="Balls/RedDwarf2"]
-scale = Vector2(1.9309, 1.9309)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/RedDwarf2/Area2D"]
-shape = SubResource("CircleShape2D_aqu2e")
-debug_color = Color(0.957318, 0, 0.533218, 0.42)
+celestial_index = 4
 
 [node name="BlueStar" parent="Balls" instance=ExtResource("85_f34p8")]
+celestial_index = 5
 
-[node name="WhiteGiant" type="RigidBody2D" parent="Balls" groups=["balls"]]
-position = Vector2(759.596, 227)
-collision_layer = 2
-collision_mask = 3
-mass = 0.1
-gravity_scale = 0.0
-contact_monitor = true
-script = ExtResource("82_deayk")
+[node name="WhiteGiant" parent="Balls" instance=ExtResource("88_8tjye")]
+celestial_index = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/WhiteGiant"]
-scale = Vector2(2.89898, 2.89898)
-shape = SubResource("CircleShape2D_vad4u")
-
-[node name="Sprite2D" type="Sprite2D" parent="Balls/WhiteGiant"]
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(-0.02, -0.02)
-texture = ExtResource("85_jxdmm")
-
-[node name="Area2D" type="Area2D" parent="Balls/WhiteGiant"]
-scale = Vector2(2.65817, 2.65817)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/WhiteGiant/Area2D"]
-scale = Vector2(1.16903, 1.16903)
-shape = SubResource("CircleShape2D_aqu2e")
-debug_color = Color(0.957318, 0, 0.533218, 0.42)
-
-[node name="Moon" type="RigidBody2D" parent="Balls" groups=["balls"]]
-position = Vector2(407.071, 210)
-collision_layer = 2
-collision_mask = 3
-mass = 0.1
-gravity_scale = 0.0
-contact_monitor = true
-script = ExtResource("82_deayk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/Moon"]
-scale = Vector2(0.477873, 0.477873)
-shape = SubResource("CircleShape2D_vad4u")
-
-[node name="Sprite2D" type="Sprite2D" parent="Balls/Moon"]
-position = Vector2(0, 3.05176e-05)
-scale = Vector2(0.0921048, 0.0921048)
-texture = ExtResource("86_un00a")
-
-[node name="Area2D" type="Area2D" parent="Balls/Moon"]
-scale = Vector2(1.9309, 1.9309)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/Moon/Area2D"]
-scale = Vector2(0.258361, 0.258361)
-shape = SubResource("CircleShape2D_aqu2e")
-debug_color = Color(0.957318, 0, 0.533218, 0.42)
-
-[node name="DwarfPlanet" type="RigidBody2D" parent="Balls" groups=["balls"]]
-modulate = Color(0.886, 1, 0.62, 1)
-position = Vector2(428.283, 209)
-collision_layer = 2
-collision_mask = 3
-mass = 0.1
-gravity_scale = 0.0
-contact_monitor = true
-script = ExtResource("82_deayk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/DwarfPlanet"]
-scale = Vector2(0.679893, 0.679893)
-shape = SubResource("CircleShape2D_vad4u")
-
-[node name="Sprite2D" type="Sprite2D" parent="Balls/DwarfPlanet"]
-position = Vector2(0, 1.45519e-11)
-scale = Vector2(0.132509, 0.132509)
-texture = ExtResource("87_mqxau")
-
-[node name="Area2D" type="Area2D" parent="Balls/DwarfPlanet"]
-scale = Vector2(1.9309, 1.9309)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/DwarfPlanet/Area2D"]
-scale = Vector2(0.362986, 0.362986)
-shape = SubResource("CircleShape2D_aqu2e")
-debug_color = Color(0.957318, 0, 0.533218, 0.42)
-
-[node name="Planet" type="RigidBody2D" parent="Balls" groups=["balls"]]
-position = Vector2(451.515, 209)
-collision_layer = 2
-collision_mask = 3
-mass = 0.1
-gravity_scale = 0.0
-contact_monitor = true
-script = ExtResource("82_deayk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/Planet"]
-scale = Vector2(1.12434, 1.12434)
-shape = SubResource("CircleShape2D_vad4u")
-
-[node name="Sprite2D" type="Sprite2D" parent="Balls/Planet"]
-position = Vector2(-3.08258e-05, 1.45519e-11)
-scale = Vector2(0.213317, 0.213317)
-texture = ExtResource("88_le4g5")
-
-[node name="Area2D" type="Area2D" parent="Balls/Planet"]
-scale = Vector2(1.9309, 1.9309)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/Planet/Area2D"]
-scale = Vector2(0.59315, 0.59315)
-shape = SubResource("CircleShape2D_aqu2e")
-debug_color = Color(0.957318, 0, 0.533218, 0.42)
-
-[node name="GasGiant" type="RigidBody2D" parent="Balls" groups=["balls"]]
-modulate = Color(1, 0.57, 0.9785, 0.901961)
-position = Vector2(486.869, 208)
-collision_layer = 2
-collision_mask = 3
-mass = 0.1
-gravity_scale = 0.0
-contact_monitor = true
-script = ExtResource("82_deayk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/GasGiant"]
-scale = Vector2(1.48799, 1.48799)
-shape = SubResource("CircleShape2D_vad4u")
-
-[node name="Sprite2D" type="Sprite2D" parent="Balls/GasGiant"]
-position = Vector2(-3.08258e-05, 1.45519e-11)
-scale = Vector2(0.294125, 0.294125)
-texture = ExtResource("89_167p3")
-
-[node name="Area2D" type="Area2D" parent="Balls/GasGiant"]
-scale = Vector2(1.9309, 1.9309)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/GasGiant/Area2D"]
-scale = Vector2(0.8024, 0.8024)
-shape = SubResource("CircleShape2D_aqu2e")
-debug_color = Color(0.957318, 0, 0.533218, 0.42)
-
-[node name="Orbit" type="Node2D" parent="."]
-visible = false
-modulate = Color(0.215686, 1, 1, 0.286275)
+[node name="Orbit" type="Area2D" parent="."]
+modulate = Color(0.3496, 0.4522, 0.76, 0.423529)
 position = Vector2(579.798, 340)
-
-[node name="Area2D" type="Area2D" parent="Orbit"]
-visible = false
+scale = Vector2(1, 1)
 disable_mode = 1
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Orbit/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orbit"]
 position = Vector2(2.0202, 5.00003)
 scale = Vector2(18.6162, 18.6162)
 shape = SubResource("CircleShape2D_28mwc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Orbit"]
-visible = false
-position = Vector2(-2.0202, 9.00003)
+position = Vector2(-2.0202, 9.00006)
 scale = Vector2(3.30303, 3.30303)
 texture = ExtResource("89_167p3")
 
-[connection signal="area_entered" from="Balls/RedDwarf2/Area2D" to="Balls/RedDwarf2" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Orbit" to="Balls/RedDwarf" method="_on_orbit_area_exited"]
