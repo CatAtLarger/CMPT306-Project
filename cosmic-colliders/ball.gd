@@ -43,7 +43,23 @@ func next_ball():
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print("Hit")
 	var collision_object = area.get_parent()
+	
 	if is_in_group("balls"):
+		# if image is the same then must be same ball
+		if collision_object.get_child(1).texture == get_child(1).texture:
+			
+			var next_ball_path = collision_object.get_meta("next_ball_path")
+			if next_ball_path != null:
+				pass
+				#var next_ball_scene = load(String(next_ball_path))
+				#if next_ball_scene:
+					#var new_ball = next_ball_scene.instance()
+					#
+					#print(new_ball)
+					#
+					#get_parent().add_child(new_ball)
+					#
+					#new_ball.position = collision_object.position
+					
+			collision_object.queue_free()
 		
-		collision_object.queue_free()
-		next_ball()
