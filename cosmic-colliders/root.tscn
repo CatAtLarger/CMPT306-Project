@@ -823,6 +823,15 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f4sey"]
+shuffle = true
+fade_time = 1.0
+stream_count = 4
+stream_0 = ExtResource("90_6itr5")
+stream_1 = ExtResource("91_jlgjt")
+stream_2 = ExtResource("92_hrly2")
+stream_3 = ExtResource("93_phxk1")
+
 [sub_resource type="ImageTexture" id="ImageTexture_fj6vv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aat06"]
@@ -1495,15 +1504,6 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_28mwc"]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f4sey"]
-shuffle = true
-fade_time = 1.0
-stream_count = 4
-stream_0 = ExtResource("90_6itr5")
-stream_1 = ExtResource("91_jlgjt")
-stream_2 = ExtResource("92_hrly2")
-stream_3 = ExtResource("93_phxk1")
-
 [node name="Root" type="Node2D"]
 scale = Vector2(0.99, 1)
 
@@ -1598,6 +1598,10 @@ position = Vector2(1972.29, 1140.46)
 scale = Vector2(2.06792, 2.06792)
 texture = ExtResource("80_06c7q")
 
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="Background"]
+stream = SubResource("AudioStreamPlaylist_f4sey")
+autoplay = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(604.04, 339)
 
@@ -1639,6 +1643,10 @@ celestial_index = 3
 [node name="RedDwarf" parent="Balls" instance=ExtResource("82_5s8pb")]
 celestial_index = 4
 
+[node name="RedDwarf2" parent="Balls" instance=ExtResource("82_5s8pb")]
+position = Vector2(542.424, 132)
+celestial_index = 4
+
 [node name="BlueStar" parent="Balls" instance=ExtResource("85_f34p8")]
 celestial_index = 5
 
@@ -1648,7 +1656,6 @@ celestial_index = 6
 [node name="Orbit" type="Area2D" parent="."]
 modulate = Color(0.3496, 0.4522, 0.76, 0.423529)
 position = Vector2(579.798, 340)
-scale = Vector2(1, 1)
 disable_mode = 1
 collision_layer = 4
 collision_mask = 4
@@ -1662,9 +1669,5 @@ shape = SubResource("CircleShape2D_28mwc")
 position = Vector2(-2.0202, 9.00006)
 scale = Vector2(3.30303, 3.30303)
 texture = ExtResource("89_167p3")
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPlaylist_f4sey")
-autoplay = true
 
 [connection signal="area_exited" from="Orbit" to="Balls/RedDwarf" method="_on_orbit_area_exited"]

@@ -1,8 +1,11 @@
 extends RigidBody2D
 
 #for gravity
-var central_mass_position = Vector2.ZERO
-@export var gravitational_constant = 5000.0
+var central_mass_position := Vector2.ZERO
+@export var gravitational_constant := 5000.0
+
+
+
 
 #for loading next ball's scene after collision
 @onready var celestial_objects = [
@@ -60,6 +63,8 @@ func next_ball(collision_object):
 				
 				var new_ball = next_ball_scene.instantiate()
 
+
+				
 				get_parent().add_child(new_ball)
 					
 				new_ball.position = collision_object.position
@@ -77,8 +82,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	
 	if is_in_group("balls"):
 		
-		next_ball(collision_object)
-		
+		if not is_queued_for_deletion() && not collision_object.is_queued_for_deletion():
+			
+			next_ball(collision_object)
 		
 
 func _on_orbit_area_exited(area: Area2D) -> void:
