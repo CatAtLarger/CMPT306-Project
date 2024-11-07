@@ -9,22 +9,28 @@ var central_mass_position := Vector2.ZERO
 
 #for loading next ball's scene after collision
 @onready var celestial_objects = [
-	preload("res://moon.tscn"),
-	preload("res://dwarf_planet.tscn"),
-	preload("res://planet.tscn"),
-	preload("res://gas_giant.tscn"),
-	preload("res://red_dwarf.tscn"),
-	preload("res://blue_star.tscn"),
-	preload("res://white_giant.tscn")
-	
+	load("res://moon.tscn"),
+	load("res://dwarf_planet.tscn"),
+	load("res://planet.tscn"),
+	load("res://gas_giant.tscn"),
+	load("res://red_dwarf.tscn"),
+	load("res://blue_star.tscn"),
+	load("res://white_giant.tscn")
 ]
 @export var celestial_index = 0
 
+
 func _ready() -> void:
 	
-	if get_parent() != null:
-		central_mass_position = get_parent().get_parent().get_node("CentralMass").global_position
-
+	var central_mass := get_node_or_null("CentralMass")
+	
+	if not central_mass == null:
+		
+		central_mass_position = central_mass.position
+		
+	else:
+		push_warning("central_mass_position is hardcoded, cannot get \"Central Mass\" object" )
+		central_mass_position = Vector2(577,339)
 	
 
 
@@ -65,7 +71,8 @@ func next_ball(collision_object):
 
 
 				
-				get_parent().add_child(new_ball)
+				get_parent().call_deferred("add_child", new_ball)
+
 					
 				new_ball.position = collision_object.position
 				collision_object.queue_free()

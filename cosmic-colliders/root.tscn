@@ -1,4 +1,4 @@
-[gd_scene load_steps=261 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=260 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
@@ -832,8 +832,6 @@ stream_1 = ExtResource("91_jlgjt")
 stream_2 = ExtResource("92_hrly2")
 stream_3 = ExtResource("93_phxk1")
 
-[sub_resource type="ImageTexture" id="ImageTexture_fj6vv"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_aat06"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjcwo"]
@@ -1608,10 +1606,6 @@ position = Vector2(604.04, 339)
 [node name="CentralMass" type="Node2D" parent="."]
 position = Vector2(577.778, 339)
 scale = Vector2(4.27273, 4.27273)
-
-[node name="Sprite2D" type="Sprite2D" parent="CentralMass"]
-scale = Vector2(14.989, 14.989)
-texture = SubResource("ImageTexture_fj6vv")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="CentralMass"]
 collision_layer = 3
