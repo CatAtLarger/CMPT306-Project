@@ -1,4 +1,4 @@
-[gd_scene load_steps=262 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=263 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
@@ -94,6 +94,7 @@
 [ext_resource type="AudioStream" uid="uid://dnbg2wxsrrdcy" path="res://Music/Industria.mp3" id="92_hrly2"]
 [ext_resource type="AudioStream" uid="uid://dotw8i6rfu5hw" path="res://Music/Industria_1.mp3" id="93_phxk1"]
 [ext_resource type="Script" path="res://Scripts/satellite.gd" id="94_1fihr"]
+[ext_resource type="Script" path="res://Scripts/score_tracker.gd" id="95_pw4j2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1684,5 +1685,8 @@ offset_right = 596.0
 offset_bottom = 588.0
 scale = Vector2(1.5, 1.5)
 text = "Score: 0"
+
+[node name="ScoreTracker" type="Node" parent="."]
+script = ExtResource("95_pw4j2")
 
 [connection signal="area_exited" from="Orbit" to="Balls/RedDwarf" method="_on_orbit_area_exited"]
