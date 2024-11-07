@@ -1,4 +1,4 @@
-[gd_scene load_steps=261 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=262 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
@@ -93,6 +93,7 @@
 [ext_resource type="AudioStream" uid="uid://ga4v4uux5qvo" path="res://Music/Fly_1.mp3" id="91_jlgjt"]
 [ext_resource type="AudioStream" uid="uid://dnbg2wxsrrdcy" path="res://Music/Industria.mp3" id="92_hrly2"]
 [ext_resource type="AudioStream" uid="uid://dotw8i6rfu5hw" path="res://Music/Industria_1.mp3" id="93_phxk1"]
+[ext_resource type="Script" path="res://Scripts/satellite.gd" id="94_1fihr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1648,7 +1649,6 @@ celestial_index = 6
 [node name="Orbit" type="Area2D" parent="."]
 modulate = Color(0.3496, 0.4522, 0.76, 0.423529)
 position = Vector2(579.798, 340)
-scale = Vector2(1, 1)
 disable_mode = 1
 collision_layer = 4
 collision_mask = 4
@@ -1666,5 +1666,8 @@ texture = ExtResource("89_167p3")
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_f4sey")
 autoplay = true
+
+[node name="Satellite" type="Node2D" parent="."]
+script = ExtResource("94_1fihr")
 
 [connection signal="area_exited" from="Orbit" to="Balls/RedDwarf" method="_on_orbit_area_exited"]
