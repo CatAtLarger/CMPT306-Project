@@ -5,3 +5,17 @@ licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
 http://creativecommons.org/licenses/by-sa/3.0/
 and the Creative Commons Attribution 4.0 International License (CC BY 4.0).
 https://creativecommons.org/licenses/by/4.0/
+
+
+Background:
+	
+	Void - Environment Pack (1.0)
+
+	Commissioned from: Baldur (https://twitter.com/the__baldur)
+	Distributed by Foozle (www.foozle.io)
+
+	License: (Creative Commons Zero, CC0)
+	http://creativecommons.org/publicdomain/zero/1.0/
+
+	This content is free to use and modify for all projects, including commercial projects.
+	Attribution not required.  If you would like to support, consider a voluntary donation.
