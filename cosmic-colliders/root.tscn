@@ -81,13 +81,13 @@
 [ext_resource type="Texture2D" uid="uid://bc8i82vvdolji" path="res://Images/BackgroundImages/S001_nyknck.png" id="78_tnqsk"]
 [ext_resource type="Texture2D" uid="uid://dnej3eucc8wbl" path="res://Images/Fires/Fireball_68x9.png" id="79_0k0io"]
 [ext_resource type="Texture2D" uid="uid://beotw2y3wj778" path="res://Images/BackgroundImages/Space Background(1).png" id="80_06c7q"]
-[ext_resource type="PackedScene" uid="uid://bthn47s1cjswv" path="res://red_dwarf.tscn" id="82_5s8pb"]
-[ext_resource type="PackedScene" uid="uid://dg1xdv0rirhvk" path="res://moon.tscn" id="82_gwfll"]
-[ext_resource type="PackedScene" uid="uid://dn1vkifsyc8i2" path="res://dwarf_planet.tscn" id="83_x3rrg"]
-[ext_resource type="PackedScene" uid="uid://rrrpmpfshn2u" path="res://planet.tscn" id="84_2unu0"]
-[ext_resource type="PackedScene" uid="uid://ba5q031s8hapb" path="res://blue_star.tscn" id="85_f34p8"]
-[ext_resource type="PackedScene" uid="uid://c8oebh14nbd7y" path="res://gas_giant.tscn" id="85_h5bnc"]
-[ext_resource type="PackedScene" uid="uid://7qut4w2gbrbw" path="res://white_giant.tscn" id="88_8tjye"]
+[ext_resource type="PackedScene" uid="uid://bthn47s1cjswv" path="res://Ball_Scenes/red_dwarf.tscn" id="82_5s8pb"]
+[ext_resource type="PackedScene" uid="uid://dg1xdv0rirhvk" path="res://Ball_Scenes/moon.tscn" id="82_gwfll"]
+[ext_resource type="PackedScene" uid="uid://dn1vkifsyc8i2" path="res://Ball_Scenes/dwarf_planet.tscn" id="83_x3rrg"]
+[ext_resource type="PackedScene" uid="uid://rrrpmpfshn2u" path="res://Ball_Scenes/planet.tscn" id="84_2unu0"]
+[ext_resource type="PackedScene" uid="uid://ba5q031s8hapb" path="res://Ball_Scenes/blue_star.tscn" id="85_f34p8"]
+[ext_resource type="PackedScene" uid="uid://c8oebh14nbd7y" path="res://Ball_Scenes/gas_giant.tscn" id="85_h5bnc"]
+[ext_resource type="PackedScene" uid="uid://7qut4w2gbrbw" path="res://Ball_Scenes/white_giant.tscn" id="88_8tjye"]
 [ext_resource type="Texture2D" uid="uid://cmpe2ahjbt61d" path="res://Images/Balls/7(1).png" id="89_167p3"]
 [ext_resource type="AudioStream" uid="uid://c7jl0c61vouk" path="res://Music/Fly.mp3" id="90_6itr5"]
 [ext_resource type="AudioStream" uid="uid://ga4v4uux5qvo" path="res://Music/Fly_1.mp3" id="91_jlgjt"]
@@ -1628,6 +1628,10 @@ frame_progress = 0.271949
 [node name="Balls" type="Node2D" parent="."]
 
 [node name="Moon" parent="Balls" instance=ExtResource("82_gwfll")]
+position = Vector2(385.859, 317)
+
+[node name="Moon2" parent="Balls" instance=ExtResource("82_gwfll")]
+position = Vector2(358.586, 314)
 
 [node name="DwarfPlanet" parent="Balls" instance=ExtResource("83_x3rrg")]
 

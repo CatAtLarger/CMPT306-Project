@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 #for gravity
-var central_mass_position := Vector2.ZERO
+var central_mass_position := Vector2(577,339)
 @export var gravitational_constant := 5000.0
 
 
@@ -9,13 +9,13 @@ var central_mass_position := Vector2.ZERO
 
 #for loading next ball's scene after collision
 @onready var celestial_objects = [
-	load("res://moon.tscn"),
-	load("res://dwarf_planet.tscn"),
-	load("res://planet.tscn"),
-	load("res://gas_giant.tscn"),
-	load("res://red_dwarf.tscn"),
-	load("res://blue_star.tscn"),
-	load("res://white_giant.tscn")
+	load("res://Ball_Scenes/moon.tscn"),
+	load("res://Ball_Scenes/dwarf_planet.tscn"),
+	load("res://Ball_Scenes/planet.tscn"),
+	load("res://Ball_Scenes/gas_giant.tscn"),
+	load("res://Ball_Scenes/red_dwarf.tscn"),
+	load("res://Ball_Scenes/blue_star.tscn"),
+	load("res://Ball_Scenes/white_giant.tscn")
 ]
 @export var celestial_index = 0
 
@@ -30,7 +30,7 @@ func _ready() -> void:
 		
 	else:
 		push_warning("central_mass_position is hardcoded, cannot get \"Central Mass\" object" )
-		central_mass_position = Vector2(577,339)
+
 	
 
 
