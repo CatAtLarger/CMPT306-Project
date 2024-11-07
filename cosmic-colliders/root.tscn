@@ -1,4 +1,4 @@
-[gd_scene load_steps=256 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=261 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
@@ -89,6 +89,10 @@
 [ext_resource type="PackedScene" uid="uid://c8oebh14nbd7y" path="res://gas_giant.tscn" id="85_h5bnc"]
 [ext_resource type="PackedScene" uid="uid://7qut4w2gbrbw" path="res://white_giant.tscn" id="88_8tjye"]
 [ext_resource type="Texture2D" uid="uid://cmpe2ahjbt61d" path="res://Images/Balls/7(1).png" id="89_167p3"]
+[ext_resource type="AudioStream" uid="uid://c7jl0c61vouk" path="res://Music/Fly.mp3" id="90_6itr5"]
+[ext_resource type="AudioStream" uid="uid://ga4v4uux5qvo" path="res://Music/Fly_1.mp3" id="91_jlgjt"]
+[ext_resource type="AudioStream" uid="uid://dnbg2wxsrrdcy" path="res://Music/Industria.mp3" id="92_hrly2"]
+[ext_resource type="AudioStream" uid="uid://dotw8i6rfu5hw" path="res://Music/Industria_1.mp3" id="93_phxk1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1491,6 +1495,15 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_28mwc"]
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f4sey"]
+shuffle = true
+fade_time = 1.0
+stream_count = 4
+stream_0 = ExtResource("90_6itr5")
+stream_1 = ExtResource("91_jlgjt")
+stream_2 = ExtResource("92_hrly2")
+stream_3 = ExtResource("93_phxk1")
+
 [node name="Root" type="Node2D"]
 scale = Vector2(0.99, 1)
 
@@ -1616,7 +1629,6 @@ frame_progress = 0.271949
 [node name="Moon" parent="Balls" instance=ExtResource("82_gwfll")]
 
 [node name="DwarfPlanet" parent="Balls" instance=ExtResource("83_x3rrg")]
-celestial_index = 1
 
 [node name="Planet" parent="Balls" instance=ExtResource("84_2unu0")]
 celestial_index = 2
@@ -1650,5 +1662,9 @@ shape = SubResource("CircleShape2D_28mwc")
 position = Vector2(-2.0202, 9.00006)
 scale = Vector2(3.30303, 3.30303)
 texture = ExtResource("89_167p3")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_f4sey")
+autoplay = true
 
 [connection signal="area_exited" from="Orbit" to="Balls/RedDwarf" method="_on_orbit_area_exited"]
