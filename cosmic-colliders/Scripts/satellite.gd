@@ -1,4 +1,4 @@
-extends Node2D  # Attach this script to the Satellite Node2D
+extends Node2D
 
 # List of ball (celestial object) scenes to load from, representing various celestial bodies
 @export var ball_scenes: Array = [
@@ -19,6 +19,10 @@ var drag_radius: float = 270
 var is_dragging: bool = false
 var previous_angle: float = 0.0  # To store the previous angle for direction detection
 
+@export var drop_cooldown: float = 1  # Cooldown time in seconds
+var can_drop: bool = true  # Flag to control dropping
+@onready var drop_cooldown_timer = Timer.new()  # Timer for cooldown
+
 func _ready() -> void:
 	# Initialize the queue with 10 random celestial bodies
 	for i in range(10):
@@ -26,6 +30,12 @@ func _ready() -> void:
 	
 	# Set the initial rotation so it faces the center from its starting position
 	rotation_degrees = 0
+	
+	# Configure and start the cooldown timer
+	drop_cooldown_timer.one_shot = true
+	drop_cooldown_timer.wait_time = drop_cooldown
+	add_child(drop_cooldown_timer)
+	drop_cooldown_timer.timeout.connect(Callable(self, "_on_drop_cooldown_timeout"))
 
 # Function to set the initial rotation based on the starting position
 func _input(event):
@@ -36,9 +46,10 @@ func _input(event):
 				is_dragging = true
 				previous_angle = (global_position - center_point).angle()  # Initialize previous angle
 		else:
-			# Stop dragging when the mouse is released and shoot the ball
+			# Stop dragging when the mouse is released and attempt to drop the ball
 			is_dragging = false
-			drop_ball()
+			if can_drop:
+				drop_ball()
 
 # Called every frame to update position if dragging
 func _process(_delta):
@@ -83,3 +94,11 @@ func drop_ball() -> void:
 
 		# Add a new random ball to the end of the queue to maintain queue size
 		balls_queue.append(ball_scenes[randi() % ball_scenes.size()])
+		
+		# Start cooldown after dropping the ball
+		can_drop = false
+		drop_cooldown_timer.start()
+
+# Cooldown reset function
+func _on_drop_cooldown_timeout() -> void:
+	can_drop = true  # Allow another drop after cooldown
