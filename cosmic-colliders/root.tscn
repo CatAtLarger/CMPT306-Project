@@ -1604,7 +1604,7 @@ autoplay = true
 position = Vector2(604.04, 339)
 
 [node name="CentralMass" type="Node2D" parent="."]
-position = Vector2(577.778, 339)
+position = Vector2(576.768, 328)
 scale = Vector2(4.27273, 4.27273)
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="CentralMass"]
@@ -1647,6 +1647,7 @@ position = Vector2(385.859, 304)
 [node name="WhiteGiant" parent="Balls" instance=ExtResource("88_8tjye")]
 
 [node name="Orbit" parent="." instance=ExtResource("93_h8mib")]
+position = Vector2(578.788, 336)
 collision_layer = 6
 collision_mask = 3
 
