@@ -1,0 +1,24 @@
+Group #33 Jonah Konecnik (JOK827) and KB
+
+
+Jonah:
+	
+	- created repo and pitch powerpoint
+
+	- proposed and outlined pivot from switch
+
+	- created, layered, and animated background
+
+		- added background sounds
+
+	- created ball class with mutltiple ball types
+
+		- added collision detection with orbit
+
+		- added collision detection with eachother
+
+	- created central mass that attracts all entities towards it
+
+	- created orbit to check if balls leave radius
+
+	- set up camera

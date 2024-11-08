@@ -36,18 +36,18 @@ func _ready() -> void:
 
 
 	#debugging
-	set_process_input(true)
+	#set_process_input(true)
 	
 
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				if position.distance_to(get_global_mouse_position()) < 20:
-					dragging = true
-				else:
-					dragging = false
+#func _input(event: InputEvent) -> void:
+	#if event is InputEventMouseButton:
+		#if event.button_index == MOUSE_BUTTON_LEFT:
+			#if event.pressed:
+				#if position.distance_to(get_global_mouse_position()) < 20:
+					#dragging = true
+				#else:
+					#dragging = false
 					
 					
 func _physics_process(delta):
@@ -55,8 +55,8 @@ func _physics_process(delta):
 	_apply_gravity(delta)
 	
 	#for debugging
-	if dragging:
-		global_position = get_global_mouse_position()
+	#if dragging:
+		#global_position = get_global_mouse_position()
 
 
 
