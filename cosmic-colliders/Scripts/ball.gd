@@ -20,6 +20,9 @@ var central_mass_position := Vector2(577,339)
 @export var celestial_index = 0
 
 
+#for debugging
+var dragging = false
+
 func _ready() -> void:
 	
 	var central_mass := get_node_or_null("CentralMass")
@@ -31,13 +34,29 @@ func _ready() -> void:
 	else:
 		push_warning("central_mass_position is hardcoded, cannot get \"Central Mass\" object" )
 
+
+	#debugging
+	set_process_input(true)
 	
 
 
-
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				if position.distance_to(get_global_mouse_position()) < 20:
+					dragging = true
+				else:
+					dragging = false
+					
+					
 func _physics_process(delta):
 	
 	_apply_gravity(delta)
+	
+	#for debugging
+	if dragging:
+		global_position = get_global_mouse_position()
 
 
 
@@ -94,10 +113,3 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			
 			next_ball(collision_object)
 		
-
-func _on_orbit_area_exited(area: Area2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	pass # Replace with function body.
