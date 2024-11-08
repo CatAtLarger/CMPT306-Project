@@ -1632,27 +1632,24 @@ frame_progress = 0.271949
 
 [node name="Moon" parent="Balls" instance=ExtResource("82_gwfll")]
 position = Vector2(385.859, 317)
-gravitational_constant = null
-celestial_index = null
 
 [node name="DwarfPlanet" parent="Balls" instance=ExtResource("83_x3rrg")]
-gravitational_constant = null
+
+[node name="DwarfPlanet2" parent="Balls" instance=ExtResource("83_x3rrg")]
+position = Vector2(397.98, 254)
+
+[node name="DwarfPlanet3" parent="Balls" instance=ExtResource("83_x3rrg")]
+position = Vector2(385.859, 304)
 
 [node name="Planet" parent="Balls" instance=ExtResource("84_2unu0")]
-gravitational_constant = null
 
 [node name="GasGiant" parent="Balls" instance=ExtResource("85_h5bnc")]
-gravitational_constant = null
 
 [node name="RedDwarf" parent="Balls" instance=ExtResource("82_5s8pb")]
-gravitational_constant = null
 
 [node name="BlueStar" parent="Balls" instance=ExtResource("85_f34p8")]
-gravitational_constant = null
-celestial_index = 5
 
 [node name="WhiteGiant" parent="Balls" instance=ExtResource("88_8tjye")]
-gravitational_constant = null
 
 [node name="Orbit" parent="." instance=ExtResource("93_h8mib")]
 

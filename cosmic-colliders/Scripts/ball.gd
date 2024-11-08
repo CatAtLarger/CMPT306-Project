@@ -57,10 +57,13 @@ func _apply_gravity(delta):
 
 func next_ball(collision_object):
 	
+	
 		# if image is the same then must be same ball
 		if collision_object.get_child(1).texture == get_child(1).texture:
 			
 			var next_ball_index = celestial_index + 1
+			
+			
 
 			#if not last ball
 			if next_ball_index < celestial_objects.size() :
@@ -93,4 +96,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		
 
 func _on_orbit_area_exited(area: Area2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
 	pass # Replace with function body.
