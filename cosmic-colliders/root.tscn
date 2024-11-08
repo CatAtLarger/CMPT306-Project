@@ -1639,23 +1639,17 @@ position = Vector2(385.859, 317)
 [node name="DwarfPlanet" parent="Balls" instance=ExtResource("83_x3rrg")]
 
 [node name="Planet" parent="Balls" instance=ExtResource("84_2unu0")]
-celestial_index = 2
 
 [node name="GasGiant" parent="Balls" instance=ExtResource("85_h5bnc")]
-celestial_index = 3
 
 [node name="RedDwarf" parent="Balls" instance=ExtResource("82_5s8pb")]
-celestial_index = 4
 
 [node name="RedDwarf2" parent="Balls" instance=ExtResource("82_5s8pb")]
 position = Vector2(539.394, 139)
-celestial_index = 4
 
 [node name="BlueStar" parent="Balls" instance=ExtResource("85_f34p8")]
-celestial_index = 5
 
 [node name="WhiteGiant" parent="Balls" instance=ExtResource("88_8tjye")]
-celestial_index = 6
 
 [node name="Orbit" type="Area2D" parent="."]
 modulate = Color(0.3496, 0.4522, 0.76, 0.423529)

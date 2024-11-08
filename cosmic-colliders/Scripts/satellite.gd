@@ -1,4 +1,4 @@
-extends Node2D
+extends Node2D  # Attach this script to the Satellite Node2D
 
 # List of ball (celestial object) scenes to load from, representing various celestial bodies
 @export var ball_scenes: Array = [
@@ -17,19 +17,24 @@ var balls_queue: Array = []  # Queue of balls to be dropped
 var center_point = Vector2(570, 340)
 var drag_radius: float = 270
 var is_dragging: bool = false
+var previous_angle: float = 0.0  # To store the previous angle for direction detection
 
 func _ready() -> void:
 	# Initialize the queue with 10 random celestial bodies
 	for i in range(10):
 		balls_queue.append(ball_scenes[randi() % ball_scenes.size()])
+	
+	# Set the initial rotation so it faces the center from its starting position
+	rotation_degrees = 0
 
-# Detect mouse events for starting/stopping dragging
+# Function to set the initial rotation based on the starting position
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			# Start dragging if the click is within the satellite's area
 			if global_position.distance_to(event.global_position) <= drag_radius:
 				is_dragging = true
+				previous_angle = (global_position - center_point).angle()  # Initialize previous angle
 		else:
 			# Stop dragging when the mouse is released and shoot the ball
 			is_dragging = false
@@ -42,6 +47,26 @@ func _process(_delta):
 		var direction = (get_viewport().get_mouse_position() - center_point).normalized()
 		# Set the position within the radius around the center point
 		global_position = center_point + direction * drag_radius
+		
+		# Calculate the current angle from the center to the satellite's position in radians
+		var current_angle = (global_position - center_point).angle()
+		
+		# Convert the angle to degrees for rotation purposes
+		var current_angle_degrees = rad_to_deg(current_angle)
+		
+		# Reverse the rotation direction by swapping the adjustments
+		if current_angle < previous_angle:
+			# Now, counterclockwise rotation
+			rotation_degrees -= abs(current_angle_degrees - rad_to_deg(previous_angle))
+		else:
+			# Now, clockwise rotation
+			rotation_degrees += abs(current_angle_degrees - rad_to_deg(previous_angle))
+		
+		# Normalize rotation to stay within 0 to 360 degrees
+		rotation_degrees = fmod(rotation_degrees + 360, 360)
+		
+		# Update the previous angle
+		previous_angle = current_angle
 
 # Function to handle dropping a ball from the queue
 func drop_ball() -> void:
