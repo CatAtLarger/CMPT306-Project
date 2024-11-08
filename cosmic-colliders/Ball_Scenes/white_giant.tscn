@@ -16,6 +16,7 @@ mass = 0.1
 gravity_scale = 0.0
 contact_monitor = true
 script = ExtResource("1_o5ax2")
+celestial_index = 6
 metadata/value = 1400
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -34,3 +35,5 @@ scale = Vector2(2.65817, 2.65817)
 scale = Vector2(1.16903, 1.16903)
 shape = SubResource("CircleShape2D_aqu2e")
 debug_color = Color(0.957318, 0, 0.533218, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
