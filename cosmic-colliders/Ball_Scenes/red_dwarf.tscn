@@ -16,6 +16,7 @@ mass = 0.1
 gravity_scale = 0.0
 contact_monitor = true
 script = ExtResource("1_7s4co")
+gravitational_constant = null
 celestial_index = 4
 metadata/value = 1000
 

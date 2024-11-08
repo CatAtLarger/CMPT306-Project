@@ -5,7 +5,7 @@ var central_mass_position := Vector2(577,339)
 @export var gravitational_constant := 5000.0
 
 
-
+@onready var orbit = load("res://orbit.tscn")
 
 #for loading next ball's scene after collision
 @onready var celestial_objects = [
@@ -69,6 +69,10 @@ func next_ball(collision_object):
 				var new_ball = next_ball_scene.instantiate()
 				get_parent().call_deferred("add_child", new_ball)
 				new_ball.position = collision_object.position
+				
+				
+				#attach orbit to new child
+				#orbit.connect("area_exited", new_ball, _on_orbit_area_exited)
 
 
 			collision_object.queue_free()
@@ -89,8 +93,4 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		
 
 func _on_orbit_area_exited(area: Area2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
 	pass # Replace with function body.

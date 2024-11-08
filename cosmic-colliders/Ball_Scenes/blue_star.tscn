@@ -16,6 +16,8 @@ mass = 0.1
 gravity_scale = 0.0
 contact_monitor = true
 script = ExtResource("1_qk2wi")
+gravitational_constant = null
+celestial_index = 5
 metadata/value = 1200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
