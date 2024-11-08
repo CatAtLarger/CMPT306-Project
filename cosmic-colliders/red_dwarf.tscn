@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bthn47s1cjswv"]
+[gd_scene load_steps=5 format=3 uid="uid://dim75rm3tmbvf"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_7s4co"]
 [ext_resource type="Texture2D" uid="uid://dww02m23jsp6q" path="res://Images/Balls/star_red_giant01.png" id="2_f1vhk"]
@@ -16,7 +16,6 @@ mass = 0.1
 gravity_scale = 0.0
 contact_monitor = true
 script = ExtResource("1_7s4co")
-celestial_index = 4
 metadata/value = 1000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -58,41 +58,39 @@ func _apply_gravity(delta):
 func next_ball(collision_object):
 	
 		# if image is the same then must be same ball
-
 		if collision_object.get_child(1).texture == get_child(1).texture:
 			
 			var next_ball_index = celestial_index + 1
-			var next_ball_scene = celestial_objects[next_ball_index]
-			
-			
-			if next_ball_scene:
-				
+
+			#if not last ball
+			if next_ball_index < celestial_objects.size() :
+				#make new ball
+				var next_ball_scene = celestial_objects[next_ball_index]
 				var new_ball = next_ball_scene.instantiate()
-
-
-				
 				get_parent().call_deferred("add_child", new_ball)
-
-					
 				new_ball.position = collision_object.position
-				collision_object.queue_free()
-				call_deferred("queue_free")
-				
-			else:
-				push_error("Cannot get get next celestial_object!")
+
+
+			collision_object.queue_free()
+			call_deferred("queue_free")
+			
 		
 		
 		
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	
 	var collision_object = area.get_parent()
-	
+
 	if is_in_group("balls"):
-		
+
 		if not is_queued_for_deletion() && not collision_object.is_queued_for_deletion():
 			
 			next_ball(collision_object)
 		
 
 func _on_orbit_area_exited(area: Area2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
 	pass # Replace with function body.
