@@ -1,4 +1,4 @@
-Group #33 Jonah Konecnik (JOK827) and KB
+Group #33 Jonah Konecnik (JOK827) and Khubaib Ahmad (hti315)
 
 
 Jonah:
@@ -22,3 +22,19 @@ Jonah:
 	- created orbit to check if balls leave radius
 
 	- set up camera
+
+Khubaib:
+
+Implemented satellite node as the primary dropper mechanism for the balls.
+
+Added drag-and-drop functionality to allow the satellite to move within a circular radius with mouse.
+
+Configured cooldowns to control the dropping rate of the balls.
+
+Integrated a scoring system based on ball types, because each ball has a metadata value for accurate scorekeeping.
+
+Set up score updates for each ball dropped and combined, following the metadata values.
+
+Set up some UI with a score label and configured the ScoreTracker as a global autoload to track the player's points.
+
+Created the Image that shows how many points each ball would grant and the size diffrences of each ball.
