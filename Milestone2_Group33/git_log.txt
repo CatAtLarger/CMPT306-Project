@@ -1,0 +1,367 @@
+commit 97766ff151d7621dbe12e2d0ee7655ddd284dc7c
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Fri Nov 8 23:44:59 2024 -0600
+
+    made zipped file
+
+commit 2a67c139aa4effc81bf852283a681dfbf80e97c5
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Fri Nov 8 23:23:27 2024 -0600
+
+    Added the Image too see the scores and sizes of ball.
+
+commit b282c94fc47b8336e91a56d49bae9ddbb385b920
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Fri Nov 8 22:47:36 2024 -0600
+
+    Added so that now once balls combine scoreupdates, seems to work for all except the white giant?
+
+commit 6b93d2a3822f3a9a4fed7ea95ada25223e1bcb2b
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Fri Nov 8 22:38:19 2024 -0600
+
+    just got the meta data to work so it updates score according to what is dropped
+
+commit a57392c55014d439bf3af410f69caa33e80de8bd
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Fri Nov 8 22:35:17 2024 -0600
+
+    Fianlly made a child node from root. it was a label called score. added text to it "Score: 0". made a script called Auto Script which I set up as a global variable in Autoloader,then added to sttelite.gd so it every time it shoots score goes up
+
+commit 08ec69b0cfc3e92475d1330bbd92f3c5a0479782
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Fri Nov 8 16:40:41 2024 -0600
+
+    Score.gd making better working still
+
+commit 5fa1d835e516f168fe3c2112237aa3e38b67b270
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Fri Nov 8 02:39:57 2024 -0600
+
+    Everything with Sattelite Works Now, tried again to display the ball before dropping just didn't work.
+
+commit 8637e72e08a9fb4ede32dc5560e4acaca2cd0eed
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Fri Nov 8 01:24:24 2024 -0600
+
+    Added Rotation Ability to the Sattelite Script.
+
+commit 86d1803de437483411d591d38e189083ca94d653
+Merge: 8b30977 f7694b1
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Thu Nov 7 23:14:14 2024 -0600
+
+    Merge branch 'main' of https://github.com/CatAtLarger/CMPT306-Project
+
+commit 8b30977476479e8f7824d9c06ae85379aca96037
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Thu Nov 7 22:58:14 2024 -0600
+
+    Finally got the drag funtion to work, also added an image for Sattelite. Couldn't make the image of  whats being dropped, I cant figure it out
+
+commit f7694b1a66a939a4491cb3e177feb83cdb92c2da
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 21:16:28 2024 -0600
+
+    commented out debugging code and added both neccessary txt files to milestone2
+
+commit 19174300eeb01c8d5d0bd3cc13e2cad5a5d834f9
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 21:04:33 2024 -0600
+
+    got rid of some old stuff and created what has been worked on file
+
+commit b508ee9c70568592338a79cedf2123975bc56d6e
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 20:51:05 2024 -0600
+
+    finished area2d collision for prototype
+
+commit d48f1ac27ebd558cd47dd0e656abffc94eb02ee3
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 20:32:51 2024 -0600
+
+    added debugging methods and scaffolding for area exit method
+    
+    very inefficient and gross tbh
+
+commit 7da196b6f1cb51e6b550adff01f320cf16c447b2
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 19:34:56 2024 -0600
+
+    ok this time ball collisions are fixed i swear
+
+commit 127413f5027e37dc707a5872732e5a3cba5db162
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 19:19:09 2024 -0600
+
+    started on area collision
+
+commit b7356803ea6ffd865a6e8a839b61026475e3ea5f
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 18:57:40 2024 -0600
+
+    fully finished collisions for prototype
+
+commit f5d1459f361673b9b37c3d9851b2b1bd157864db
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Thu Nov 7 16:02:32 2024 -0600
+
+    made an node for score tracker and attached the script to it
+
+commit 5a3d192d0b81227984ee9b571f3a215b735e0cea
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Thu Nov 7 15:55:31 2024 -0600
+
+    Added UI Node and created Labe and wrote "Score:0" l and then i created the a script in the script folder called score_tracker.dg
+
+commit d01275ac57925362dc210a0c10d954fb7a50b3c4
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 15:20:35 2024 -0600
+
+    put background music node in background node
+
+commit 30823f5d8b6615c80bbda9aca9b5c9c0ef862895
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Thu Nov 7 14:37:11 2024 -0600
+
+    Added click-to-drop functionality for Satellite node, Its Semi workinng when you click it but will work on it more
+
+commit 60042ec5ca0921298472382198914d5b991f1680
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 13:58:28 2024 -0600
+
+    fixed errors in ball code
+
+commit 5685faf510f6a1b961987ea9385305fd6ef9dddb
+Merge: f8ecfb7 ca77772
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Thu Nov 7 13:55:05 2024 -0600
+
+    Merge branch 'main' of https://github.com/CatAtLarger/CMPT306-Project
+
+commit f8ecfb7f0e51ffd18ed007897f67588fce6c875a
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Thu Nov 7 13:52:01 2024 -0600
+
+    I made a Satellite Node 2d under root  and Added drag-and-drop functionality in a script called satellite.gd which i saved in the Scripts folder.
+
+commit ca77772b03247d29a1db4e13985cf3d360ba43c4
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 13:50:03 2024 -0600
+
+    fixed errors with instantiating and handling collisions with defferals
+
+commit f5efd393c6e72111fadeb5b05e8b60c77b8be0bf
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Nov 7 13:18:54 2024 -0600
+
+    fixed bug with collision where two balls spawn instead of one
+
+commit e0ac666a56d80510eb34b1e27ca43e731cbf4bfd
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Wed Nov 6 22:26:59 2024 -0600
+
+    added copyright text files
+
+commit d3ba451c7633f44dbdfeaf1651819305ee044366
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Wed Nov 6 22:23:31 2024 -0600
+
+    added background music
+
+commit 9588ad753bf27a212a41746e05011030fb71c1ab
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Wed Nov 6 21:26:19 2024 -0600
+
+    instantiated each celestial body as own scene
+
+commit f52d4b3f9e0d637360de98e8a7889239b4f8013a
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Wed Nov 6 19:57:11 2024 -0600
+
+    added code to check collisions for same sprite image
+
+commit 55b5a919d4410d06975b922328ebe90378cab317
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Wed Nov 6 19:27:30 2024 -0600
+
+    Added the initial planets for prototype with placeholder images
+
+commit 8aa2d7c1b4f769a7fe3374398babc1a3d0795bd3
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Tue Nov 5 22:29:54 2024 -0600
+
+    added collision detection and function to change to next ball
+    
+    texture will change but not update visually :(
+
+commit aaf1327336161c3396e0c12e7335eb0e2866138a
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Tue Nov 5 20:17:19 2024 -0600
+
+    added graviational force
+
+commit 9d4baa980f71c2bc8e24ef06ef92743dcfae0dc2
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Tue Nov 5 13:46:43 2024 -0600
+
+    added ball and box area
+
+commit b11dc7e89c1491043d6ca1f679f935251bb0527c
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Mon Nov 4 16:27:36 2024 -0600
+
+    added body of box
+
+commit 43866a353fca0ed3e47fecb7af2068d0ec5cdea5
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Mon Nov 4 16:01:26 2024 -0600
+
+    Update root.tscn
+
+commit f816a6ccf2799136a05242db0eb17724bd90bbf2
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Sat Nov 2 03:32:31 2024 -0600
+
+    moved the comet to start outside
+
+commit 6a03750e8d291fea92e557675c866dfb6387e178
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Sat Nov 2 03:30:38 2024 -0600
+
+    added a comet to spawn from a random location/direction
+
+commit 0e3770ffed72329c8b0005cf63a0f45eb19ca1ad
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Sat Nov 2 02:45:32 2024 -0600
+
+    added a comet to shoot randomly
+
+commit 623ccb8174190cf054ce22cb04a78995f1740d4f
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Sat Nov 2 01:29:39 2024 -0600
+
+    fixed fog layer in bg
+    
+    changed opacity and fixed issues in movement code
+
+commit a770bbea95b02bacf7ae148ca3cb564e98433c58
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Sat Nov 2 01:11:28 2024 -0600
+
+    Update root.tscn
+
+commit ca97d6b83ddc0bddbf0d3d5039e536ce0e3f3184
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Fri Nov 1 00:09:29 2024 -0600
+
+    added the final layer
+    
+    still needs a bit of polish on layer3 and maybe more celestial bodies on layer1 but background basically done
+
+commit 55243d8cd1f584aa9711a37087d5b7c1d82483e2
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Oct 31 23:19:59 2024 -0600
+
+    polished layer2
+
+commit dafc95c23eb7db166124a99149edbc30482500dd
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Oct 31 23:13:12 2024 -0600
+
+    added a third layer for background
+
+commit 7666ba2014905710f1a7a9adc079f856e49f786a
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Oct 31 21:56:06 2024 -0600
+
+    added animated layers to project
+
+commit 58269fd56713b9cd18164926c1aebfbaf048d05a
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Oct 31 20:24:13 2024 -0600
+
+    created new project for last pivot lol
+
+commit c909a74a728e0040d759d71343ed8974b9b7a075
+Author: GogeBat21 <hti315@usask.ca>
+Date:   Thu Oct 31 17:41:24 2024 -0600
+
+    Added Word File
+
+commit 1cf4a2451a4e133862d5e5134ed9861d30f0d7c7
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Oct 31 16:31:07 2024 -0600
+
+    added push test for kb
+
+commit 6a8469ec7450e240b875548f7dbc2b3078f626c0
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Oct 31 16:25:58 2024 -0600
+
+    added tasks for each of us
+
+commit fa98e0ea8e70675dd7903abd626b921a1073ef9b
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Oct 31 15:01:39 2024 -0600
+
+    removed unnecessary fat
+
+commit 8130c9d21e6e73a6ba369759ea9515ce5a961bef
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Thu Oct 31 02:33:06 2024 -0600
+
+    when the going gets tough, pivot
+    
+    pivoted our game and added some basic scaffolding
+
+commit f56bc16b46bd908153465e715aeb4c43fea1090e
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Tue Oct 29 19:25:13 2024 -0600
+
+    added a basic platform and some more scaffolding
+
+commit eda20a63055ac41cc35cabf69667a98e00b5eb1f
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Tue Oct 29 18:38:54 2024 -0600
+
+    added more scaffolding
+
+commit f02f3d9c4ac5a3d9904ca68ee588092130e0970a
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Tue Oct 29 18:26:08 2024 -0600
+
+    added scaffolding
+    
+    added some inheritance properties in the evidence
+    
+    split the project into Model View and Controller
+
+commit 2993ad2b88dd1e3624ff36d98b212e34de9433dd
+Author: Jonah Konecnik <jok827@usask.ca>
+Date:   Tue Oct 29 17:44:09 2024 -0600
+
+    created project and set it up to work with repo
+
+commit 4ed800a43c55c04ec8ef8a3bf9ccf9d96a8927fc
+Author: Jonah Konecnik <139001088+CatAtLarger@users.noreply.github.com>
+Date:   Tue Oct 22 13:27:14 2024 -0600
+
+    Updated README.md
+    
+    added class diagram link
+
+commit 030ddb7b0a89a29f1e7fe63cb88e1696658d0160
+Author: Jonah Konecnik <139001088+CatAtLarger@users.noreply.github.com>
+Date:   Wed Oct 16 16:46:53 2024 -0600
+
+    Update README.md
+    
+    updated link to presentation
+
+commit 87ef5bdb354fa972ccf16f14df776163e608f7ef
+Author: Jonah Konecnik <139001088+CatAtLarger@users.noreply.github.com>
+Date:   Fri Oct 11 16:11:27 2024 -0600
+
+    Initial commit
