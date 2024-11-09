@@ -93,8 +93,13 @@ func drop_ball() -> void:
 		# Add the ball to the Balls node in the scene tree to make it part of the orbit
 		get_parent().get_node("Balls").add_child(ball_instance)
 
-		# Update the score
-		Autoscript.score += 200
+		# Retrieve the ball's metadata value and add it to the score
+		var ball_value = ball_instance.get_meta("value")
+		if ball_value != null:
+			Autoscript.score += ball_value
+		else:
+			push_warning("Ball instance has no metadata value.")
+
 		update_score_display()
 		
 		# Add a new random ball to the end of the queue to maintain queue size
