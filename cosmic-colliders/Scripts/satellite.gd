@@ -22,6 +22,7 @@ var previous_angle: float = 0.0  # To store the previous angle for direction det
 @export var drop_cooldown: float = 1  # Cooldown time in seconds
 var can_drop: bool = true  # Flag to control dropping
 @onready var drop_cooldown_timer = Timer.new()  # Timer for cooldown
+@onready var score_label = get_tree().root.get_node("Root/Score")  # Score label reference
 
 func _ready() -> void:
 	# Initialize the queue with 10 random celestial bodies
@@ -92,13 +93,24 @@ func drop_ball() -> void:
 		# Add the ball to the Balls node in the scene tree to make it part of the orbit
 		get_parent().get_node("Balls").add_child(ball_instance)
 
+		# Update the score
+		Autoscript.score += 200
+		update_score_display()
+		
 		# Add a new random ball to the end of the queue to maintain queue size
 		balls_queue.append(ball_scenes[randi() % ball_scenes.size()])
 		
 		# Start cooldown after dropping the ball
 		can_drop = false
 		drop_cooldown_timer.start()
-
+		
 # Cooldown reset function
 func _on_drop_cooldown_timeout() -> void:
 	can_drop = true  # Allow another drop after cooldown
+
+# Function to update the score label text
+func update_score_display() -> void:
+	if score_label:
+		score_label.text = "Score: " + str(Autoscript.score)
+	else:
+		push_error("Score label not found.")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=264 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=263 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
@@ -95,7 +95,6 @@
 [ext_resource type="AudioStream" uid="uid://dotw8i6rfu5hw" path="res://Music/Industria_1.mp3" id="93_phxk1"]
 [ext_resource type="Script" path="res://Scripts/satellite.gd" id="94_1fihr"]
 [ext_resource type="Texture2D" uid="uid://cqjy232j6l752" path="res://Images/Other Images/spaceStation_018.png" id="95_42lgn"]
-[ext_resource type="Script" path="res://Scripts/score_tracker.gd" id="95_pw4j2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1635,21 +1634,35 @@ frame_progress = 0.271949
 
 [node name="Moon" parent="Balls" instance=ExtResource("82_gwfll")]
 position = Vector2(385.859, 317)
+gravitational_constant = 5000.0
 
 [node name="DwarfPlanet" parent="Balls" instance=ExtResource("83_x3rrg")]
+gravitational_constant = 5000.0
+celestial_index = 0
 
 [node name="Planet" parent="Balls" instance=ExtResource("84_2unu0")]
+gravitational_constant = 5000.0
+celestial_index = 0
 
 [node name="GasGiant" parent="Balls" instance=ExtResource("85_h5bnc")]
+gravitational_constant = 5000.0
+celestial_index = 0
 
 [node name="RedDwarf" parent="Balls" instance=ExtResource("82_5s8pb")]
+gravitational_constant = 5000.0
+celestial_index = 0
 
 [node name="RedDwarf2" parent="Balls" instance=ExtResource("82_5s8pb")]
 position = Vector2(539.394, 139)
+gravitational_constant = 5000.0
+celestial_index = 0
 
 [node name="BlueStar" parent="Balls" instance=ExtResource("85_f34p8")]
+gravitational_constant = 5000.0
+celestial_index = 0
 
 [node name="WhiteGiant" parent="Balls" instance=ExtResource("88_8tjye")]
+celestial_index = 0
 
 [node name="Orbit" type="Area2D" parent="."]
 modulate = Color(0.3496, 0.4522, 0.76, 0.423529)
@@ -1675,17 +1688,11 @@ script = ExtResource("94_1fihr")
 [node name="Satellite_Image" type="Sprite2D" parent="Satellite"]
 texture = ExtResource("95_42lgn")
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="UI"]
-offset_left = 1028.0
-offset_top = 39.0
-offset_right = 1089.0
-offset_bottom = 62.0
-scale = Vector2(1.5, 1.5)
+[node name="Score" type="Label" parent="."]
+offset_left = 1065.66
+offset_top = 38.0
+offset_right = 1126.66
+offset_bottom = 61.0
 text = "Score: 0"
-
-[node name="ScoreTracker" type="Node" parent="."]
-script = ExtResource("95_pw4j2")
 
 [connection signal="area_exited" from="Orbit" to="Balls/RedDwarf" method="_on_orbit_area_exited"]

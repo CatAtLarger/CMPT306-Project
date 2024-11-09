@@ -7,6 +7,8 @@ var central_mass_position := Vector2(577,339)
 
 @onready var orbit = load("res://orbit.tscn")
 
+
+
 #for loading next ball's scene after collision
 @onready var celestial_objects = [
 	load("res://Ball_Scenes/moon.tscn"),
@@ -112,4 +114,3 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if not is_queued_for_deletion() && not collision_object.is_queued_for_deletion():
 			
 			next_ball(collision_object)
-		
