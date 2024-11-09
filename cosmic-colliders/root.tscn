@@ -1,4 +1,4 @@
-[gd_scene load_steps=263 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=264 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
@@ -95,6 +95,7 @@
 [ext_resource type="AudioStream" uid="uid://dotw8i6rfu5hw" path="res://Music/Industria_1.mp3" id="93_phxk1"]
 [ext_resource type="Script" path="res://Scripts/satellite.gd" id="94_1fihr"]
 [ext_resource type="Texture2D" uid="uid://cqjy232j6l752" path="res://Images/Other Images/spaceStation_018.png" id="95_42lgn"]
+[ext_resource type="Texture2D" uid="uid://dri1njk4fqkkh" path="res://Images/Other Images/UI for sizes and scores.png" id="96_5kf85"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1687,6 +1688,13 @@ script = ExtResource("94_1fihr")
 
 [node name="Satellite_Image" type="Sprite2D" parent="Satellite"]
 texture = ExtResource("95_42lgn")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Image fo Scores" type="Sprite2D" parent="UI"]
+position = Vector2(255, 415)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("96_5kf85")
 
 [node name="Score" type="Label" parent="."]
 offset_left = 1065.66
