@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Autoscript="*res://Scripts/Autoscript.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [physics]
 
 2d/physics_engine="GodotPhysics2D"
