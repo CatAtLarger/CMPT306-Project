@@ -1634,7 +1634,7 @@ frame_progress = 0.271949
 [node name="Balls" type="Node2D" parent="."]
 
 [node name="Moon" parent="Balls" instance=ExtResource("82_gwfll")]
-position = Vector2(385.859, 317)
+position = Vector2(313.131, 218)
 gravitational_constant = 5000.0
 
 [node name="DwarfPlanet" parent="Balls" instance=ExtResource("83_x3rrg")]
@@ -1668,7 +1668,6 @@ celestial_index = 0
 [node name="Orbit" type="Area2D" parent="."]
 modulate = Color(0.3496, 0.4522, 0.76, 0.423529)
 position = Vector2(579.798, 340)
-disable_mode = 1
 collision_layer = 4
 collision_mask = 4
 
@@ -1703,4 +1702,6 @@ offset_right = 1126.66
 offset_bottom = 61.0
 text = "Score: 0"
 
-[connection signal="area_exited" from="Orbit" to="Balls/RedDwarf" method="_on_orbit_area_exited"]
+[connection signal="area_entered" from="Orbit" to="Balls/Moon" method="_on_orbit_area_entered"]
+[connection signal="body_entered" from="Orbit" to="Balls/Moon" method="_on_orbit_body_entered"]
+[connection signal="body_shape_entered" from="Orbit" to="Balls/Moon" method="_on_orbit_body_shape_entered"]

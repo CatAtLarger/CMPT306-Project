@@ -63,12 +63,24 @@ func next_ball(collision_object):
 			else:
 				push_warning("Ball instance has no metadata value.")
 				
-		# Free the colliding balls after combining
-		collision_object.queue_free()
-		call_deferred("queue_free")
+			# Free the colliding balls after combining
+			collision_object.queue_free()
+			call_deferred("queue_free")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var collision_object = area.get_parent()
 	if is_in_group("balls"):
 		if not is_queued_for_deletion() and not collision_object.is_queued_for_deletion():
 			next_ball(collision_object)
+
+
+func _on_orbit_area_entered(area: Area2D) -> void:
+	print("area orbit entered")
+
+
+func _on_orbit_body_entered(body: Node2D) -> void:
+	print("Area body entered")
+
+
+func _on_orbit_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	print("Body shape entered")
