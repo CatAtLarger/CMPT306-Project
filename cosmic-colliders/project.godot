@@ -13,7 +13,11 @@ config_version=5
 config/name="Cosmic Colliders"
 run/main_scene="res://Scenes/root.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Images/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://Sounds/default_bus_layout.tres"
 
 [autoload]
 
