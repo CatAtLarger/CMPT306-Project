@@ -81,7 +81,7 @@
 [ext_resource type="Texture2D" uid="uid://bc8i82vvdolji" path="res://Images/BackgroundImages/S001_nyknck.png" id="78_tnqsk"]
 [ext_resource type="Texture2D" uid="uid://dnej3eucc8wbl" path="res://Images/Fires/Fireball_68x9.png" id="79_0k0io"]
 [ext_resource type="Texture2D" uid="uid://beotw2y3wj778" path="res://Images/BackgroundImages/Space Background(1).png" id="80_06c7q"]
-[ext_resource type="Texture2D" uid="uid://cmpe2ahjbt61d" path="res://Images/Balls/7(1).png" id="89_167p3"]
+[ext_resource type="Texture2D" uid="uid://cmpe2ahjbt61d" path="res://Images/Balls/gas_giant_full.png" id="89_167p3"]
 [ext_resource type="AudioStream" uid="uid://c7jl0c61vouk" path="res://Sounds/Music/Fly.mp3" id="90_6itr5"]
 [ext_resource type="AudioStream" uid="uid://ga4v4uux5qvo" path="res://Sounds/Music/Fly_1.mp3" id="91_jlgjt"]
 [ext_resource type="AudioStream" uid="uid://dnbg2wxsrrdcy" path="res://Sounds/Music/Industria.mp3" id="92_hrly2"]
@@ -1602,7 +1602,7 @@ autoplay = true
 position = Vector2(604.04, 339)
 
 [node name="CentralMass" type="Node2D" parent="."]
-position = Vector2(577.778, 339)
+position = Vector2(580.808, 342)
 scale = Vector2(4.27273, 4.27273)
 
 [node name="Sprite2D" type="Sprite2D" parent="CentralMass"]
@@ -1638,7 +1638,7 @@ scale = Vector2(18.6162, 18.6162)
 shape = SubResource("CircleShape2D_28mwc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Orbit"]
-position = Vector2(-2.0202, 9.00006)
+position = Vector2(-4.0404, 10)
 scale = Vector2(3.30303, 3.30303)
 texture = ExtResource("89_167p3")
 

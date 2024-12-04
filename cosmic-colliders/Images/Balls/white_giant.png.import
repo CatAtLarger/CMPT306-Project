@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1scnmwe3pdkm"
-path="res://.godot/imported/star_white_giant04.png-02acf792009ff4584234861bbd91e7a7.ctex"
+uid="uid://c0mpbf7yu60ry"
+path="res://.godot/imported/white_giant.png-d0a8693d0d42e5a8e04f9f010a6fafa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Balls/star_white_giant04.png"
-dest_files=["res://.godot/imported/star_white_giant04.png-02acf792009ff4584234861bbd91e7a7.ctex"]
+source_file="res://Images/Balls/white_giant.png"
+dest_files=["res://.godot/imported/white_giant.png-d0a8693d0d42e5a8e04f9f010a6fafa7.ctex"]
 
 [params]
 

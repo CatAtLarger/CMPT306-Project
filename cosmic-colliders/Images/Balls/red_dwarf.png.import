@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mtbil6k0ge8s"
-path="res://.godot/imported/barren.png-93b076d8e1eabf5ce0ad318c2830aa4e.ctex"
+uid="uid://csppy12ohd2yj"
+path="res://.godot/imported/red_dwarf.png-c53df47122216762638e0fb88b47525b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Balls/barren.png"
-dest_files=["res://.godot/imported/barren.png-93b076d8e1eabf5ce0ad318c2830aa4e.ctex"]
+source_file="res://Images/Balls/red_dwarf.png"
+dest_files=["res://.godot/imported/red_dwarf.png-c53df47122216762638e0fb88b47525b.ctex"]
 
 [params]
 

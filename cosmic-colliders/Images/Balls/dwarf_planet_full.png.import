@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmpe2ahjbt61d"
-path="res://.godot/imported/7(1).png-4c89f5d66f3de2a89dbae017502ab5b4.ctex"
+uid="uid://mtbil6k0ge8s"
+path="res://.godot/imported/dwarf_planet_full.png-71f1bebb8459bb80cf4380c0f95c5725.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Balls/7(1).png"
-dest_files=["res://.godot/imported/7(1).png-4c89f5d66f3de2a89dbae017502ab5b4.ctex"]
+source_file="res://Images/Balls/dwarf_planet_full.png"
+dest_files=["res://.godot/imported/dwarf_planet_full.png-71f1bebb8459bb80cf4380c0f95c5725.ctex"]
 
 [params]
 

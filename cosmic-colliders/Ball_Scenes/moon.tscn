@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dg1xdv0rirhvk"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_dnbgm"]
-[ext_resource type="Texture2D" uid="uid://bnri8l5brmfdt" path="res://Images/Balls/barren-charred.png" id="2_rk2t0"]
+[ext_resource type="Texture2D" uid="uid://csuxrw3gm3fbo" path="res://Images/Balls/moon.png" id="2_x8b21"]
 [ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="3_cbawg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
@@ -32,7 +32,7 @@ shape = SubResource("CircleShape2D_vad4u")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 3.05176e-05)
 scale = Vector2(0.0921048, 0.0921048)
-texture = ExtResource("2_rk2t0")
+texture = ExtResource("2_x8b21")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(1.9309, 1.9309)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnri8l5brmfdt"
-path="res://.godot/imported/barren-charred.png-e5a5102e5e7c58984640874d77cc46f3.ctex"
+uid="uid://cshajji0oo33h"
+path="res://.godot/imported/blue_giant.png-e5624f7606c072a039135197b21c1698.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Balls/barren-charred.png"
-dest_files=["res://.godot/imported/barren-charred.png-e5a5102e5e7c58984640874d77cc46f3.ctex"]
+source_file="res://Images/Balls/blue_giant.png"
+dest_files=["res://.godot/imported/blue_giant.png-e5624f7606c072a039135197b21c1698.ctex"]
 
 [params]
 

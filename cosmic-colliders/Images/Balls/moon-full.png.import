@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxodef8b5c1gk"
-path="res://.godot/imported/star_blue_giant01.png-66f9e24af3b8446addbd5e7783db7f09.ctex"
+uid="uid://bnri8l5brmfdt"
+path="res://.godot/imported/moon-full.png-1f13d41d68e53dc7bb2e9e89ee6aade9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Balls/star_blue_giant01.png"
-dest_files=["res://.godot/imported/star_blue_giant01.png-66f9e24af3b8446addbd5e7783db7f09.ctex"]
+source_file="res://Images/Balls/moon-full.png"
+dest_files=["res://.godot/imported/moon-full.png-1f13d41d68e53dc7bb2e9e89ee6aade9.ctex"]
 
 [params]
 

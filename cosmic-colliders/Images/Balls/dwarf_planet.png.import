@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dww02m23jsp6q"
-path="res://.godot/imported/star_red_giant01.png-3755454add4ddb3d6da3ec2b57d9cd82.ctex"
+uid="uid://kc442g1rbb1j"
+path="res://.godot/imported/dwarf_planet.png-e32cf0418956f7ca972cab1a62f8b917.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Balls/star_red_giant01.png"
-dest_files=["res://.godot/imported/star_red_giant01.png-3755454add4ddb3d6da3ec2b57d9cd82.ctex"]
+source_file="res://Images/Balls/dwarf_planet.png"
+dest_files=["res://.godot/imported/dwarf_planet.png-e32cf0418956f7ca972cab1a62f8b917.ctex"]
 
 [params]
 
