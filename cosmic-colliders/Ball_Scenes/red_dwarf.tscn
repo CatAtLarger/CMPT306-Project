@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bthn47s1cjswv"]
+[gd_scene load_steps=7 format=3 uid="uid://bthn47s1cjswv"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_7s4co"]
 [ext_resource type="Texture2D" uid="uid://dww02m23jsp6q" path="res://Images/Balls/star_red_giant01.png" id="2_f1vhk"]
@@ -9,12 +9,9 @@ radius = 10.0102
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_upog3"]
-lifetime_randomness = 0.4
-particle_flag_disable_z = true
-gravity = Vector3(0, 98, 0)
-
-[sub_resource type="ImageTexture" id="ImageTexture_amk80"]
+[sub_resource type="Curve" id="Curve_hq8ib"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="RedDwarf" type="RigidBody2D" groups=["balls"]]
 position = Vector2(539.394, 206)
@@ -52,13 +49,21 @@ stream = ExtResource("3_i3r0n")
 pitch_scale = 1.5
 bus = &"Effects"
 
-[node name="ParticleEffect" type="GPUParticles2D" parent="Effects"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Effects"]
+scale = Vector2(0.998224, 0.995524)
 emitting = false
-amount = 19
-process_material = SubResource("ParticleProcessMaterial_upog3")
-texture = SubResource("ImageTexture_amk80")
-lifetime = 0.9
+amount = 60
 one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 31.75
+initial_velocity_max = 108.2
+scale_amount_min = 0.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_hq8ib")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="finished" from="Effects/SoundEffect" to="." method="_on_sound_effect_finished"]

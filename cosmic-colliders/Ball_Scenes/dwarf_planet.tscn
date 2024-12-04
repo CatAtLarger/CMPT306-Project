@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn1vkifsyc8i2"]
+[gd_scene load_steps=7 format=3 uid="uid://dn1vkifsyc8i2"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_chdbo"]
 [ext_resource type="Texture2D" uid="uid://mtbil6k0ge8s" path="res://Images/Balls/barren.png" id="2_6e1lw"]
@@ -9,11 +9,9 @@ radius = 10.0102
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_buwk7"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 98, 0)
-
-[sub_resource type="ImageTexture" id="ImageTexture_bn3m6"]
+[sub_resource type="Curve" id="Curve_il3kv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="DwarfPlanet" type="RigidBody2D" groups=["balls"]]
 modulate = Color(0.886, 1, 0.62, 1)
@@ -53,9 +51,21 @@ stream = ExtResource("3_lvnvj")
 pitch_scale = 1.5
 bus = &"Effects"
 
-[node name="ParticleEffect" type="GPUParticles2D" parent="Effects"]
-process_material = SubResource("ParticleProcessMaterial_buwk7")
-texture = SubResource("ImageTexture_bn3m6")
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Effects"]
+scale = Vector2(0.998224, 0.995524)
+emitting = false
+amount = 60
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 31.75
+initial_velocity_max = 108.2
+scale_amount_min = 0.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_il3kv")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="finished" from="Effects/SoundEffect" to="." method="_on_sound_effect_finished"]

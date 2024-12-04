@@ -77,7 +77,7 @@ func next_ball(collision_object, ball_index):
 			
 func trigger_collision_effects():
 	
-	sound_effect.call_deferred("play")
+	$Effects/CPUParticles2D.emitting = true
 	sound_effect.play()
 	
 	if not sound_effect.playing:

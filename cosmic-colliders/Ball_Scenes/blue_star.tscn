@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ba5q031s8hapb"]
+[gd_scene load_steps=7 format=3 uid="uid://ba5q031s8hapb"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_qk2wi"]
 [ext_resource type="Texture2D" uid="uid://cxodef8b5c1gk" path="res://Images/Balls/star_blue_giant01.png" id="2_6l055"]
@@ -9,11 +9,9 @@ radius = 10.0102
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l4ydk"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 98, 0)
-
-[sub_resource type="ImageTexture" id="ImageTexture_t02xl"]
+[sub_resource type="Curve" id="Curve_sxgrk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="BlueStar" type="RigidBody2D" groups=["balls"]]
 position = Vector2(648.485, 185)
@@ -56,9 +54,21 @@ stream = ExtResource("3_8m76m")
 pitch_scale = 1.5
 bus = &"Effects"
 
-[node name="ParticleEffect" type="GPUParticles2D" parent="Effects"]
-process_material = SubResource("ParticleProcessMaterial_l4ydk")
-texture = SubResource("ImageTexture_t02xl")
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Effects"]
+scale = Vector2(0.998224, 0.995524)
+emitting = false
+amount = 60
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 31.75
+initial_velocity_max = 108.2
+scale_amount_min = 0.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_sxgrk")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="finished" from="Effects/SoundEffect" to="." method="_on_sound_effect_finished"]
