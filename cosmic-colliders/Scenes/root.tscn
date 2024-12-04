@@ -1501,7 +1501,7 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_lrq1w"]
 font = ExtResource("90_l0yc3")
-font_size = 60
+font_size = 40
 
 [node name="Main Scene" type="Node2D"]
 scale = Vector2(0.99, 1)
@@ -1646,11 +1646,11 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("89_o6qgg")
 
 [node name="Score" type="Label" parent="."]
-offset_left = 889.899
-offset_top = 59.0
-offset_right = 1093.9
-offset_bottom = 120.0
-scale = Vector2(0.826073, 0.826073)
+offset_left = 29.293
+offset_top = 21.0
+offset_right = 479.293
+offset_bottom = 176.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_lrq1w")
-autowrap_mode = 2
+autowrap_mode = 3
+text_direction = 1
