@@ -22,6 +22,7 @@ gravity_scale = 0.0
 contact_monitor = true
 script = ExtResource("1_f57o4")
 gravitational_constant = 2000.0
+celestial_index = 3
 metadata/value = 200
 metadata/ball_number = 0
 

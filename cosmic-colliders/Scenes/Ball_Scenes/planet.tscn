@@ -22,7 +22,7 @@ gravity_scale = 0.0
 contact_monitor = true
 script = ExtResource("1_5koya")
 gravitational_constant = 2800.0
-celestial_index = 2
+celestial_index = 5
 metadata/value = 600
 metadata/ball_number = 0
 

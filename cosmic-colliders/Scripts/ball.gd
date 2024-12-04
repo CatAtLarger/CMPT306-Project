@@ -8,6 +8,9 @@ var central_mass_position = Vector2(577,339)
 
 # for loading next ball's scene after collision
 @onready var celestial_objects: Array = [
+	load("res://Scenes/Ball_Scenes/space_dust.tscn"),
+	load("res://Scenes/Ball_Scenes/asteroid.tscn"),
+	load("res://Scenes/Ball_Scenes/comet.tscn"),
 	load("res://Scenes/Ball_Scenes/moon.tscn"),
 	load("res://Scenes/Ball_Scenes/dwarf_planet.tscn"),
 	load("res://Scenes/Ball_Scenes/planet.tscn"),

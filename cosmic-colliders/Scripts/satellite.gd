@@ -2,6 +2,9 @@ extends Node2D
 
 # List of ball (celestial object) scenes to load from, representing various celestial bodies
 @export var ball_scenes: Array = [
+	load("res://Scenes/Ball_Scenes/space_dust.tscn"),
+	load("res://Scenes/Ball_Scenes/asteroid.tscn"),
+	load("res://Scenes/Ball_Scenes/comet.tscn"),
 	load("res://Scenes/Ball_Scenes/moon.tscn"),
 	load("res://Scenes/Ball_Scenes/dwarf_planet.tscn"),
 	load("res://Scenes/Ball_Scenes/planet.tscn"),

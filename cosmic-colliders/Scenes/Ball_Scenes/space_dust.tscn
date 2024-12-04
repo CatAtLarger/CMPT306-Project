@@ -1,53 +1,56 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8oebh14nbd7y"]
+[gd_scene load_steps=7 format=3 uid="uid://bo0t4t1dvy72w"]
 
-[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_hs2tt"]
-[ext_resource type="Texture2D" uid="uid://8f6bxaslyaxw" path="res://Images/Balls/gas_giant.png" id="2_e35fe"]
-[ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="3_v0po4"]
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_jjjlq"]
+[ext_resource type="Texture2D" uid="uid://chcoce4ki6ilt" path="res://Images/Balls/space_dust.png" id="2_t7h50"]
+[ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="3_hpq8c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
 radius = 10.0102
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
 
-[sub_resource type="Curve" id="Curve_olyc8"]
+[sub_resource type="Curve" id="Curve_2wvfx"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="GasGiant" type="RigidBody2D" groups=["balls"]]
-modulate = Color(1, 0.57, 0.9785, 0.901961)
-position = Vector2(486.869, 208)
+[node name="SpaceDust" type="RigidBody2D" groups=["balls"]]
+position = Vector2(407.071, 210)
 collision_layer = 2
 collision_mask = 3
 mass = 0.1
 gravity_scale = 0.0
 contact_monitor = true
-script = ExtResource("1_hs2tt")
-gravitational_constant = 3300.0
-celestial_index = 6
-metadata/value = 800
+script = ExtResource("1_jjjlq")
+gravitational_constant = 2000.0
+celestial_index = 0
+metadata/value = 200
 metadata/ball_number = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(4.52799, 4.52799)
+position = Vector2(-0.0710144, 1)
+scale = Vector2(1.83785, 1.83785)
 shape = SubResource("CircleShape2D_vad4u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.868988, 1.45519e-11)
-scale = Vector2(0.798909, 0.798909)
-texture = ExtResource("2_e35fe")
+modulate = Color(0.756325, 0.923437, 0.993854, 1)
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_t7h50")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(6.41091, 6.41091)
+position = Vector2(-0.0710144, 2)
+scale = Vector2(7.54959, 7.54959)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(0.733765, 0.733765)
+position = Vector2(0, -0.132458)
+scale = Vector2(0.258361, 0.258361)
 shape = SubResource("CircleShape2D_aqu2e")
 debug_color = Color(0.957318, 0, 0.533218, 0.42)
 
 [node name="Effects" type="Node2D" parent="."]
 
 [node name="SoundEffect" type="AudioStreamPlayer" parent="Effects"]
-stream = ExtResource("3_v0po4")
+stream = ExtResource("3_hpq8c")
 pitch_scale = 1.5
 bus = &"Effects"
 
@@ -65,7 +68,7 @@ initial_velocity_min = 31.75
 initial_velocity_max = 108.2
 scale_amount_min = 0.0
 scale_amount_max = 5.0
-scale_amount_curve = SubResource("Curve_olyc8")
+scale_amount_curve = SubResource("Curve_2wvfx")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="finished" from="Effects/SoundEffect" to="." method="_on_sound_effect_finished"]

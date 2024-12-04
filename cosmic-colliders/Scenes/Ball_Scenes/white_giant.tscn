@@ -21,7 +21,7 @@ mass = 0.1
 gravity_scale = 0.0
 contact_monitor = true
 script = ExtResource("1_hptgy")
-celestial_index = 6
+celestial_index = 9
 metadata/value = 1400
 metadata/ball_number = 0
 

@@ -24,7 +24,7 @@ gravity_scale = 0.0
 contact_monitor = true
 script = ExtResource("1_chdbo")
 gravitational_constant = 2300.0
-celestial_index = 1
+celestial_index = 4
 metadata/value = 400
 metadata/ball_number = 0
 
