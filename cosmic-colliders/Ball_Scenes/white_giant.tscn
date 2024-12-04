@@ -1,12 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://7qut4w2gbrbw"]
+[gd_scene load_steps=8 format=3 uid="uid://7qut4w2gbrbw"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_o5ax2"]
 [ext_resource type="Texture2D" uid="uid://d1scnmwe3pdkm" path="res://Images/Balls/star_white_giant04.png" id="2_57md1"]
+[ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="3_sn20d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
 radius = 10.0102
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vg21i"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[sub_resource type="ImageTexture" id="ImageTexture_yuxbp"]
 
 [node name="WhiteGiant" type="RigidBody2D" groups=["balls"]]
 position = Vector2(759.596, 227)
@@ -18,6 +25,7 @@ contact_monitor = true
 script = ExtResource("1_o5ax2")
 celestial_index = 6
 metadata/value = 1400
+metadata/ball_number = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2.89898, 2.89898)
@@ -36,4 +44,16 @@ scale = Vector2(1.16903, 1.16903)
 shape = SubResource("CircleShape2D_aqu2e")
 debug_color = Color(0.957318, 0, 0.533218, 0.42)
 
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="SoundEffect" type="AudioStreamPlayer" parent="Effects"]
+stream = ExtResource("3_sn20d")
+pitch_scale = 1.5
+bus = &"Effects"
+
+[node name="ParticleEffect" type="GPUParticles2D" parent="Effects"]
+process_material = SubResource("ParticleProcessMaterial_vg21i")
+texture = SubResource("ImageTexture_yuxbp")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="finished" from="Effects/SoundEffect" to="." method="_on_sound_effect_finished"]

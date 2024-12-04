@@ -24,6 +24,10 @@ var can_drop: bool = true  # Flag to control dropping
 @onready var drop_cooldown_timer = Timer.new()  # Timer for cooldown
 @onready var score_label = get_tree().root.get_node("Root/Score")  # Score label reference
 
+
+#to keep track of ball order
+var ball_number = 0
+
 func _ready() -> void:
 	# Initialize the queue with 10 random celestial bodies
 	for i in range(10):
@@ -86,6 +90,9 @@ func drop_ball() -> void:
 		# Remove the first ball from the queue and instantiate it
 		var ball_scene = balls_queue.pop_front()
 		var ball_instance = ball_scene.instantiate()
+		
+		ball_instance.set_meta("ball_number", ball_number)
+		ball_number+=1
 		
 		# Position the ball at the satellite's position (ready to "drop" into orbit)
 		ball_instance.position = self.global_position

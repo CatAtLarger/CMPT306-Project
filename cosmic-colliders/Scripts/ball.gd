@@ -1,8 +1,8 @@
 extends RigidBody2D
 
 # for gravity
-var central_mass_position := Vector2(577,339)
-@export var gravitational_constant := 5000.0
+var central_mass_position = Vector2(577,339)
+@export var gravitational_constant = 5000.0
 
 @onready var orbit = load("res://orbit.tscn")
 
@@ -16,18 +16,22 @@ var central_mass_position := Vector2(577,339)
 	load("res://Ball_Scenes/blue_star.tscn"),
 	load("res://Ball_Scenes/white_giant.tscn")
 ]
-@export var celestial_index = 0
+@export var celestial_index = 1000
 
-# for debugging
-var dragging = false
+# for effects
+@onready var sound_effect = get_node("Effects/SoundEffect")
+
 
 func _ready() -> void:
-	var central_mass = get_node_or_null("CentralMass")
 	
-	if not central_mass == null:
+	#for finding central mass
+	var central_mass := get_node_or_null("CentralMass")
+	if central_mass != null:
 		central_mass_position = central_mass.position
 	else:
 		push_warning("central_mass_position is hardcoded, cannot get \"Central Mass\" object")
+		
+
 
 func _physics_process(delta):
 	_apply_gravity(delta)
@@ -39,48 +43,73 @@ func _apply_gravity(delta):
 	if distance > 0:
 		var force_magnitude = gravitational_constant / pow(distance, 2)
 		var force = direction * force_magnitude
-		# Apply the gravitational force
+		# apply the gravitational force
 		apply_central_impulse(force * delta)
 
-func next_ball(collision_object):
-	# if image is the same then must be same ball
-	if collision_object.get_child(1).texture == get_child(1).texture:
-		var next_ball_index = celestial_index + 1
+func next_ball(collision_object, ball_index):
+	
+	var next_ball_index = ball_index + 1
 
-		# if not last ball
-		if next_ball_index < celestial_objects.size():
-			# make new ball
-			var next_ball_scene = celestial_objects[next_ball_index]
-			var new_ball = next_ball_scene.instantiate()
-			get_parent().call_deferred("add_child", new_ball)
-			new_ball.position = collision_object.position
-
-			# Update score by adding double the current ball's value
-			var ball_value = self.get_meta("value")  # Retrieve metadata value
-			if ball_value != null:
-				Autoscript.score += ball_value * 2  # Add twice the current ball's value
-				Autoscript.update_score_display()  # Update score display
-			else:
-				push_warning("Ball instance has no metadata value.")
-				
-			# Free the colliding balls after combining
-			collision_object.queue_free()
-			call_deferred("queue_free")
+	# if not last ball
+	if next_ball_index >= celestial_objects.size():
+		push_error("Cannot grab next index of last object in array.")
+	
+	
+	#become invisible
+	$Sprite2D.visible = false
+	
+	# make new ball
+	var next_ball_scene = celestial_objects[next_ball_index]
+	var new_ball = next_ball_scene.instantiate()
+	get_parent().call_deferred("add_child", new_ball)
+	new_ball.position = collision_object.position
+	# Update score by adding double the current ball's value
+	var ball_value = self.get_meta("value")  # Retrieve metadata value
+	if ball_value != null:
+		Autoscript.score += ball_value * 2  # Add twice the current ball's value
+		Autoscript.update_score_display()  # Update score display
+	else:
+		push_warning("Ball instance has no metadata 'value'.")
+			
+	# Free the colliding ball after combining
+	trigger_collision_effects()
+	
+			
+func trigger_collision_effects():
+	
+	sound_effect.call_deferred("play")
+	sound_effect.play()
+	
+	if not sound_effect.playing:
+		print("sound is not playing")
+		sound_effect.play()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	
 	var collision_object = area.get_parent()
-	if is_in_group("balls"):
-		if not is_queued_for_deletion() and not collision_object.is_queued_for_deletion():
-			next_ball(collision_object)
+	
+	#if neither objects are balls
+	if not is_in_group("balls") or not collision_object.is_in_group("balls"):
+		return
+	
+	#if both objects have already been queued for deletion
+	if is_queued_for_deletion() and collision_object.is_queued_for_deletion():
+		return
+		
+	#if the image isn't the same	
+	if  collision_object.get_child(1).texture != get_child(1).texture:
+		return
+		
+	#if last ball	
+	if (celestial_index + 1) >= celestial_objects.size():
+		return
+		
+	if get_meta("ball_number") > collision_object.get_meta("ball_number"):
+		next_ball(collision_object, celestial_index)
+	else:
+		queue_free()
 
 
-func _on_orbit_area_entered(area: Area2D) -> void:
-	print("area orbit entered")
 
-
-func _on_orbit_body_entered(body: Node2D) -> void:
-	print("Area body entered")
-
-
-func _on_orbit_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	print("Body shape entered")
+func _on_sound_effect_finished() -> void:
+	call_deferred("queue_free")
