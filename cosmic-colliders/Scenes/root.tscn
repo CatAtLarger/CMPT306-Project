@@ -89,7 +89,7 @@
 [ext_resource type="Script" path="res://Scripts/satellite.gd" id="87_uqc33"]
 [ext_resource type="Texture2D" uid="uid://cqjy232j6l752" path="res://Images/Other Images/spaceStation_018.png" id="88_3dmjg"]
 [ext_resource type="Texture2D" uid="uid://dri1njk4fqkkh" path="res://Images/Other Images/UI for sizes and scores.png" id="89_o6qgg"]
-[ext_resource type="FontFile" uid="uid://p6hxnx750fx3" path="res://Fonts/DS-DIGI.TTF" id="90_vxvhi"]
+[ext_resource type="FontFile" uid="uid://b1gmew01rk3wy" path="res://Fonts/Orbitron-VariableFont_wght.ttf" id="90_l0yc3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1502,7 +1502,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_28mwc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lrq1w"]
-font = ExtResource("90_vxvhi")
+font = ExtResource("90_l0yc3")
 font_size = 60
 
 [node name="Main Scene" type="Node2D"]
@@ -1669,4 +1669,4 @@ offset_bottom = 120.0
 scale = Vector2(0.826073, 0.826073)
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_lrq1w")
-autowrap_mode = 3
+autowrap_mode = 2
