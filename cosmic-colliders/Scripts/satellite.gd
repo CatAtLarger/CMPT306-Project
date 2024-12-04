@@ -2,13 +2,13 @@ extends Node2D
 
 # List of ball (celestial object) scenes to load from, representing various celestial bodies
 @export var ball_scenes: Array = [
-	load("res://Ball_Scenes/moon.tscn"),
-	load("res://Ball_Scenes/dwarf_planet.tscn"),
-	load("res://Ball_Scenes/planet.tscn"),
-	load("res://Ball_Scenes/gas_giant.tscn"),
-	load("res://Ball_Scenes/red_dwarf.tscn"),
-	load("res://Ball_Scenes/blue_star.tscn"),
-	load("res://Ball_Scenes/white_giant.tscn")
+	load("res://Scenes/Ball_Scenes/moon.tscn"),
+	load("res://Scenes/Ball_Scenes/dwarf_planet.tscn"),
+	load("res://Scenes/Ball_Scenes/planet.tscn"),
+	load("res://Scenes/Ball_Scenes/gas_giant.tscn"),
+	load("res://Scenes/Ball_Scenes/red_dwarf.tscn"),
+	load("res://Scenes/Ball_Scenes/blue_star.tscn"),
+	load("res://Scenes/Ball_Scenes/white_giant.tscn")
 ]
 
 var balls_queue: Array = []  # Queue of balls to be dropped
@@ -22,7 +22,7 @@ var previous_angle: float = 0.0  # To store the previous angle for direction det
 @export var drop_cooldown: float = 1  # Cooldown time in seconds
 var can_drop: bool = true  # Flag to control dropping
 @onready var drop_cooldown_timer = Timer.new()  # Timer for cooldown
-@onready var score_label = get_tree().root.get_node("Root/Score")  # Score label reference
+@onready var score_label = get_tree().root.get_node("Main Scene/Score")  # Score label reference
 
 
 #to keep track of ball order
@@ -35,6 +35,8 @@ func _ready() -> void:
 	
 	# Set the initial rotation so it faces the center from its starting position
 	rotation_degrees = 0
+	
+	score_label.text = "Test"
 	
 	# Configure and start the cooldown timer
 	drop_cooldown_timer.one_shot = true

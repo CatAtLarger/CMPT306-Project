@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://7qut4w2gbrbw"]
 
-[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_o5ax2"]
-[ext_resource type="Texture2D" uid="uid://c0mpbf7yu60ry" path="res://Images/Balls/white_giant.png" id="2_adbqd"]
-[ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="3_sn20d"]
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_hptgy"]
+[ext_resource type="Texture2D" uid="uid://c0mpbf7yu60ry" path="res://Images/Balls/white_giant.png" id="2_sx5jm"]
+[ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="3_x0xvp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
 radius = 10.0102
@@ -20,7 +20,7 @@ collision_mask = 3
 mass = 0.1
 gravity_scale = 0.0
 contact_monitor = true
-script = ExtResource("1_o5ax2")
+script = ExtResource("1_hptgy")
 celestial_index = 6
 metadata/value = 1400
 metadata/ball_number = 0
@@ -32,7 +32,7 @@ shape = SubResource("CircleShape2D_vad4u")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 3.05176e-05)
 scale = Vector2(-0.02, -0.02)
-texture = ExtResource("2_adbqd")
+texture = ExtResource("2_sx5jm")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2.65817, 2.65817)
@@ -45,7 +45,7 @@ debug_color = Color(0.957318, 0, 0.533218, 0.42)
 [node name="Effects" type="Node2D" parent="."]
 
 [node name="SoundEffect" type="AudioStreamPlayer" parent="Effects"]
-stream = ExtResource("3_sn20d")
+stream = ExtResource("3_x0xvp")
 pitch_scale = 1.5
 bus = &"Effects"
 

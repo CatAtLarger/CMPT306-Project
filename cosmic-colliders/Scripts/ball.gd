@@ -7,15 +7,16 @@ var central_mass_position = Vector2(577,339)
 @onready var orbit = load("res://orbit.tscn")
 
 # for loading next ball's scene after collision
-@onready var celestial_objects = [
-	load("res://Ball_Scenes/moon.tscn"),
-	load("res://Ball_Scenes/dwarf_planet.tscn"),
-	load("res://Ball_Scenes/planet.tscn"),
-	load("res://Ball_Scenes/gas_giant.tscn"),
-	load("res://Ball_Scenes/red_dwarf.tscn"),
-	load("res://Ball_Scenes/blue_star.tscn"),
-	load("res://Ball_Scenes/white_giant.tscn")
+@onready var celestial_objects: Array = [
+	load("res://Scenes/Ball_Scenes/moon.tscn"),
+	load("res://Scenes/Ball_Scenes/dwarf_planet.tscn"),
+	load("res://Scenes/Ball_Scenes/planet.tscn"),
+	load("res://Scenes/Ball_Scenes/gas_giant.tscn"),
+	load("res://Scenes/Ball_Scenes/red_dwarf.tscn"),
+	load("res://Scenes/Ball_Scenes/blue_star.tscn"),
+	load("res://Scenes/Ball_Scenes/white_giant.tscn")
 ]
+
 @export var celestial_index = 1000
 
 # for effects
