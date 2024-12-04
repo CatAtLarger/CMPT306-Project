@@ -26,16 +26,16 @@ metadata/value = 200
 metadata/ball_number = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.477873, 0.477873)
+scale = Vector2(2.59787, 2.59787)
 shape = SubResource("CircleShape2D_vad4u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 3.05176e-05)
-scale = Vector2(0.0921048, 0.0921048)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_eqloo")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(1.9309, 1.9309)
+scale = Vector2(10.8109, 10.8109)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(0.258361, 0.258361)

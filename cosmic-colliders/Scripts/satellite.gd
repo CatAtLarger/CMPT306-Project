@@ -36,7 +36,6 @@ func _ready() -> void:
 	# Set the initial rotation so it faces the center from its starting position
 	rotation_degrees = 0
 	
-	score_label.text = "Test"
 	
 	# Configure and start the cooldown timer
 	drop_cooldown_timer.one_shot = true

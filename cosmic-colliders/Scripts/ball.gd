@@ -4,7 +4,7 @@ extends RigidBody2D
 var central_mass_position = Vector2(577,339)
 @export var gravitational_constant = 5000.0
 
-@onready var orbit = load("res://orbit.tscn")
+@onready var orbit = load("res://Scenes/orbit.tscn")
 
 # for loading next ball's scene after collision
 @onready var celestial_objects: Array = [

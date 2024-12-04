@@ -5,9 +5,10 @@
 [ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="3_lvnvj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
-radius = 10.0102
+radius = 43.9305
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
+radius = 46.6793
 
 [sub_resource type="Curve" id="Curve_il3kv"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -33,7 +34,7 @@ shape = SubResource("CircleShape2D_vad4u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1.45519e-11)
-scale = Vector2(0.132509, 0.132509)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_xsgji")
 
 [node name="Area2D" type="Area2D" parent="."]
