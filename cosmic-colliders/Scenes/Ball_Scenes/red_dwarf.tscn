@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="3_i3r0n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
-radius = 10.0102
+radius = 8.56744
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
 
@@ -27,16 +27,16 @@ metadata/value = 1000
 metadata/ball_number = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.64646, 1.64646)
+scale = Vector2(5.20646, 5.20646)
 shape = SubResource("CircleShape2D_vad4u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 3.05176e-05)
-scale = Vector2(0.0130195, 0.0130195)
+scale = Vector2(0.133019, 0.133019)
 texture = ExtResource("2_5magu")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(1.9309, 1.9309)
+scale = Vector2(4.9309, 4.9309)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_aqu2e")
