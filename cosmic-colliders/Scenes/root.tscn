@@ -1,4 +1,4 @@
-[gd_scene load_steps=274 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=276 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -85,7 +85,6 @@
 [ext_resource type="AudioStream" uid="uid://dnbg2wxsrrdcy" path="res://Sounds/Music/Industria.mp3" id="83_2n16u"]
 [ext_resource type="AudioStream" uid="uid://dotw8i6rfu5hw" path="res://Sounds/Music/Industria_1.mp3" id="84_ibuq1"]
 [ext_resource type="Texture2D" uid="uid://bjd7u41a3mfs1" path="res://Images/BackgroundImages/earthspin-sheet.png" id="85_bel40"]
-[ext_resource type="PackedScene" uid="uid://dw64tv8qwj7tr" path="res://Scenes/orbit.tscn" id="86_2agdh"]
 [ext_resource type="Script" path="res://Scripts/satellite.gd" id="87_uqc33"]
 [ext_resource type="Texture2D" uid="uid://cqjy232j6l752" path="res://Images/Other Images/spaceStation_018.png" id="88_3dmjg"]
 [ext_resource type="AudioStream" uid="uid://cuad42esknq6n" path="res://Sounds/SoundEffects/MENU B_Back-[AudioTrimmer.com].wav" id="89_ah0wj"]
@@ -99,7 +98,9 @@
 [ext_resource type="Texture2D" uid="uid://8f6bxaslyaxw" path="res://Images/Balls/gas_giant.png" id="96_4linh"]
 [ext_resource type="Texture2D" uid="uid://csppy12ohd2yj" path="res://Images/Balls/red_dwarf.png" id="97_6ptuo"]
 [ext_resource type="Texture2D" uid="uid://cshajji0oo33h" path="res://Images/Balls/blue_giant.png" id="99_tyo4e"]
+[ext_resource type="Script" path="res://Scripts/orbit.gd" id="100_d5p5r"]
 [ext_resource type="Texture2D" uid="uid://c0mpbf7yu60ry" path="res://Images/Balls/white_giant.png" id="100_lg1e1"]
+[ext_resource type="Texture2D" uid="uid://cmpe2ahjbt61d" path="res://Images/Balls/gas_giant_full.png" id="100_qda2n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1534,6 +1535,8 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("90_l0yc3")
 font_size = 40
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j0jv2"]
+
 [node name="Main Scene" type="Node2D"]
 scale = Vector2(0.99, 1)
 
@@ -1660,12 +1663,9 @@ frame_progress = 0.271949
 
 [node name="Balls" type="Node2D" parent="."]
 
-[node name="Orbit" parent="." instance=ExtResource("86_2agdh")]
-
 [node name="Satellite" type="Node2D" parent="."]
 position = Vector2(570, 70)
 script = ExtResource("87_uqc33")
-drop_cooldown = 0.5
 
 [node name="Satellite_Image" type="Sprite2D" parent="Satellite"]
 texture = ExtResource("88_3dmjg")
@@ -2007,5 +2007,20 @@ text = "Score: 0"
 label_settings = SubResource("LabelSettings_lrq1w")
 autowrap_mode = 3
 text_direction = 1
+
+[node name="Orbit" type="Area2D" parent="."]
+position = Vector2(580.808, 339)
+script = ExtResource("100_d5p5r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orbit"]
+position = Vector2(2.0202, 5.00003)
+scale = Vector2(18.6162, 18.6162)
+shape = SubResource("CircleShape2D_j0jv2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Orbit"]
+modulate = Color(0.277528, 0.277528, 0.277528, 0.258824)
+position = Vector2(-4.0404, 10)
+scale = Vector2(3.30303, 3.30303)
+texture = ExtResource("100_qda2n")
 
 [connection signal="finished" from="Satellite/Effects/SoundEffect" to="Satellite" method="_on_sound_effect_finished"]

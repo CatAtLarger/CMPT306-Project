@@ -4,7 +4,6 @@ extends RigidBody2D
 var central_mass_position = Vector2(577,339)
 @export var gravitational_constant = 5000.0
 
-@onready var orbit = load("res://Scenes/orbit.tscn")
 
 # for loading next ball's scene after collision
 @onready var celestial_objects: Array = [
@@ -50,7 +49,7 @@ func _apply_gravity(delta):
 		# apply the gravitational force
 		apply_central_impulse(force * delta)
 
-func next_ball(collision_object, ball_index):
+func next_ball(ball_index):
 	
 	var next_ball_index = ball_index + 1
 
@@ -66,7 +65,7 @@ func next_ball(collision_object, ball_index):
 	var next_ball_scene = celestial_objects[next_ball_index]
 	var new_ball = next_ball_scene.instantiate()
 	get_parent().call_deferred("add_child", new_ball)
-	new_ball.position = collision_object.position
+	new_ball.position = position
 	# Update score by adding double the current ball's value
 	var ball_value = self.get_meta("value")  # Retrieve metadata value
 	if ball_value != null:
@@ -76,7 +75,8 @@ func next_ball(collision_object, ball_index):
 		push_warning("Ball instance has no metadata 'value'.")
 			
 	# Free the colliding ball after combining
-	trigger_collision_effects()
+	if new_ball:
+		trigger_collision_effects()
 	
 			
 func trigger_collision_effects():
@@ -109,7 +109,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		return
 		
 	if get_meta("ball_number") > collision_object.get_meta("ball_number"):
-		next_ball(collision_object, celestial_index)
+		next_ball( celestial_index)
 	else:
 		queue_free()
 
