@@ -1665,7 +1665,7 @@ script = ExtResource("87_uqc33")
 texture = ExtResource("88_3dmjg")
 
 [node name="BallImage" type="Sprite2D" parent="Satellite"]
-position = Vector2(-0.303018, 47)
+position = Vector2(2.72729, -49)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

@@ -68,11 +68,11 @@ func _ready() -> void:
 	#### inelegant quick and dirty solution
 	match($BallImage.texture.resource_path):
 		"res://Images/Balls/space_dust.png":
-			$BallImage.scale = Vector2(-3.949,-3.949)
+			$BallImage.scale = Vector2(0.06,0.06)
 		"res://Images/Balls/asteroid.png":
-			$BallImage.scale = Vector2(7.15,7.15)
+			$BallImage.scale = Vector2(0.1,0.1)
 		"res://Images/Balls/comet.png":
-			$BallImage.scale = Vector2(9.15,9.15)
+			$BallImage.scale = Vector2(1.5,1.5)
 		"res://Images/Balls/moon.png":
 			$BallImage.scale = Vector2(0.5,0.5)
 		"res://Images/Balls/dwarf_planet.png":
@@ -153,7 +153,6 @@ func drop_ball() -> void:
 		
 		
 
-	
 	
 # Cooldown reset function
 func _on_drop_cooldown_timeout() -> void:
