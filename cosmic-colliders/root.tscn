@@ -1,4 +1,4 @@
-[gd_scene load_steps=258 format=3 uid="uid://bfkcifluou8xr"]
+[gd_scene load_steps=258 format=3 uid="uid://b5y1cpqcqsjfy"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]
@@ -1640,7 +1640,6 @@ scale = Vector2(18.6162, 18.6162)
 shape = SubResource("CircleShape2D_28mwc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Orbit"]
-visible = false
 position = Vector2(-4.0404, 10)
 scale = Vector2(3.30303, 3.30303)
 texture = ExtResource("89_167p3")
