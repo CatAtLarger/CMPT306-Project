@@ -66,6 +66,8 @@ func next_ball(ball_index):
 	var new_ball = next_ball_scene.instantiate()
 	get_parent().call_deferred("add_child", new_ball)
 	new_ball.position = position
+	Autoscript.tag_ball(new_ball)
+	
 	# Update score by adding double the current ball's value
 	var ball_value = self.get_meta("value")  # Retrieve metadata value
 	if ball_value != null:
@@ -77,6 +79,7 @@ func next_ball(ball_index):
 	# Free the colliding ball after combining
 	if new_ball:
 		trigger_collision_effects()
+		
 	
 			
 func trigger_collision_effects():

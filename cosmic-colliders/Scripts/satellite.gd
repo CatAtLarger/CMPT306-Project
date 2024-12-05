@@ -44,8 +44,7 @@ var can_drop: bool = true  # Flag to control dropping
 @onready var second_up = get_tree().root.get_node("Main Scene/UI/UpNext/SecondUp")
 @onready var third_up = get_tree().root.get_node("Main Scene/UI/UpNext/ThirdUp")
 
-# To keep track of ball order
-var ball_number = 0
+
 
 func _ready() -> void:
 	# Initialize the queue with 10 random celestial bodies
@@ -103,8 +102,8 @@ func drop_ball() -> void:
 		var ball_scene = balls_queue.pop_front()
 		var ball_instance = ball_scene.instantiate()
 		
-		ball_instance.set_meta("ball_number", ball_number)
-		ball_number += 1
+		Autoscript.tag_ball(ball_instance)
+		
 		
 		# Position the ball at the satellite's position
 		ball_instance.position = self.global_position

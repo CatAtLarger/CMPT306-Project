@@ -21,7 +21,7 @@ buses/default_bus_layout="res://Sounds/default_bus_layout.tres"
 
 [autoload]
 
-Autoscript="*res://Scripts/Autoscript.gd"
+Autoscript="*res://Scripts/global_variables.gd"
 
 [display]
 
