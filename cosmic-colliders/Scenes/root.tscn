@@ -1,4 +1,4 @@
-[gd_scene load_steps=272 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=274 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -88,6 +88,7 @@
 [ext_resource type="PackedScene" uid="uid://dw64tv8qwj7tr" path="res://Scenes/orbit.tscn" id="86_2agdh"]
 [ext_resource type="Script" path="res://Scripts/satellite.gd" id="87_uqc33"]
 [ext_resource type="Texture2D" uid="uid://cqjy232j6l752" path="res://Images/Other Images/spaceStation_018.png" id="88_3dmjg"]
+[ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="89_teo7e"]
 [ext_resource type="FontFile" uid="uid://c3s1e2cduti3m" path="res://Fonts/Orbitron-VariableFont_wght.ttf" id="90_l0yc3"]
 [ext_resource type="Texture2D" uid="uid://chcoce4ki6ilt" path="res://Images/Balls/space_dust.png" id="91_rlg2d"]
 [ext_resource type="Texture2D" uid="uid://c5lahwhthb3ge" path="res://Images/Balls/asteroid.png" id="92_vopn4"]
@@ -1508,6 +1509,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve" id="Curve_mp40v"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_td1tc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w6wm8"]
@@ -1666,6 +1671,30 @@ texture = ExtResource("88_3dmjg")
 
 [node name="BallImage" type="Sprite2D" parent="Satellite"]
 position = Vector2(2.72729, -49)
+
+[node name="Effects" type="Node2D" parent="Satellite"]
+position = Vector2(6.76769, -49)
+
+[node name="SoundEffect" type="AudioStreamPlayer" parent="Satellite/Effects"]
+stream = ExtResource("89_teo7e")
+pitch_scale = 1.5
+bus = &"Effects"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Satellite/Effects"]
+scale = Vector2(0.998224, 0.995524)
+emitting = false
+amount = 60
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 31.75
+initial_velocity_max = 108.2
+scale_amount_min = 0.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_mp40v")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -1977,3 +2006,5 @@ text = "Score: 0"
 label_settings = SubResource("LabelSettings_lrq1w")
 autowrap_mode = 3
 text_direction = 1
+
+[connection signal="finished" from="Satellite/Effects/SoundEffect" to="Satellite" method="_on_sound_effect_finished"]

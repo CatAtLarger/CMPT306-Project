@@ -61,24 +61,7 @@ func _ready() -> void:
 	add_child(drop_cooldown_timer)
 	drop_cooldown_timer.timeout.connect(Callable(self, "_on_drop_cooldown_timeout"))
 	
-	var next_ball_image = ball_image_queue.pop_front()
-	$BallImage.texture = next_ball_image
 	
-	print($BallImage.texture.resource_path)
-	#### inelegant quick and dirty solution
-	match($BallImage.texture.resource_path):
-		"res://Images/Balls/space_dust.png":
-			$BallImage.scale = Vector2(0.06,0.06)
-		"res://Images/Balls/asteroid.png":
-			$BallImage.scale = Vector2(0.1,0.1)
-		"res://Images/Balls/comet.png":
-			$BallImage.scale = Vector2(1.5,1.5)
-		"res://Images/Balls/moon.png":
-			$BallImage.scale = Vector2(0.5,0.5)
-		"res://Images/Balls/dwarf_planet.png":
-			$BallImage.scale = Vector2(0.6,0.6)
-		_:
-			push_error("Grabbing a ball that should not be in the rotation of next balls!")
 		
 
 # Function to set the initial rotation based on the starting position
@@ -93,6 +76,10 @@ func _input(event):
 			# Stop dragging when the mouse is released and attempt to drop the ball
 			is_dragging = false
 			if can_drop:
+				$BallImage.visible = false
+				$Effects/CPUParticles2D.emitting = true
+				$Effects/SoundEffect.play()
+				
 				drop_ball()
 
 # Called every frame to update position if dragging
@@ -152,7 +139,25 @@ func drop_ball() -> void:
 		
 		
 		
-
+func get_next_ball():
+	var next_ball_image = ball_image_queue.pop_front()
+	$BallImage.texture = next_ball_image
+	
+	print($BallImage.texture.resource_path)
+	#### inelegant quick and dirty solution for correct sizing
+	match($BallImage.texture.resource_path):
+		"res://Images/Balls/space_dust.png":
+			$BallImage.scale = Vector2(0.06,0.06)
+		"res://Images/Balls/asteroid.png":
+			$BallImage.scale = Vector2(0.1,0.1)
+		"res://Images/Balls/comet.png":
+			$BallImage.scale = Vector2(1.5,1.5)
+		"res://Images/Balls/moon.png":
+			$BallImage.scale = Vector2(0.5,0.5)
+		"res://Images/Balls/dwarf_planet.png":
+			$BallImage.scale = Vector2(0.6,0.6)
+		_:
+			push_error("Grabbing a ball that should not be in the rotation of next balls!")
 	
 # Cooldown reset function
 func _on_drop_cooldown_timeout() -> void:
@@ -167,3 +172,9 @@ func update_score_display() -> void:
 
 func update_next_ball_ui() -> void:
 	pass
+
+
+func _on_sound_effect_finished() -> void:
+	$Effects/CPUParticles2D.emitting = false
+	$BallImage.visible = true
+	get_next_ball()
