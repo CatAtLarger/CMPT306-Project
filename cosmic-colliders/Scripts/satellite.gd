@@ -13,8 +13,20 @@ extends Node2D
 	load("res://Scenes/Ball_Scenes/blue_star.tscn"),
 	load("res://Scenes/Ball_Scenes/white_giant.tscn")
 ]
-
+@export var ball_images: Array = [
+	load("res://Images/Balls/space_dust.png"),
+	load("res://Images/Balls/asteroid.png"),
+	load("res://Images/Balls/comet.png"),
+	load("res://Images/Balls/moon.png"),
+	load("res://Images/Balls/dwarf_planet.png"),
+	load("res://Images/Balls/planet.png"),
+	load("res://Images/Balls/gas_giant.png"),
+	load("res://Images/Balls/red_dwarf.png"),
+	load("res://Images/Balls/blue_giant.png"),
+	load("res://Images/Balls/white_giant.png")
+]
 var balls_queue: Array = []  # Queue of balls to be dropped
+var ball_image_queue: Array = []
 
 # Center point and radius for dragging constraint
 var center_point = Vector2(570, 340)
@@ -28,13 +40,16 @@ var can_drop: bool = true  # Flag to control dropping
 @onready var score_label = get_tree().root.get_node("Main Scene/Score")  # Score label reference
 
 
+
 #to keep track of ball order
 var ball_number = 0
 
 func _ready() -> void:
 	# Initialize the queue with 10 random celestial bodies
 	for i in range(10):
-		balls_queue.append(ball_scenes[randi() % ball_scenes.size()])
+		var next_ball_index = randi() % (ball_scenes.size() /2)
+		balls_queue.append(ball_scenes[next_ball_index])
+		ball_image_queue.append(ball_images[next_ball_index])
 	
 	# Set the initial rotation so it faces the center from its starting position
 	rotation_degrees = 0
@@ -45,6 +60,26 @@ func _ready() -> void:
 	drop_cooldown_timer.wait_time = drop_cooldown
 	add_child(drop_cooldown_timer)
 	drop_cooldown_timer.timeout.connect(Callable(self, "_on_drop_cooldown_timeout"))
+	
+	var next_ball_image = ball_image_queue.pop_front()
+	$BallImage.texture = next_ball_image
+	
+	print($BallImage.texture.resource_path)
+	#### inelegant quick and dirty solution
+	match($BallImage.texture.resource_path):
+		"res://Images/Balls/space_dust.png":
+			$BallImage.scale = Vector2(-3.949,-3.949)
+		"res://Images/Balls/asteroid.png":
+			$BallImage.scale = Vector2(7.15,7.15)
+		"res://Images/Balls/comet.png":
+			$BallImage.scale = Vector2(9.15,9.15)
+		"res://Images/Balls/moon.png":
+			$BallImage.scale = Vector2(0.5,0.5)
+		"res://Images/Balls/dwarf_planet.png":
+			$BallImage.scale = Vector2(0.6,0.6)
+		_:
+			push_error("Grabbing a ball that should not be in the rotation of next balls!")
+		
 
 # Function to set the initial rotation based on the starting position
 func _input(event):
@@ -93,6 +128,7 @@ func drop_ball() -> void:
 	if balls_queue.size() > 0:
 		# Remove the first ball from the queue and instantiate it
 		var ball_scene = balls_queue.pop_front()
+		
 		var ball_instance = ball_scene.instantiate()
 		
 		ball_instance.set_meta("ball_number", ball_number)
@@ -103,15 +139,22 @@ func drop_ball() -> void:
 
 		# Add the ball to the Balls node in the scene tree to make it part of the orbit
 		get_parent().get_node("Balls").add_child(ball_instance)
-
+		
 		
 		# Add a new random ball to the end of the queue to maintain queue size
-		balls_queue.append(ball_scenes[randi() % ball_scenes.size()])
+		var next_ball_index = randi() % (ball_scenes.size() / 2)
+		balls_queue.append(ball_scenes[next_ball_index])
+		ball_image_queue.append(ball_images[next_ball_index-1])
 		
 		# Start cooldown after dropping the ball
 		can_drop = false
 		drop_cooldown_timer.start()
 		
+		
+		
+
+	
+	
 # Cooldown reset function
 func _on_drop_cooldown_timeout() -> void:
 	can_drop = true  # Allow another drop after cooldown
@@ -122,3 +165,6 @@ func update_score_display() -> void:
 		score_label.text = "Score: " + str(Autoscript.score)
 	else:
 		push_error("Score label not found.")
+
+func update_next_ball_ui() -> void:
+	pass
