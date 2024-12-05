@@ -88,7 +88,7 @@
 [ext_resource type="PackedScene" uid="uid://dw64tv8qwj7tr" path="res://Scenes/orbit.tscn" id="86_2agdh"]
 [ext_resource type="Script" path="res://Scripts/satellite.gd" id="87_uqc33"]
 [ext_resource type="Texture2D" uid="uid://cqjy232j6l752" path="res://Images/Other Images/spaceStation_018.png" id="88_3dmjg"]
-[ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="89_teo7e"]
+[ext_resource type="AudioStream" uid="uid://cuad42esknq6n" path="res://Sounds/SoundEffects/MENU B_Back-[AudioTrimmer.com].wav" id="89_ah0wj"]
 [ext_resource type="FontFile" uid="uid://c3s1e2cduti3m" path="res://Fonts/Orbitron-VariableFont_wght.ttf" id="90_l0yc3"]
 [ext_resource type="Texture2D" uid="uid://chcoce4ki6ilt" path="res://Images/Balls/space_dust.png" id="91_rlg2d"]
 [ext_resource type="Texture2D" uid="uid://c5lahwhthb3ge" path="res://Images/Balls/asteroid.png" id="92_vopn4"]
@@ -1665,6 +1665,7 @@ frame_progress = 0.271949
 [node name="Satellite" type="Node2D" parent="."]
 position = Vector2(570, 70)
 script = ExtResource("87_uqc33")
+drop_cooldown = 0.5
 
 [node name="Satellite_Image" type="Sprite2D" parent="Satellite"]
 texture = ExtResource("88_3dmjg")
@@ -1676,8 +1677,8 @@ position = Vector2(2.72729, -49)
 position = Vector2(6.76769, -49)
 
 [node name="SoundEffect" type="AudioStreamPlayer" parent="Satellite/Effects"]
-stream = ExtResource("89_teo7e")
-pitch_scale = 1.5
+stream = ExtResource("89_ah0wj")
+pitch_scale = 0.5
 bus = &"Effects"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Satellite/Effects"]

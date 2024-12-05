@@ -131,7 +131,7 @@ func drop_ball() -> void:
 		# Add a new random ball to the end of the queue to maintain queue size
 		var next_ball_index = randi() % (ball_scenes.size() / 2)
 		balls_queue.append(ball_scenes[next_ball_index])
-		ball_image_queue.append(ball_images[next_ball_index-1])
+		ball_image_queue.append(ball_images[next_ball_index])
 		
 		# Start cooldown after dropping the ball
 		can_drop = false
@@ -176,5 +176,6 @@ func update_next_ball_ui() -> void:
 
 func _on_sound_effect_finished() -> void:
 	$Effects/CPUParticles2D.emitting = false
-	$BallImage.visible = true
+	
 	get_next_ball()
+	$BallImage.visible = true
