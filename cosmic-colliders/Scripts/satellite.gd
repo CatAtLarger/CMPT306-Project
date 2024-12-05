@@ -39,6 +39,11 @@ var can_drop: bool = true  # Flag to control dropping
 @onready var drop_cooldown_timer = Timer.new()  # Timer for cooldown
 @onready var score_label = get_tree().root.get_node("Main Scene/Score")  # Score label reference
 
+# References to the "Next Up" UI sprites
+@onready var first_up = get_tree().root.get_node("Main Scene/UI/UpNext/FirstUp")
+@onready var second_up = get_tree().root.get_node("Main Scene/UI/UpNext/SecondUp")
+@onready var third_up = get_tree().root.get_node("Main Scene/UI/UpNext/ThirdUp")
+
 # To keep track of ball order
 var ball_number = 0
 
@@ -58,8 +63,9 @@ func _ready() -> void:
 	add_child(drop_cooldown_timer)
 	drop_cooldown_timer.timeout.connect(Callable(self, "_on_drop_cooldown_timeout"))
 	
-	# Display the first ball image
+	# Display the current ball and update the "Next Up" UI
 	get_next_ball()
+	update_next_up_ui()
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -112,12 +118,14 @@ func drop_ball() -> void:
 		balls_queue.append(ball_scenes[next_ball_index])
 		ball_image_queue.append(ball_images[next_ball_index])
 		
-		# Update the next ball's image
+		# Update the current ball and the "Next Up" UI
 		get_next_ball()
+		update_next_up_ui()
 		can_drop = false
 		drop_cooldown_timer.start()
 
 func get_next_ball():
+	# Update the ball being dropped
 	if ball_image_queue.size() > 0:
 		$BallImage.texture = ball_image_queue[0]
 		match $BallImage.texture.resource_path:
@@ -134,11 +142,18 @@ func get_next_ball():
 			_:
 				push_error("Unexpected ball in queue!")
 
+func update_next_up_ui() -> void:
+	# Update the "Next Up" sprites to display the next three balls in the queue
+	if ball_image_queue.size() > 1:
+		first_up.texture = ball_image_queue[1] if ball_image_queue.size() > 1 else null
+	if ball_image_queue.size() > 2:
+		second_up.texture = ball_image_queue[2] if ball_image_queue.size() > 2 else null
+	if ball_image_queue.size() > 3:
+		third_up.texture = ball_image_queue[3] if ball_image_queue.size() > 3 else null
+
 func _on_drop_cooldown_timeout() -> void:
 	can_drop = true
 
 func _on_sound_effect_finished() -> void:
 	$Effects/CPUParticles2D.emitting = false
-	
-	get_next_ball()
 	$BallImage.visible = true

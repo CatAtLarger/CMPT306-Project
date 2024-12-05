@@ -1,4 +1,4 @@
-[gd_scene load_steps=258 format=3 uid="uid://b5y1cpqcqsjfy"]
+[gd_scene load_steps=258 format=3 uid="uid://bfkcifluou8xr"]
 
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="1_ahao5"]
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_t7md6"]

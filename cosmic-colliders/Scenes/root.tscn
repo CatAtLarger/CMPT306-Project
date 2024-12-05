@@ -1986,7 +1986,7 @@ position = Vector2(105, 31)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("92_vopn4")
 
-[node name="FirstUp3" type="Sprite2D" parent="UI/UpNext"]
+[node name="ThirdUp" type="Sprite2D" parent="UI/UpNext"]
 position = Vector2(174, 31)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("92_vopn4")
