@@ -139,5 +139,6 @@ func _on_drop_cooldown_timeout() -> void:
 
 func _on_sound_effect_finished() -> void:
 	$Effects/CPUParticles2D.emitting = false
-	$BallImage.visible = true
+	
 	get_next_ball()
+	$BallImage.visible = true
