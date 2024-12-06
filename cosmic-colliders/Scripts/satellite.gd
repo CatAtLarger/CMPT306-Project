@@ -37,7 +37,7 @@ var previous_angle: float = 0.0  # To store the previous angle for direction det
 @export var drop_cooldown: float = 1  # Cooldown time in seconds
 var can_drop: bool = true  # Flag to control dropping
 @onready var drop_cooldown_timer = Timer.new()  # Timer for cooldown
-@onready var score_label = get_tree().root.get_node("Main Scene/Score")  # Score label reference
+@onready var score_label = get_tree().root.get_node("Main Scene/UI/Score")  # Score label reference
 
 # References to the "Next Up" UI sprites
 @onready var first_up = get_tree().root.get_node("Main Scene/UI/UpNext/FirstUp")

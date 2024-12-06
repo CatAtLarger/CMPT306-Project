@@ -1999,10 +1999,10 @@ offset_right = 140.0
 text = "Up Next:"
 label_settings = SubResource("LabelSettings_f3k5o")
 
-[node name="Score" type="Label" parent="."]
-offset_left = 29.293
+[node name="Score" type="Label" parent="UI"]
+offset_left = 29.0001
 offset_top = 21.0
-offset_right = 479.293
+offset_right = 479.0
 offset_bottom = 176.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_lrq1w")
