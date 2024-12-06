@@ -3,32 +3,11 @@ extends Control
 var high_scores_path = "res://high_scores.txt"
 
 var high_score_file
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
+	set_high_score("JON", 2005)
+
 	
-	if not FileAccess.file_exists(high_scores_path):
-		push_error(high_scores_path, "does not exist! Cannot update high scores!")
-		return
-	
-	high_score_file = FileAccess.open(high_scores_path,FileAccess.READ)
-	var high_scores = []
-	while not high_score_file.eof_reached():
-		var line = high_score_file.get_line()
-		var initials = line.substr(0,3)
-		var score = line.substr(4)
-		high_scores.append([initials,score])
-		
-		
-	for high_score in $HighScores.get_children():
-		var next_score = high_scores.pop_front()
-		high_score.get_node("Name").text = next_score[0]
-		high_score.get_node("Score").text = next_score[1]
-		
-	high_score_file.close()
-	
-	print(get_high_scores())
-	set_high_score("JON", 50000)
-	print(get_high_scores())
 
 func is_high_score(score: int) -> bool:
 	var high_score_array = get_high_scores()
@@ -41,15 +20,29 @@ func is_high_score(score: int) -> bool:
 
 
 func set_high_score(initials: String, score: int):
-	var high_score_array = get_high_scores()
 	
-	for item in high_score_array:
-		if score > item[1].to_int():
-			var temp = [item[0], item[1]]
-			var index = high_score_array.find(item)
-			high_score_array.remove_at(index)
-			high_score_array.insert(index, [initials, str(score)])
-			set_high_score(temp[0], temp[1].to_int())
+	var high_score_array = get_high_scores()
+
+	# Ensure maximum of 8 high scores
+	if high_score_array.size() >= 8:
+		# Check if the new score is higher than the lowest existing score
+		if score <= int(high_score_array[-1][1]):
+			return  # Don't add the new score if it's lower
+
+	# Find the insertion point
+	var i = 0
+	while i < high_score_array.size() and score <= int(high_score_array[i][1]):
+		i += 1
+
+	# Insert the new score at the correct position
+	high_score_array.insert(i, [initials, str(score)])
+
+	# If the list exceeds 8, remove the lowest score
+	if high_score_array.size() > 8:
+		high_score_array.remove_at(8)
+
+	save_to_file(high_score_array)  # Update the high scores in the game state
+	return
 
 func get_high_scores():
 	var all_high_scores = load_from_file()
@@ -64,7 +57,10 @@ func get_high_scores():
 
 func save_to_file(content):
 	var file = FileAccess.open(high_scores_path, FileAccess.WRITE)
-	file.store_string(content)
+	var content_string = ""
+	for item in content:
+		content_string += item[0] + " " + item[1] + "\n"
+	file.store_string(content_string)
 	file.close()
 
 func load_from_file() -> String:
