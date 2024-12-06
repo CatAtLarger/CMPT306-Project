@@ -127,28 +127,37 @@ func get_next_ball():
 	# Update the ball being dropped
 	if ball_image_queue.size() > 0:
 		$BallImage.texture = ball_image_queue[0]
-		match $BallImage.texture.resource_path:
+		$BallImage.scale = get_ball_scale($BallImage.texture.resource_path)
+
+func get_ball_scale(texture_resource_path) -> Vector2:
+	match texture_resource_path:
 			"res://Images/Balls/space_dust.png":
-				$BallImage.scale = Vector2(0.06, 0.06)
+				return Vector2(0.06, 0.06)
 			"res://Images/Balls/asteroid.png":
-				$BallImage.scale = Vector2(0.1, 0.1)
+				return Vector2(0.1, 0.1)
 			"res://Images/Balls/comet.png":
-				$BallImage.scale = Vector2(1.5, 1.5)
+				return Vector2(1.5, 1.5)
 			"res://Images/Balls/moon.png":
-				$BallImage.scale = Vector2(0.5, 0.5)
+				return Vector2(0.5, 0.5)
 			"res://Images/Balls/dwarf_planet.png":
-				$BallImage.scale = Vector2(0.6, 0.6)
+				return Vector2(0.6, 0.6)
 			_:
-				push_error("Unexpected ball in queue!")
+				push_error("Unexpected ball in queue! Returning empty Vector2.")
+				return Vector2(0,0)
 
 func update_next_up_ui() -> void:
+	
+	var desired_diameter = 70
 	# Update the "Next Up" sprites to display the next three balls in the queue
 	if ball_image_queue.size() > 1:
-		first_up.texture = ball_image_queue[1] if ball_image_queue.size() > 1 else null
+		first_up.texture = ball_image_queue[1]
+		first_up.scale = Vector2(desired_diameter,desired_diameter) / first_up.texture.get_size()
 	if ball_image_queue.size() > 2:
-		second_up.texture = ball_image_queue[2] if ball_image_queue.size() > 2 else null
+		second_up.texture = ball_image_queue[2]
+		second_up.scale = Vector2(desired_diameter,desired_diameter) / second_up.texture.get_size()
 	if ball_image_queue.size() > 3:
-		third_up.texture = ball_image_queue[3] if ball_image_queue.size() > 3 else null
+		third_up.texture = ball_image_queue[3]
+		third_up.scale = Vector2(desired_diameter,desired_diameter) / third_up.texture.get_size()
 
 func _on_drop_cooldown_timeout() -> void:
 	can_drop = true

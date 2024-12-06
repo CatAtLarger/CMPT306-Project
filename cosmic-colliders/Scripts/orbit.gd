@@ -25,6 +25,8 @@ func _on_timer_timeout() -> void:
 		var ball_radius = ball.get_child(0).shape.radius * ball.get_child(0).scale.x
 		var distance_to_center = ball.global_position.distance_to($CollisionShape2D.global_position)
 		if (distance_to_center > boundary_radius - ball_radius) and ball.has_collided:
+			# REPLACE WITH ACTUAL GAME OVER FUNCTION!!!!
 			print("Game Over")
+			
 			
 			
