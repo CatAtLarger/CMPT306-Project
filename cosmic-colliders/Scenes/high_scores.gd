@@ -26,26 +26,34 @@ func _ready() -> void:
 		
 	high_score_file.close()
 	
-	print(set_high_score("JOK",1200))
+	print(get_high_scores())
+	print(is_high_score(500))
 
 
-func is_high_score(score) -> bool:
-	if not FileAccess.file_exists(high_scores_path):
-		push_error(high_scores_path, "does not exist! Cannot check high scores! Returning false.")
-		return false
+func is_high_score(score: int) -> bool:
+	var high_score_array = get_high_scores()
 	
-	high_score_file = FileAccess.open(high_scores_path,FileAccess.READ)
-	while not high_score_file.eof_reached():
-		var line = high_score_file.get_line()
-		if line.substr(4).to_int() < score:
-			high_score_file.close()
+	for item in high_score_array:
+		print(item[1].to_int())
+		if score > item[1].to_int():
+			print(item[1].to_int())
 			return true
-	high_score_file.close()
+			
 	return false
 
+
 func set_high_score(initials: String, score: int):
+	pass
+
+func get_high_scores() -> PackedStringArray:
 	var all_high_scores = load_from_file()
-	print(all_high_scores)
+	var all_lines = all_high_scores.split("\n",false)
+	var high_score_array = []
+	for line in all_lines:
+		
+		high_score_array.append( [line.substr(0,3), line.substr(4)])
+
+	return high_score_array
 
 
 func save_to_file(content):
