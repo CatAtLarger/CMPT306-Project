@@ -1856,7 +1856,6 @@ label_settings = SubResource("LabelSettings_qdn0f")
 
 [node name="Moon" type="Node2D" parent="UI/ScoreValues"]
 position = Vector2(254.411, 33.824)
-scale = Vector2(1, 1)
 
 [node name="Image" type="Sprite2D" parent="UI/ScoreValues/Moon"]
 position = Vector2(98.5293, 7.35293)

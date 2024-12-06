@@ -96,7 +96,7 @@ func trigger_collision_effects():
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	
-	has_collided = true
+	
 	
 	var collision_object = area.get_parent()
 
@@ -104,6 +104,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	#if neither objects are balls
 	if not is_in_group("balls") or not collision_object.is_in_group("balls"):
 		return
+	
+	has_collided = true
 	
 	#if both objects have already been queued for deletion
 	if is_queued_for_deletion() and collision_object.is_queued_for_deletion():
