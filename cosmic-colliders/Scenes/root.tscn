@@ -1666,6 +1666,7 @@ frame_progress = 0.271949
 [node name="Satellite" type="Node2D" parent="."]
 position = Vector2(570, 70)
 script = ExtResource("87_uqc33")
+drop_cooldown = 0.1
 
 [node name="Satellite_Image" type="Sprite2D" parent="Satellite"]
 texture = ExtResource("88_3dmjg")
@@ -2023,4 +2024,10 @@ position = Vector2(-5.05014, 7)
 scale = Vector2(3.30303, 3.30303)
 texture = ExtResource("100_qda2n")
 
+[node name="Timer" type="Timer" parent="Orbit"]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="child_entered_tree" from="Balls" to="Orbit" method="_on_balls_child_entered_tree"]
 [connection signal="finished" from="Satellite/Effects/SoundEffect" to="Satellite" method="_on_sound_effect_finished"]
+[connection signal="timeout" from="Orbit/Timer" to="Orbit" method="_on_timer_timeout"]
