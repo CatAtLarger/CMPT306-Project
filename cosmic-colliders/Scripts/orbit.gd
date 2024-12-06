@@ -13,7 +13,8 @@ func _on_balls_child_entered_tree(node: Node) -> void:
 	ball_area.connect("area_exited",on_area_exited)
 
 func on_area_exited(area: Area2D):
-	$Timer.start()
+	if $Timer.is_stopped():
+		$Timer.start()
 
 
 func _on_timer_timeout() -> void:
@@ -23,7 +24,7 @@ func _on_timer_timeout() -> void:
 	for ball in current_balls:
 		var ball_radius = ball.get_child(0).shape.radius * ball.get_child(0).scale.x
 		var distance_to_center = ball.global_position.distance_to($CollisionShape2D.global_position)
-		print(ball_radius)
-		if distance_to_center > boundary_radius - ball_radius:
+		if (distance_to_center > boundary_radius - ball_radius) and ball.has_collided:
 			print("Game Over")
+			
 			

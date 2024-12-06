@@ -25,6 +25,9 @@ var central_mass_position = Vector2(577,339)
 @onready var sound_effect = get_node("Effects/SoundEffect")
 
 
+var has_collided = false
+
+
 func _ready() -> void:
 	
 	#for finding central mass
@@ -93,7 +96,10 @@ func trigger_collision_effects():
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	
+	has_collided = true
+	
 	var collision_object = area.get_parent()
+
 	
 	#if neither objects are balls
 	if not is_in_group("balls") or not collision_object.is_in_group("balls"):
