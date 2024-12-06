@@ -50,7 +50,7 @@ func get_high_scores() -> PackedStringArray:
 	var all_lines = all_high_scores.split("\n",false)
 	var high_score_array = []
 	for line in all_lines:
-		
+		#test commit
 		high_score_array.append( [line.substr(0,3), line.substr(4)])
 
 	return high_score_array
