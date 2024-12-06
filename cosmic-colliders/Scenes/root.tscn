@@ -1,4 +1,4 @@
-[gd_scene load_steps=276 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=279 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -99,8 +99,10 @@
 [ext_resource type="Texture2D" uid="uid://csppy12ohd2yj" path="res://Images/Balls/red_dwarf.png" id="97_6ptuo"]
 [ext_resource type="Texture2D" uid="uid://cshajji0oo33h" path="res://Images/Balls/blue_giant.png" id="99_tyo4e"]
 [ext_resource type="Script" path="res://Scripts/orbit.gd" id="100_d5p5r"]
+[ext_resource type="Script" path="res://Scenes/high_scores.gd" id="100_k4kib"]
 [ext_resource type="Texture2D" uid="uid://c0mpbf7yu60ry" path="res://Images/Balls/white_giant.png" id="100_lg1e1"]
 [ext_resource type="Texture2D" uid="uid://cmpe2ahjbt61d" path="res://Images/Balls/gas_giant_full.png" id="100_qda2n"]
+[ext_resource type="LabelSettings" uid="uid://17c3nhrt6m0" path="res://Fonts/default_label_settings.tres" id="101_7h840"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1525,15 +1527,17 @@ font = ExtResource("90_l0yc3")
 font_size = 30
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_lrq1w"]
+font = ExtResource("90_l0yc3")
+font_size = 40
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k26mc"]
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_uokck"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f3k5o"]
 font = ExtResource("90_l0yc3")
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_lrq1w"]
-font = ExtResource("90_l0yc3")
-font_size = 40
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j0jv2"]
 
@@ -1666,7 +1670,7 @@ frame_progress = 0.271949
 [node name="Satellite" type="Node2D" parent="."]
 position = Vector2(570, 70)
 script = ExtResource("87_uqc33")
-drop_cooldown = 0.1
+drop_cooldown = 1.5
 
 [node name="Satellite_Image" type="Sprite2D" parent="Satellite"]
 texture = ExtResource("88_3dmjg")
@@ -1965,40 +1969,6 @@ scale = Vector2(0.503137, 0.503137)
 text = "10240"
 label_settings = SubResource("LabelSettings_qdn0f")
 
-[node name="UpNext" type="Node2D" parent="UI"]
-position = Vector2(926, 39)
-
-[node name="TextureRect" type="TextureRect" parent="UI/UpNext"]
-modulate = Color(1, 1, 1, 0.686275)
-offset_left = -2.0
-offset_top = -24.0
-offset_right = 38.0
-offset_bottom = 16.0
-scale = Vector2(5.48259, 2.33085)
-texture = SubResource("CanvasTexture_uokck")
-
-[node name="FirstUp" type="Sprite2D" parent="UI/UpNext"]
-position = Vector2(41, 33)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("92_vopn4")
-
-[node name="SecondUp" type="Sprite2D" parent="UI/UpNext"]
-position = Vector2(105, 31)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("92_vopn4")
-
-[node name="ThirdUp" type="Sprite2D" parent="UI/UpNext"]
-position = Vector2(174, 31)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("92_vopn4")
-
-[node name="Label" type="Label" parent="UI/UpNext"]
-offset_left = 72.0
-offset_top = -23.0
-offset_right = 140.0
-text = "Up Next:"
-label_settings = SubResource("LabelSettings_f3k5o")
-
 [node name="Score" type="Label" parent="UI"]
 offset_left = 29.0001
 offset_top = 21.0
@@ -2008,6 +1978,319 @@ text = "Score: 0"
 label_settings = SubResource("LabelSettings_lrq1w")
 autowrap_mode = 3
 text_direction = 1
+
+[node name="HighScoreUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 47.0
+offset_top = 255.0
+offset_right = 87.0
+offset_bottom = 295.0
+scale = Vector2(1.39209, 1.39209)
+script = ExtResource("100_k4kib")
+
+[node name="HighScores" type="VBoxContainer" parent="UI/HighScoreUI"]
+z_index = 1
+layout_mode = 0
+offset_bottom = 236.0
+
+[node name="HighScore" type="Panel" parent="UI/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "1."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore2" type="Panel" parent="UI/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore2"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore2"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore2"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "2."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore3" type="Panel" parent="UI/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore3"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore3"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore3"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "3."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore4" type="Panel" parent="UI/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore4"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore4"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore4"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "4."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore5" type="Panel" parent="UI/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore5"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore5"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore5"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "5."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore6" type="Panel" parent="UI/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore6"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore6"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore6"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "6."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore7" type="Panel" parent="UI/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore7"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore7"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore7"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "7."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore8" type="Panel" parent="UI/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore8"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore8"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore8"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "8."
+label_settings = ExtResource("101_7h840")
+
+[node name="TextureRect" type="TextureRect" parent="UI/HighScoreUI"]
+modulate = Color(1, 1, 1, 0.580392)
+layout_mode = 0
+offset_left = -25.0
+offset_top = -28.0
+offset_right = 15.0
+offset_bottom = 12.0
+scale = Vector2(3.8149, 4.95447)
+texture = SubResource("CanvasTexture_k26mc")
+
+[node name="UpNext" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/UpNext"]
+modulate = Color(1, 1, 1, 0.580392)
+layout_mode = 0
+offset_left = 924.0
+offset_top = 15.0
+offset_right = 964.0
+offset_bottom = 55.0
+scale = Vector2(5.48259, 2.33085)
+texture = SubResource("CanvasTexture_uokck")
+
+[node name="FirstUp" type="Sprite2D" parent="UI/UpNext"]
+position = Vector2(967, 72)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("92_vopn4")
+
+[node name="SecondUp" type="Sprite2D" parent="UI/UpNext"]
+position = Vector2(1031, 70)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("92_vopn4")
+
+[node name="ThirdUp" type="Sprite2D" parent="UI/UpNext"]
+position = Vector2(1100, 70)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("92_vopn4")
+
+[node name="Label" type="Label" parent="UI/UpNext"]
+layout_mode = 0
+offset_left = 998.0
+offset_top = 16.0
+offset_right = 1072.0
+offset_bottom = 39.0
+text = "Up Next:"
+label_settings = SubResource("LabelSettings_f3k5o")
 
 [node name="Orbit" type="Area2D" parent="."]
 position = Vector2(583.838, 337)
