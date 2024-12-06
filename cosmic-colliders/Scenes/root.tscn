@@ -1,4 +1,4 @@
-[gd_scene load_steps=279 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=280 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -104,6 +104,7 @@
 [ext_resource type="Texture2D" uid="uid://cmpe2ahjbt61d" path="res://Images/Balls/gas_giant_full.png" id="100_qda2n"]
 [ext_resource type="LabelSettings" uid="uid://17c3nhrt6m0" path="res://Fonts/default_label_settings.tres" id="101_7h840"]
 [ext_resource type="FontFile" uid="uid://bah5ame2s45an" path="res://Fonts/Oxanium-ExtraBold.ttf" id="101_426h3"]
+[ext_resource type="Script" path="res://Scripts/game_over_menu.gd" id="104_b2h15"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -2216,6 +2217,43 @@ texture = ExtResource("100_qda2n")
 wait_time = 4.0
 one_shot = true
 
+[node name="GameOverMenu" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("104_b2h15")
+
+[node name="BackgroundLayer" type="Panel" parent="GameOverMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="GameOverMenu/BackgroundLayer"]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 219.0
+offset_right = 626.0
+offset_bottom = 242.0
+text = "GAME OVER"
+
+[node name="PlayAgainButton" type="Button" parent="GameOverMenu/BackgroundLayer"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 397.0
+offset_right = 624.0
+offset_bottom = 428.0
+text = "PLAY AGAIN"
+
+[node name="ExitButton" type="Button" parent="GameOverMenu/BackgroundLayer"]
+layout_mode = 0
+offset_left = 547.0
+offset_top = 450.0
+offset_right = 588.0
+offset_bottom = 481.0
+text = "EXIT"
+
 [connection signal="child_entered_tree" from="Balls" to="Orbit" method="_on_balls_child_entered_tree"]
 [connection signal="finished" from="Satellite/Effects/SoundEffect" to="Satellite" method="_on_sound_effect_finished"]
 [connection signal="timeout" from="Orbit/Timer" to="Orbit" method="_on_timer_timeout"]
+[connection signal="pressed" from="GameOverMenu/BackgroundLayer/PlayAgainButton" to="GameOverMenu" method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="GameOverMenu/BackgroundLayer/ExitButton" to="GameOverMenu" method="_on_exit_button_pressed"]

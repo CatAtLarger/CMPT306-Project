@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var boundary = $CollisionShape2D  # Adjust as necessary
-#@onready var game_over_menu = get_tree().root.get_node("Main Scene/GameOverMenu")  # Reference to the GameOverMenu node
+@onready var game_over_menu = get_tree().root.get_node("Main Scene/GameOverMenu")  # Reference to the GameOverMenu node
 
 var boundary_radius = 0
 
