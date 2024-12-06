@@ -1,4 +1,4 @@
-[gd_scene load_steps=279 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=280 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -103,6 +103,7 @@
 [ext_resource type="Texture2D" uid="uid://c0mpbf7yu60ry" path="res://Images/Balls/white_giant.png" id="100_lg1e1"]
 [ext_resource type="Texture2D" uid="uid://cmpe2ahjbt61d" path="res://Images/Balls/gas_giant_full.png" id="100_qda2n"]
 [ext_resource type="LabelSettings" uid="uid://17c3nhrt6m0" path="res://Fonts/default_label_settings.tres" id="101_7h840"]
+[ext_resource type="Script" path="res://Scripts/game_over_menu.gd" id="104_b2h15"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -2311,6 +2312,46 @@ texture = ExtResource("100_qda2n")
 wait_time = 4.0
 one_shot = true
 
+[node name="GameOverMenu" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("104_b2h15")
+
+[node name="GameOverMenuBackgroud Layer" type="Panel" parent="GameOverMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="Label" parent="GameOverMenu/GameOverMenuBackgroud Layer"]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 214.0
+offset_right = 632.0
+offset_bottom = 237.0
+theme_override_fonts/font = ExtResource("90_l0yc3")
+text = "GAMEOVER"
+
+[node name="PlayAgainButton" type="Button" parent="GameOverMenu/GameOverMenuBackgroud Layer"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 401.0
+offset_right = 641.0
+offset_bottom = 432.0
+theme_override_fonts/font = ExtResource("90_l0yc3")
+text = "PLAY AGAIN"
+
+[node name="ExitButton" type="Button" parent="GameOverMenu/GameOverMenuBackgroud Layer"]
+layout_mode = 0
+offset_left = 556.0
+offset_top = 452.0
+offset_right = 605.0
+offset_bottom = 483.0
+theme_override_fonts/font = ExtResource("90_l0yc3")
+text = "EXIT"
+
 [connection signal="child_entered_tree" from="Balls" to="Orbit" method="_on_balls_child_entered_tree"]
 [connection signal="finished" from="Satellite/Effects/SoundEffect" to="Satellite" method="_on_sound_effect_finished"]
 [connection signal="timeout" from="Orbit/Timer" to="Orbit" method="_on_timer_timeout"]
+[connection signal="pressed" from="GameOverMenu/GameOverMenuBackgroud Layer/PlayAgainButton" to="GameOverMenu" method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="GameOverMenu/GameOverMenuBackgroud Layer/ExitButton" to="GameOverMenu" method="_on_exit_button_pressed"]
