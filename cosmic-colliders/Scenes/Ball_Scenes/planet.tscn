@@ -23,7 +23,7 @@ contact_monitor = true
 script = ExtResource("1_5koya")
 gravitational_constant = 2800.0
 celestial_index = 5
-metadata/value = 600
+metadata/value = 64
 metadata/ball_number = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -31,7 +31,7 @@ shape = SubResource("CircleShape2D_vad4u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 3.05176e-05)
-scale = Vector2(0.17, 0.17)
+scale = Vector2(1.12, 1.12)
 texture = ExtResource("2_sx5jm")
 
 [node name="Area2D" type="Area2D" parent="."]

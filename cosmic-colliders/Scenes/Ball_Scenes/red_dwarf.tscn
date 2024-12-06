@@ -23,7 +23,7 @@ contact_monitor = true
 script = ExtResource("1_7s4co")
 gravitational_constant = 4000.0
 celestial_index = 7
-metadata/value = 1000
+metadata/value = 256
 metadata/ball_number = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -32,7 +32,7 @@ shape = SubResource("CircleShape2D_vad4u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 3.05176e-05)
-scale = Vector2(0.133019, 0.133019)
+scale = Vector2(0.973014, 0.973014)
 texture = ExtResource("2_5magu")
 
 [node name="Area2D" type="Area2D" parent="."]

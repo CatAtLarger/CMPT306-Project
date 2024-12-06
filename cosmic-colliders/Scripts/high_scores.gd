@@ -27,30 +27,36 @@ func _ready() -> void:
 	high_score_file.close()
 	
 	print(get_high_scores())
-	print(is_high_score(500))
-
+	set_high_score("JON", 50000)
+	print(get_high_scores())
 
 func is_high_score(score: int) -> bool:
 	var high_score_array = get_high_scores()
 	
 	for item in high_score_array:
-		print(item[1].to_int())
 		if score > item[1].to_int():
-			print(item[1].to_int())
 			return true
 			
 	return false
 
 
 func set_high_score(initials: String, score: int):
-	pass
+	var high_score_array = get_high_scores()
+	
+	for item in high_score_array:
+		if score > item[1].to_int():
+			var temp = [item[0], item[1]]
+			var index = high_score_array.find(item)
+			high_score_array.remove_at(index)
+			high_score_array.insert(index, [initials, str(score)])
+			set_high_score(temp[0], temp[1].to_int())
 
-func get_high_scores() -> PackedStringArray:
+func get_high_scores():
 	var all_high_scores = load_from_file()
 	var all_lines = all_high_scores.split("\n",false)
 	var high_score_array = []
 	for line in all_lines:
-		#test commit
+
 		high_score_array.append( [line.substr(0,3), line.substr(4)])
 
 	return high_score_array
