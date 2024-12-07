@@ -1,0 +1,19 @@
+
+Since the prototype we have added:
+
+    Jonah:
+        - made UI visually consistent and easy to read (fonts, colours, background, positions, etc.)
+        - made all image elements more visually consistent and pixelated
+        - fixed satellite drag and drop so it is more intuitive
+        - added new sound effects and particle effects
+        - created high score functions that write to a file
+        - created the functions to check for game over
+        - created UI elements:
+            - Up Next UI
+            - High Score and New High Score UI
+            - Score Values UI
+            - Satellite (ball drop) UI
+        - general game adjustments based on feedback (size of balls, time to drop, etc.)
+        - general organization and basic optimizations
+        - worked on submission including itch page
+        - gathered all beta-testing feedback

@@ -1,0 +1,42 @@
+Total Work Distribution:
+
+    Jonah:
+
+        Sounds:
+
+        - added background music
+        - added all sound effects
+
+        Visuals:
+
+            - created, layered, and animated background
+            - created UI elements:
+                - Up Next UI
+                - High Score and New High Score UI
+                - Score Values UI
+                - Satellite (ball drop) UI
+            - created all particle effects
+            - added all sprite images
+                - made all image elements visually consistent and deliberately pixelated
+            - changed UI so it visually consistent and easy to read (fonts, colours, background, positions, etc.)
+
+        Gameplay:
+
+            - created ball class with mutltiple ball types
+                - added collision detection with orbit
+                - added collision detection with eachother
+            - created high score functions that write to a file (LOCAL FILE)
+            - created central mass that attracts all entities towards it
+            - created orbit to check if balls leave radius
+                - created the functions to check for game over
+            - set up camera
+            - fixed satellite drag and drop so it is more intuitive
+            - general game adjustments based on feedback (size of balls, time to drop, etc.)
+            - general organization and basic optimizations
+
+        Misc:
+            - created repo and pitch powerpoint
+            - proposed and outlined all general game ideas including pivot
+                - delegated all tasks and work between group members
+            - gathered all beta-testing feedback
+            - worked on all submissions and submission requirements including itch page
