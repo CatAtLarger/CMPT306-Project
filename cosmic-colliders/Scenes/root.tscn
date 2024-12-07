@@ -1,4 +1,4 @@
-[gd_scene load_steps=285 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=284 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -90,7 +90,6 @@
 [ext_resource type="AudioStream" uid="uid://cuad42esknq6n" path="res://Sounds/SoundEffects/MENU B_Back-[AudioTrimmer.com].wav" id="89_ah0wj"]
 [ext_resource type="Texture2D" uid="uid://dwng5vx2ix0mn" path="res://Images/Misc/windowpanenoshine.png" id="89_n6yc1"]
 [ext_resource type="Shader" path="res://Scenes/shimmer.gdshader" id="89_svr0l"]
-[ext_resource type="FontFile" uid="uid://c3s1e2cduti3m" path="res://Fonts/Orbitron-VariableFont_wght.ttf" id="90_l0yc3"]
 [ext_resource type="Texture2D" uid="uid://chcoce4ki6ilt" path="res://Images/Balls/space_dust.png" id="91_rlg2d"]
 [ext_resource type="Texture2D" uid="uid://c5lahwhthb3ge" path="res://Images/Balls/asteroid.png" id="92_vopn4"]
 [ext_resource type="Texture2D" uid="uid://cxfnkh57hixdf" path="res://Images/Balls/comet.png" id="93_717a5"]
@@ -1542,8 +1541,8 @@ font_size = 40
 [sub_resource type="CanvasTexture" id="CanvasTexture_uokck"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f3k5o"]
-font = ExtResource("90_l0yc3")
-font_color = Color(0, 0, 0, 1)
+font = ExtResource("101_426h3")
+font_size = 18
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j0jv2"]
 
@@ -1910,43 +1909,71 @@ text_direction = 1
 [node name="UpNext" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 30.0
-offset_top = 81.0
-offset_right = 70.0
-offset_bottom = 121.0
+offset_left = 43.0
+offset_top = 527.0
+offset_right = 83.0
+offset_bottom = 567.0
 
 [node name="TextureRect" type="TextureRect" parent="UI/UpNext"]
 modulate = Color(1, 1, 1, 0.580392)
+self_modulate = Color(0.901961, 0.0980392, 0.0980392, 0.231373)
 layout_mode = 0
 offset_left = -2.0
 offset_top = 1.0
-offset_right = 38.0
-offset_bottom = 41.0
+offset_right = 42.0
+offset_bottom = 49.0
 scale = Vector2(5.48259, 2.33085)
 texture = SubResource("CanvasTexture_uokck")
 
 [node name="FirstUp" type="Sprite2D" parent="UI/UpNext"]
-position = Vector2(166, 49)
+position = Vector2(196, 52)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("92_vopn4")
 
 [node name="SecondUp" type="Sprite2D" parent="UI/UpNext"]
-position = Vector2(102, 49)
+position = Vector2(115, 52)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("92_vopn4")
 
 [node name="ThirdUp" type="Sprite2D" parent="UI/UpNext"]
-position = Vector2(35, 49)
+position = Vector2(38, 52)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("92_vopn4")
 
 [node name="Label" type="Label" parent="UI/UpNext"]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 6.0
-offset_right = 148.0
-offset_bottom = 29.0
+offset_left = 80.0
+offset_top = 1.0
+offset_right = 154.0
+offset_bottom = 24.0
 text = "Up Next:"
+label_settings = SubResource("LabelSettings_f3k5o")
+
+[node name="1st ball" type="Label" parent="UI/UpNext"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 89.0
+offset_right = 237.0
+offset_bottom = 112.0
+text = "1st (Next)"
+label_settings = SubResource("LabelSettings_f3k5o")
+
+[node name="2nd ball" type="Label" parent="UI/UpNext"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 89.0
+offset_right = 146.0
+offset_bottom = 112.0
+text = "2nd"
+label_settings = SubResource("LabelSettings_f3k5o")
+
+[node name="3rd ball" type="Label" parent="UI/UpNext"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 88.0
+offset_right = 51.0
+offset_bottom = 111.0
+text = "3rd"
 label_settings = SubResource("LabelSettings_f3k5o")
 
 [node name="Orbit" type="Area2D" parent="."]
