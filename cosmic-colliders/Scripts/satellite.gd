@@ -70,18 +70,18 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
 			# Start dragging if the click is within the satellite's area
-			if global_position.distance_to(event.global_position) <= drag_radius:
-				is_dragging = true
-				previous_angle = (global_position - center_point).angle()  # Initialize previous angle
-		else:
+			# Initialize previous angle
 			# Stop dragging when the mouse is released and attempt to drop the ball
 			is_dragging = false
 			if can_drop:
 				$BallImage.visible = false
-				$Effects/CPUParticles2D.emitting = true
 				$Effects/SoundEffect.play()
-				
 				drop_ball()
+				
+	else:
+		if global_position.distance_to(event.global_position) <= drag_radius:
+				is_dragging = true
+				previous_angle = (global_position - center_point).angle()  
 
 func _process(_delta):
 	if is_dragging:
@@ -107,6 +107,7 @@ func drop_ball() -> void:
 		
 		# Position the ball at the satellite's position
 		ball_instance.position = self.global_position
+		ball_instance.rotation = self.global_rotation
 		get_parent().get_node("Balls").add_child(ball_instance)
 		
 		# Remove the corresponding image from the queue
@@ -126,8 +127,10 @@ func drop_ball() -> void:
 func get_next_ball():
 	# Update the ball being dropped
 	if ball_image_queue.size() > 0:
+		
 		$BallImage.texture = ball_image_queue[0]
 		$BallImage.scale = get_ball_scale($BallImage.texture.resource_path)
+		
 
 func get_ball_scale(texture_resource_path) -> Vector2:
 	match texture_resource_path:
@@ -163,5 +166,7 @@ func _on_drop_cooldown_timeout() -> void:
 	can_drop = true
 
 func _on_sound_effect_finished() -> void:
-	$Effects/CPUParticles2D.emitting = false
+	
 	$BallImage.visible = true
+	$Effects/CPUParticles2D.emitting = true
+	$Effects/NewBallSound.play()

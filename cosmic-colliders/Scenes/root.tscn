@@ -1,4 +1,4 @@
-[gd_scene load_steps=282 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=283 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -86,8 +86,9 @@
 [ext_resource type="AudioStream" uid="uid://dotw8i6rfu5hw" path="res://Sounds/Music/Industria_1.mp3" id="84_ibuq1"]
 [ext_resource type="Texture2D" uid="uid://bjd7u41a3mfs1" path="res://Images/BackgroundImages/earthspin-sheet.png" id="85_bel40"]
 [ext_resource type="Script" path="res://Scripts/satellite.gd" id="87_uqc33"]
-[ext_resource type="Texture2D" uid="uid://cqjy232j6l752" path="res://Images/Other Images/spaceStation_018.png" id="88_3dmjg"]
+[ext_resource type="AudioStream" uid="uid://chj42c8gwswms" path="res://Sounds/SoundEffects/new_ball.wav" id="88_tbypu"]
 [ext_resource type="AudioStream" uid="uid://cuad42esknq6n" path="res://Sounds/SoundEffects/MENU B_Back-[AudioTrimmer.com].wav" id="89_ah0wj"]
+[ext_resource type="Texture2D" uid="uid://dwng5vx2ix0mn" path="res://Images/Misc/windowpanenoshine.png" id="89_n6yc1"]
 [ext_resource type="FontFile" uid="uid://c3s1e2cduti3m" path="res://Fonts/Orbitron-VariableFont_wght.ttf" id="90_l0yc3"]
 [ext_resource type="Texture2D" uid="uid://chcoce4ki6ilt" path="res://Images/Balls/space_dust.png" id="91_rlg2d"]
 [ext_resource type="Texture2D" uid="uid://c5lahwhthb3ge" path="res://Images/Balls/asteroid.png" id="92_vopn4"]
@@ -1681,14 +1682,9 @@ position = Vector2(570, 70)
 script = ExtResource("87_uqc33")
 drop_cooldown = 1.5
 
-[node name="Satellite_Image" type="Sprite2D" parent="Satellite"]
-texture = ExtResource("88_3dmjg")
-
 [node name="BallImage" type="Sprite2D" parent="Satellite"]
-position = Vector2(2.72729, -49)
 
 [node name="Effects" type="Node2D" parent="Satellite"]
-position = Vector2(6.76769, -49)
 
 [node name="SoundEffect" type="AudioStreamPlayer" parent="Satellite/Effects"]
 stream = ExtResource("89_ah0wj")
@@ -1710,6 +1706,16 @@ initial_velocity_max = 108.2
 scale_amount_min = 0.0
 scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_mp40v")
+
+[node name="NewBallSound" type="AudioStreamPlayer" parent="Satellite/Effects"]
+stream = ExtResource("88_tbypu")
+volume_db = 5.0
+pitch_scale = 0.5
+
+[node name="Ball Container" type="Sprite2D" parent="Satellite"]
+modulate = Color(1, 1, 1, 0.313726)
+scale = Vector2(0.0707083, 0.0707083)
+texture = ExtResource("89_n6yc1")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqjy232j6l752"
-path="res://.godot/imported/spaceStation_018.png-9d3fc1dc98ec826c2db25de894caa806.ctex"
+uid="uid://dwng5vx2ix0mn"
+path="res://.godot/imported/windowpanenoshine.png-32f171bcba8347f292272d8c814801f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Other Images/spaceStation_018.png"
-dest_files=["res://.godot/imported/spaceStation_018.png-9d3fc1dc98ec826c2db25de894caa806.ctex"]
+source_file="res://Images/Misc/windowpanenoshine.png"
+dest_files=["res://.godot/imported/windowpanenoshine.png-32f171bcba8347f292272d8c814801f8.ctex"]
 
 [params]
 
