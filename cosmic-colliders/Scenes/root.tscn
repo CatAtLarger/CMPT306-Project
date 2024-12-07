@@ -1691,7 +1691,7 @@ frame_progress = 0.271949
 [node name="Satellite" type="Node2D" parent="."]
 position = Vector2(570, 70)
 script = ExtResource("87_uqc33")
-drop_cooldown = 0.1
+drop_cooldown = 1.5
 
 [node name="BallImage" type="Sprite2D" parent="Satellite"]
 
@@ -1994,7 +1994,7 @@ scale = Vector2(3.30303, 3.30303)
 texture = ExtResource("100_qda2n")
 
 [node name="Timer" type="Timer" parent="Orbit"]
-wait_time = 4.0
+wait_time = 6.0
 one_shot = true
 
 [node name="GameOverMenu" type="CanvasLayer" parent="."]
@@ -2374,5 +2374,7 @@ label_settings = ExtResource("101_7h840")
 [connection signal="timeout" from="Orbit/Timer" to="Orbit" method="_on_timer_timeout"]
 [connection signal="visibility_changed" from="GameOverMenu" to="GameOverMenu/HighScoreUI" method="_on_game_over_menu_visibility_changed"]
 [connection signal="pressed" from="GameOverMenu/BackgroundLayer/PlayAgainButton" to="GameOverMenu" method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="GameOverMenu/BackgroundLayer/PlayAgainButton" to="GameOverMenu/HighScoreUI" method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="GameOverMenu/BackgroundLayer/ExitButton" to="GameOverMenu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="GameOverMenu/BackgroundLayer/ExitButton" to="GameOverMenu/HighScoreUI" method="_on_exit_button_pressed"]
 [connection signal="text_submitted" from="GameOverMenu/HighScoreUI/NewHighScoreScreen/LineEdit" to="GameOverMenu/HighScoreUI" method="_on_line_edit_text_submitted"]

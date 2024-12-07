@@ -78,10 +78,31 @@ func update_high_score_ui():
 func _on_game_over_menu_visibility_changed() -> void:
 	if is_high_score(Autoscript.score):
 		$NewHighScoreScreen.visible = true
-		print("new High Score")
+		
 		
 
 
 func _on_line_edit_text_submitted(initials: String) -> void:
-	set_high_score(initials, Autoscript.score)
-	$NewHighScoreScreen.visible = false
+	if $NewHighScoreScreen/LineEdit.text.length() > 2:
+		set_high_score(initials, Autoscript.score)
+		$NewHighScoreScreen.visible = false
+		update_high_score_ui()
+
+	
+func _on_play_again_button_pressed() -> void:
+	
+	if $NewHighScoreScreen.is_visible_in_tree():
+		if $NewHighScoreScreen/LineEdit.text.length() > 2:
+			set_high_score($NewHighScoreScreen/LineEdit.text, Autoscript.score)
+			$NewHighScoreScreen.visible = false
+		else:
+			push_warning("Invalid initials. Skipping high score!")
+
+
+func _on_exit_button_pressed() -> void:
+	if $NewHighScoreScreen.is_visible_in_tree():
+		if $NewHighScoreScreen/LineEdit.text.length() > 2:
+			set_high_score($NewHighScoreScreen/LineEdit.text, Autoscript.score)
+			$NewHighScoreScreen.visible = false
+		else:
+			push_warning("Invalid initials. Skipping high score!")
