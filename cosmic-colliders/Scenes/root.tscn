@@ -1,4 +1,4 @@
-[gd_scene load_steps=287 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=291 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -1536,6 +1536,12 @@ font_size = 40
 font = ExtResource("101_426h3")
 font_size = 18
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6mli"]
+bg_color = Color(1, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6odd"]
+bg_color = Color(1, 0, 0, 0.196078)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_j0jv2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c6lnm"]
@@ -1562,6 +1568,12 @@ font = ExtResource("101_426h3")
 [sub_resource type="LabelSettings" id="LabelSettings_c88to"]
 font = ExtResource("101_426h3")
 font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p1d4"]
+bg_color = Color(1, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rf3b"]
+bg_color = Color(1, 0, 0, 0.196078)
 
 [node name="Main Scene" type="Node2D"]
 scale = Vector2(0.99, 1)
@@ -1986,6 +1998,8 @@ offset_right = 972.0
 offset_bottom = 57.0
 theme_override_fonts/font = ExtResource("101_426h3")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_n6mli")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6odd")
 text = "HOW TO PLAY"
 
 [node name="Orbit" type="Area2D" parent="."]
@@ -2008,6 +2022,7 @@ wait_time = 6.0
 one_shot = true
 
 [node name="GameOverMenu" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("104_b2h15")
 
 [node name="BackgroundLayer" type="Panel" parent="GameOverMenu"]
@@ -2420,6 +2435,8 @@ offset_right = 672.0
 offset_bottom = 601.0
 theme_override_fonts/font = ExtResource("101_426h3")
 theme_override_font_sizes/font_size = 46
+theme_override_styles/hover = SubResource("StyleBoxFlat_2p1d4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8rf3b")
 text = "RESUME"
 
 [connection signal="child_entered_tree" from="Balls" to="Orbit" method="_on_balls_child_entered_tree"]
