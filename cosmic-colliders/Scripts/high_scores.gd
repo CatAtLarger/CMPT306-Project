@@ -77,10 +77,11 @@ func update_high_score_ui():
 
 func _on_game_over_menu_visibility_changed() -> void:
 	if is_high_score(Autoscript.score):
-		visible = true
+		$NewHighScoreScreen.visible = true
+		print("new High Score")
 		
 
 
 func _on_line_edit_text_submitted(initials: String) -> void:
 	set_high_score(initials, Autoscript.score)
-	visible = false
+	$NewHighScoreScreen.visible = false
