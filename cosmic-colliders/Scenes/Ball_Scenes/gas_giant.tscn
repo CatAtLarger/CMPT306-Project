@@ -28,7 +28,6 @@ metadata/value = 128
 metadata/ball_number = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 scale = Vector2(4.52799, 4.52799)
 shape = SubResource("CircleShape2D_vad4u")
 
@@ -38,11 +37,9 @@ scale = Vector2(0.798909, 0.798909)
 texture = ExtResource("2_e35fe")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 scale = Vector2(6.41091, 6.41091)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 scale = Vector2(0.733765, 0.733765)
 shape = SubResource("CircleShape2D_aqu2e")
 debug_color = Color(0.957318, 0, 0.533218, 0.42)
@@ -51,6 +48,7 @@ debug_color = Color(0.957318, 0, 0.533218, 0.42)
 
 [node name="SoundEffect" type="AudioStreamPlayer" parent="Effects"]
 stream = ExtResource("3_v0po4")
+volume_db = 5.0
 pitch_scale = 1.5
 bus = &"Effects"
 

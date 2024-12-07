@@ -1,13 +1,9 @@
 extends Control
 
-var high_scores_path = "res://high_scores.txt"
-
-var high_score_file
+@export var high_scores_path = "res://high_scores.txt"
 
 func _ready() -> void:
-	set_high_score("JON", 2005)
-
-	
+	update_high_score_ui()
 
 func is_high_score(score: int) -> bool:
 	var high_score_array = get_high_scores()
@@ -68,3 +64,23 @@ func load_from_file() -> String:
 	var content = file.get_as_text()
 	file.close()
 	return content
+
+
+func update_high_score_ui():
+	var high_scores = get_high_scores()
+	var high_score_ui_elements = $HighScores.get_children()
+	for index in range(0,8):
+		high_score_ui_elements[index].get_node("Name").text = high_scores[index][0]
+		high_score_ui_elements[index].get_node("Score").text = high_scores[index][1]
+		
+
+
+func _on_game_over_menu_visibility_changed() -> void:
+	if is_high_score(Autoscript.score):
+		visible = true
+		
+
+
+func _on_line_edit_text_submitted(initials: String) -> void:
+	set_high_score(initials, Autoscript.score)
+	visible = false

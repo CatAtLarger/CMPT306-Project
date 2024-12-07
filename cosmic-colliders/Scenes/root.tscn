@@ -1,4 +1,4 @@
-[gd_scene load_steps=279 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=282 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -88,7 +88,7 @@
 [ext_resource type="Script" path="res://Scripts/satellite.gd" id="87_uqc33"]
 [ext_resource type="Texture2D" uid="uid://cqjy232j6l752" path="res://Images/Other Images/spaceStation_018.png" id="88_3dmjg"]
 [ext_resource type="AudioStream" uid="uid://cuad42esknq6n" path="res://Sounds/SoundEffects/MENU B_Back-[AudioTrimmer.com].wav" id="89_ah0wj"]
-[ext_resource type="FontFile" uid="uid://p6hxnx750fx3" path="res://Fonts/DS-DIGI.TTF" id="90_n0p0d"]
+[ext_resource type="FontFile" uid="uid://c3s1e2cduti3m" path="res://Fonts/Orbitron-VariableFont_wght.ttf" id="90_l0yc3"]
 [ext_resource type="Texture2D" uid="uid://chcoce4ki6ilt" path="res://Images/Balls/space_dust.png" id="91_rlg2d"]
 [ext_resource type="Texture2D" uid="uid://c5lahwhthb3ge" path="res://Images/Balls/asteroid.png" id="92_vopn4"]
 [ext_resource type="Texture2D" uid="uid://cxfnkh57hixdf" path="res://Images/Balls/comet.png" id="93_717a5"]
@@ -1520,9 +1520,8 @@ point_count = 2
 [sub_resource type="CanvasTexture" id="CanvasTexture_td1tc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qdn0f"]
-font = ExtResource("90_n0p0d")
+font = ExtResource("101_426h3")
 font_size = 130
-font_color = Color(0, 0, 0, 1)
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
@@ -1530,16 +1529,26 @@ outline_color = Color(0, 0, 0, 1)
 font = ExtResource("101_426h3")
 font_size = 40
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_k26mc"]
-
 [sub_resource type="CanvasTexture" id="CanvasTexture_uokck"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f3k5o"]
-font = ExtResource("101_426h3")
-font_size = 18
+font = ExtResource("90_l0yc3")
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j0jv2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6lnm"]
+font = ExtResource("101_426h3")
+font_size = 61
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k26mc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_41thu"]
+font = ExtResource("101_426h3")
+
+[sub_resource type="LabelSettings" id="LabelSettings_c88to"]
+font = ExtResource("101_426h3")
+font_size = 20
 
 [node name="Main Scene" type="Node2D"]
 scale = Vector2(0.99, 1)
@@ -1709,7 +1718,7 @@ position = Vector2(884, 199)
 scale = Vector2(0.680001, 0.680001)
 
 [node name="TextureRect" type="TextureRect" parent="UI/ScoreValues"]
-modulate = Color(1, 1, 1, 0.580392)
+self_modulate = Color(0.901961, 0.0980392, 0.0980392, 0.231373)
 offset_left = 139.706
 offset_top = -275.0
 offset_right = 179.706
@@ -1721,15 +1730,15 @@ texture = SubResource("CanvasTexture_td1tc")
 position = Vector2(250, -229.411)
 
 [node name="Image" type="Sprite2D" parent="UI/ScoreValues/SpaceDust"]
-position = Vector2(97.0587, 17.647)
+position = Vector2(61.7643, 1.47016)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("91_rlg2d")
 
 [node name="Value" type="Label" parent="UI/ScoreValues/SpaceDust"]
-offset_left = -10.2941
-offset_top = -20.5882
-offset_right = 155.706
-offset_bottom = 231.412
+offset_left = -75.0002
+offset_top = -27.9416
+offset_right = 90.9998
+offset_bottom = 224.059
 scale = Vector2(0.503137, 0.503137)
 text = "2
 "
@@ -1739,15 +1748,15 @@ label_settings = SubResource("LabelSettings_qdn0f")
 position = Vector2(258.823, -158.823)
 
 [node name="Image" type="Sprite2D" parent="UI/ScoreValues/Asteroid"]
-position = Vector2(92.6469, 36.7646)
+position = Vector2(54.4118, 24.9997)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("92_vopn4")
 
 [node name="Value" type="Label" parent="UI/ScoreValues/Asteroid"]
-offset_left = -22.0586
-offset_top = -7.35322
-offset_right = 143.941
-offset_bottom = 244.647
+offset_left = -86.7644
+offset_top = -11.765
+offset_right = 79.2352
+offset_bottom = 240.235
 scale = Vector2(0.503137, 0.503137)
 text = "4
 "
@@ -1757,15 +1766,15 @@ label_settings = SubResource("LabelSettings_qdn0f")
 position = Vector2(-2, 167)
 
 [node name="Image" type="Sprite2D" parent="UI/ScoreValues/Comet"]
-position = Vector2(351.999, -212.588)
+position = Vector2(315.235, -203.765)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("93_717a5")
 
 [node name="Value" type="Label" parent="UI/ScoreValues/Comet"]
-offset_left = 243.176
-offset_top = -243.47
-offset_right = 562.176
-offset_bottom = -112.47
+offset_left = 179.941
+offset_top = -239.059
+offset_right = 498.941
+offset_bottom = -108.059
 scale = Vector2(0.503137, 0.503137)
 text = "8"
 label_settings = SubResource("LabelSettings_qdn0f")
@@ -1774,15 +1783,15 @@ label_settings = SubResource("LabelSettings_qdn0f")
 position = Vector2(185.294, 83.8234)
 
 [node name="Image" type="Sprite2D" parent="UI/ScoreValues/DwarfPlanet"]
-position = Vector2(169.117, 35.2941)
+position = Vector2(132.353, 57.3528)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("94_ynxg5")
 
 [node name="Value" type="Label" parent="UI/ScoreValues/DwarfPlanet"]
-offset_left = 27.941
-offset_top = 4.41178
-offset_right = 346.941
-offset_bottom = 135.412
+offset_left = -29.4119
+offset_top = 26.4706
+offset_right = 289.588
+offset_bottom = 157.471
 scale = Vector2(0.503137, 0.503137)
 text = "32"
 label_settings = SubResource("LabelSettings_qdn0f")
@@ -1791,15 +1800,15 @@ label_settings = SubResource("LabelSettings_qdn0f")
 position = Vector2(233.823, 167.647)
 
 [node name="Image" type="Sprite2D" parent="UI/ScoreValues/Planet"]
-position = Vector2(119.118, 25)
+position = Vector2(88.2353, 74.9997)
 scale = Vector2(0.693, 0.693)
 texture = ExtResource("95_slsqx")
 
 [node name="Value" type="Label" parent="UI/ScoreValues/Planet"]
-offset_left = -17.6469
-offset_top = -1.47075
-offset_right = 301.353
-offset_bottom = 129.529
+offset_left = -73.5291
+offset_top = 36.7645
+offset_right = 215.471
+offset_bottom = 167.765
 scale = Vector2(0.503137, 0.503137)
 text = "64"
 label_settings = SubResource("LabelSettings_qdn0f")
@@ -1808,15 +1817,15 @@ label_settings = SubResource("LabelSettings_qdn0f")
 position = Vector2(194.117, 245.588)
 
 [node name="Image" type="Sprite2D" parent="UI/ScoreValues/GasGiant"]
-position = Vector2(135.294, 44.1176)
+position = Vector2(127.941, 102.941)
 scale = Vector2(0.799, 0.799)
 texture = ExtResource("96_4linh")
 
 [node name="Value" type="Label" parent="UI/ScoreValues/GasGiant"]
-offset_left = -10.2941
-offset_top = 8.82353
-offset_right = 278.706
-offset_bottom = 139.824
+offset_left = -36.7643
+offset_top = 57.3527
+offset_right = 252.236
+offset_bottom = 188.353
 scale = Vector2(0.503137, 0.503137)
 text = "128"
 label_settings = SubResource("LabelSettings_qdn0f")
@@ -1825,14 +1834,15 @@ label_settings = SubResource("LabelSettings_qdn0f")
 position = Vector2(207.353, 391.176)
 
 [node name="Image" type="Sprite2D" parent="UI/ScoreValues/RedDwarf"]
-position = Vector2(107.353, 33.8235)
+position = Vector2(114.705, 69.1174)
 scale = Vector2(0.973, 0.973)
 texture = ExtResource("97_6ptuo")
 
 [node name="Value" type="Label" parent="UI/ScoreValues/RedDwarf"]
-offset_left = -47.0587
-offset_right = 271.941
-offset_bottom = 131.0
+offset_left = -54.4121
+offset_top = 29.4116
+offset_right = 264.588
+offset_bottom = 160.412
 scale = Vector2(0.503137, 0.503137)
 text = "256"
 label_settings = SubResource("LabelSettings_qdn0f")
@@ -1845,11 +1855,11 @@ position = Vector2(179.529, 261.882)
 scale = Vector2(1.04, 1.04)
 texture = ExtResource("99_tyo4e")
 
-[node name="Value2" type="Label" parent="UI/ScoreValues/BlueStar"]
-offset_left = 10.2945
-offset_top = 235.294
-offset_right = 329.294
-offset_bottom = 366.294
+[node name="Value" type="Label" parent="UI/ScoreValues/BlueStar"]
+offset_left = 14.7063
+offset_top = 229.411
+offset_right = 333.706
+offset_bottom = 360.411
 scale = Vector2(0.503137, 0.503137)
 text = "512"
 label_settings = SubResource("LabelSettings_qdn0f")
@@ -1858,15 +1868,15 @@ label_settings = SubResource("LabelSettings_qdn0f")
 position = Vector2(254.411, 33.824)
 
 [node name="Image" type="Sprite2D" parent="UI/ScoreValues/Moon"]
-position = Vector2(98.5293, 7.35293)
+position = Vector2(60.2944, 14.7053)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("94_166wj")
 
 [node name="Value" type="Label" parent="UI/ScoreValues/Moon"]
-offset_left = -19.1175
-offset_top = -23.5299
-offset_right = 299.882
-offset_bottom = 107.47
+offset_left = -95.5877
+offset_top = -8.82403
+offset_right = 223.412
+offset_bottom = 122.176
 scale = Vector2(0.503137, 0.503137)
 text = "16"
 label_settings = SubResource("LabelSettings_qdn0f")
@@ -1881,305 +1891,31 @@ label_settings = SubResource("LabelSettings_lrq1w")
 autowrap_mode = 3
 text_direction = 1
 
-[node name="HighScoreUI" type="Control" parent="UI"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 47.0
-offset_top = 255.0
-offset_right = 87.0
-offset_bottom = 295.0
-scale = Vector2(1.39209, 1.39209)
-script = ExtResource("100_k4kib")
-
-[node name="HighScores" type="VBoxContainer" parent="UI/HighScoreUI"]
-z_index = 1
-layout_mode = 0
-offset_bottom = 236.0
-
-[node name="HighScore" type="Panel" parent="UI/HighScoreUI/HighScores"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore"]
-layout_mode = 2
-offset_left = -4.0
-offset_top = -25.0
-offset_right = 36.0
-offset_bottom = -2.0
-text = "JOK"
-label_settings = ExtResource("101_7h840")
-
-[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = -25.0
-offset_right = 120.0
-offset_bottom = -2.0
-text = "000000"
-label_settings = ExtResource("101_7h840")
-
-[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore"]
-layout_mode = 0
-offset_left = -21.0
-offset_top = -25.0
-offset_right = 19.0
-offset_bottom = -2.0
-text = "1."
-label_settings = ExtResource("101_7h840")
-
-[node name="HighScore2" type="Panel" parent="UI/HighScoreUI/HighScores"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore2"]
-layout_mode = 2
-offset_left = -4.0
-offset_top = -25.0
-offset_right = 36.0
-offset_bottom = -2.0
-text = "JOK"
-label_settings = ExtResource("101_7h840")
-
-[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore2"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = -25.0
-offset_right = 120.0
-offset_bottom = -2.0
-text = "000000"
-label_settings = ExtResource("101_7h840")
-
-[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore2"]
-layout_mode = 0
-offset_left = -21.0
-offset_top = -25.0
-offset_right = 19.0
-offset_bottom = -2.0
-text = "2."
-label_settings = ExtResource("101_7h840")
-
-[node name="HighScore3" type="Panel" parent="UI/HighScoreUI/HighScores"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore3"]
-layout_mode = 2
-offset_left = -4.0
-offset_top = -25.0
-offset_right = 36.0
-offset_bottom = -2.0
-text = "JOK"
-label_settings = ExtResource("101_7h840")
-
-[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore3"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = -25.0
-offset_right = 120.0
-offset_bottom = -2.0
-text = "000000"
-label_settings = ExtResource("101_7h840")
-
-[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore3"]
-layout_mode = 0
-offset_left = -21.0
-offset_top = -25.0
-offset_right = 19.0
-offset_bottom = -2.0
-text = "3."
-label_settings = ExtResource("101_7h840")
-
-[node name="HighScore4" type="Panel" parent="UI/HighScoreUI/HighScores"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore4"]
-layout_mode = 2
-offset_left = -4.0
-offset_top = -25.0
-offset_right = 36.0
-offset_bottom = -2.0
-text = "JOK"
-label_settings = ExtResource("101_7h840")
-
-[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore4"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = -25.0
-offset_right = 120.0
-offset_bottom = -2.0
-text = "000000"
-label_settings = ExtResource("101_7h840")
-
-[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore4"]
-layout_mode = 0
-offset_left = -21.0
-offset_top = -25.0
-offset_right = 19.0
-offset_bottom = -2.0
-text = "4."
-label_settings = ExtResource("101_7h840")
-
-[node name="HighScore5" type="Panel" parent="UI/HighScoreUI/HighScores"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore5"]
-layout_mode = 2
-offset_left = -4.0
-offset_top = -25.0
-offset_right = 36.0
-offset_bottom = -2.0
-text = "JOK"
-label_settings = ExtResource("101_7h840")
-
-[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore5"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = -25.0
-offset_right = 120.0
-offset_bottom = -2.0
-text = "000000"
-label_settings = ExtResource("101_7h840")
-
-[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore5"]
-layout_mode = 0
-offset_left = -21.0
-offset_top = -25.0
-offset_right = 19.0
-offset_bottom = -2.0
-text = "5."
-label_settings = ExtResource("101_7h840")
-
-[node name="HighScore6" type="Panel" parent="UI/HighScoreUI/HighScores"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore6"]
-layout_mode = 2
-offset_left = -4.0
-offset_top = -25.0
-offset_right = 36.0
-offset_bottom = -2.0
-text = "JOK"
-label_settings = ExtResource("101_7h840")
-
-[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore6"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = -25.0
-offset_right = 120.0
-offset_bottom = -2.0
-text = "000000"
-label_settings = ExtResource("101_7h840")
-
-[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore6"]
-layout_mode = 0
-offset_left = -21.0
-offset_top = -25.0
-offset_right = 19.0
-offset_bottom = -2.0
-text = "6."
-label_settings = ExtResource("101_7h840")
-
-[node name="HighScore7" type="Panel" parent="UI/HighScoreUI/HighScores"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore7"]
-layout_mode = 2
-offset_left = -4.0
-offset_top = -25.0
-offset_right = 36.0
-offset_bottom = -2.0
-text = "JOK"
-label_settings = ExtResource("101_7h840")
-
-[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore7"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = -25.0
-offset_right = 120.0
-offset_bottom = -2.0
-text = "000000"
-label_settings = ExtResource("101_7h840")
-
-[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore7"]
-layout_mode = 0
-offset_left = -21.0
-offset_top = -25.0
-offset_right = 19.0
-offset_bottom = -2.0
-text = "7."
-label_settings = ExtResource("101_7h840")
-
-[node name="HighScore8" type="Panel" parent="UI/HighScoreUI/HighScores"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-
-[node name="Name" type="Label" parent="UI/HighScoreUI/HighScores/HighScore8"]
-layout_mode = 2
-offset_left = -4.0
-offset_top = -25.0
-offset_right = 36.0
-offset_bottom = -2.0
-text = "JOK"
-label_settings = ExtResource("101_7h840")
-
-[node name="Score" type="Label" parent="UI/HighScoreUI/HighScores/HighScore8"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = -25.0
-offset_right = 120.0
-offset_bottom = -2.0
-text = "000000"
-label_settings = ExtResource("101_7h840")
-
-[node name="Place" type="Label" parent="UI/HighScoreUI/HighScores/HighScore8"]
-layout_mode = 0
-offset_left = -21.0
-offset_top = -25.0
-offset_right = 19.0
-offset_bottom = -2.0
-text = "8."
-label_settings = ExtResource("101_7h840")
-
-[node name="TextureRect" type="TextureRect" parent="UI/HighScoreUI"]
-modulate = Color(1, 1, 1, 0.580392)
-layout_mode = 0
-offset_left = -25.0
-offset_top = -28.0
-offset_right = 15.0
-offset_bottom = 12.0
-scale = Vector2(3.8149, 4.95447)
-texture = SubResource("CanvasTexture_k26mc")
-
 [node name="UpNext" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 39.0
-offset_top = 87.0
+offset_left = 30.0
+offset_top = 81.0
 offset_right = 70.0
 offset_bottom = 121.0
 
 [node name="TextureRect" type="TextureRect" parent="UI/UpNext"]
 modulate = Color(1, 1, 1, 0.580392)
 layout_mode = 0
-offset_left = -14.0
+offset_left = -2.0
 offset_top = 1.0
-offset_right = 32.0
-offset_bottom = 46.0
+offset_right = 38.0
+offset_bottom = 41.0
 scale = Vector2(5.48259, 2.33085)
 texture = SubResource("CanvasTexture_uokck")
 
 [node name="FirstUp" type="Sprite2D" parent="UI/UpNext"]
-position = Vector2(187, 49)
+position = Vector2(166, 49)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("92_vopn4")
 
 [node name="SecondUp" type="Sprite2D" parent="UI/UpNext"]
-position = Vector2(111, 49)
+position = Vector2(102, 49)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("92_vopn4")
 
@@ -2190,38 +1926,11 @@ texture = ExtResource("92_vopn4")
 
 [node name="Label" type="Label" parent="UI/UpNext"]
 layout_mode = 0
-offset_left = 73.0
-offset_top = 2.0
-offset_right = 149.0
-offset_bottom = 25.0
+offset_left = 74.0
+offset_top = 6.0
+offset_right = 148.0
+offset_bottom = 29.0
 text = "Up Next:"
-label_settings = SubResource("LabelSettings_f3k5o")
-
-[node name="1" type="Label" parent="UI/UpNext"]
-layout_mode = 0
-offset_left = 147.0
-offset_top = 83.0
-offset_right = 235.0
-offset_bottom = 104.0
-text = "1st (Next)"
-label_settings = SubResource("LabelSettings_f3k5o")
-
-[node name="2" type="Label" parent="UI/UpNext"]
-layout_mode = 0
-offset_left = 94.0
-offset_top = 84.0
-offset_right = 130.0
-offset_bottom = 105.0
-text = "2nd"
-label_settings = SubResource("LabelSettings_f3k5o")
-
-[node name="3" type="Label" parent="UI/UpNext"]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 84.0
-offset_right = 48.0
-offset_bottom = 105.0
-text = "3rd"
 label_settings = SubResource("LabelSettings_f3k5o")
 
 [node name="Orbit" type="Area2D" parent="."]
@@ -2256,30 +1965,344 @@ grow_vertical = 2
 
 [node name="GameOverLabel" type="Label" parent="GameOverMenu/BackgroundLayer"]
 layout_mode = 0
-offset_left = 534.0
-offset_top = 219.0
-offset_right = 626.0
-offset_bottom = 242.0
+offset_left = 403.0
+offset_top = 161.0
+offset_right = 755.0
+offset_bottom = 223.0
 text = "GAME OVER"
+label_settings = SubResource("LabelSettings_c6lnm")
 
 [node name="PlayAgainButton" type="Button" parent="GameOverMenu/BackgroundLayer"]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 397.0
-offset_right = 624.0
-offset_bottom = 428.0
+offset_left = 352.0
+offset_top = 402.0
+offset_right = 453.0
+offset_bottom = 433.0
+scale = Vector2(2.24, 2.24)
 text = "PLAY AGAIN"
 
 [node name="ExitButton" type="Button" parent="GameOverMenu/BackgroundLayer"]
 layout_mode = 0
-offset_left = 547.0
-offset_top = 450.0
-offset_right = 588.0
-offset_bottom = 481.0
-text = "EXIT"
+offset_left = 647.0
+offset_top = 407.0
+offset_right = 688.0
+offset_bottom = 438.0
+scale = Vector2(2.24, 2.24)
+text = "Exit"
+
+[node name="HighScoreUI" type="Control" parent="GameOverMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 63.0
+offset_top = 271.0
+offset_right = 103.0
+offset_bottom = 311.0
+scale = Vector2(1.39209, 1.39209)
+script = ExtResource("100_k4kib")
+
+[node name="HighScores" type="VBoxContainer" parent="GameOverMenu/HighScoreUI"]
+z_index = 1
+layout_mode = 0
+offset_left = 58.9042
+offset_top = 2.15503
+offset_right = 58.9042
+offset_bottom = 238.155
+
+[node name="HighScore" type="Panel" parent="GameOverMenu/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "1."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore2" type="Panel" parent="GameOverMenu/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore2"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore2"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore2"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "2."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore3" type="Panel" parent="GameOverMenu/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore3"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore3"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore3"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "3."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore4" type="Panel" parent="GameOverMenu/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore4"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore4"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore4"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "4."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore5" type="Panel" parent="GameOverMenu/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore5"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore5"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore5"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "5."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore6" type="Panel" parent="GameOverMenu/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore6"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore6"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore6"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "6."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore7" type="Panel" parent="GameOverMenu/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore7"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore7"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore7"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "7."
+label_settings = ExtResource("101_7h840")
+
+[node name="HighScore8" type="Panel" parent="GameOverMenu/HighScoreUI/HighScores"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore8"]
+layout_mode = 2
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+text = "JOK"
+label_settings = ExtResource("101_7h840")
+
+[node name="Score" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore8"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -25.0
+offset_right = 120.0
+offset_bottom = -2.0
+text = "000000"
+label_settings = ExtResource("101_7h840")
+
+[node name="Place" type="Label" parent="GameOverMenu/HighScoreUI/HighScores/HighScore8"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -25.0
+offset_right = 19.0
+offset_bottom = -2.0
+text = "8."
+label_settings = ExtResource("101_7h840")
+
+[node name="TextureRect" type="TextureRect" parent="GameOverMenu/HighScoreUI"]
+modulate = Color(1, 1, 1, 0.580392)
+layout_mode = 0
+offset_left = 32.3255
+offset_top = -25.8604
+offset_right = 72.3255
+offset_bottom = 14.1396
+scale = Vector2(3.8149, 4.95447)
+texture = SubResource("CanvasTexture_k26mc")
+
+[node name="NewHighScoreScreen" type="Control" parent="GameOverMenu/HighScoreUI"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LineEdit" type="LineEdit" parent="GameOverMenu/HighScoreUI/NewHighScoreScreen"]
+layout_mode = 0
+offset_left = 334.03
+offset_top = 49.5658
+offset_right = 401.093
+offset_bottom = 80.5658
+placeholder_text = "AAA"
+max_length = 3
+
+[node name="Label" type="Label" parent="GameOverMenu/HighScoreUI/NewHighScoreScreen/LineEdit"]
+layout_mode = 0
+offset_left = -13.6485
+offset_top = -28.0154
+offset_right = 87.3514
+offset_bottom = -5.01544
+text = "Enter Initals:"
+label_settings = SubResource("LabelSettings_41thu")
+
+[node name="Label" type="Label" parent="GameOverMenu/HighScoreUI/NewHighScoreScreen"]
+layout_mode = 0
+offset_left = 293.803
+offset_top = -23.7054
+offset_right = 686.803
+offset_bottom = 27.2946
+text = "New High Score!"
+label_settings = SubResource("LabelSettings_c88to")
 
 [connection signal="child_entered_tree" from="Balls" to="Orbit" method="_on_balls_child_entered_tree"]
 [connection signal="finished" from="Satellite/Effects/SoundEffect" to="Satellite" method="_on_sound_effect_finished"]
 [connection signal="timeout" from="Orbit/Timer" to="Orbit" method="_on_timer_timeout"]
+[connection signal="visibility_changed" from="GameOverMenu" to="GameOverMenu/HighScoreUI" method="_on_game_over_menu_visibility_changed"]
 [connection signal="pressed" from="GameOverMenu/BackgroundLayer/PlayAgainButton" to="GameOverMenu" method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="GameOverMenu/BackgroundLayer/ExitButton" to="GameOverMenu" method="_on_exit_button_pressed"]
+[connection signal="text_submitted" from="GameOverMenu/HighScoreUI/NewHighScoreScreen/LineEdit" to="GameOverMenu/HighScoreUI" method="_on_line_edit_text_submitted"]

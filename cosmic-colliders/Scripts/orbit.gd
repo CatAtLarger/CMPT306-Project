@@ -35,3 +35,4 @@ func show_game_over():
 		game_over_menu.visible = true  # Display the Game Over menu
 	else:
 		push_error("GameOverMenu node not found!")
+	

@@ -49,6 +49,7 @@ debug_color = Color(0.957318, 0, 0.533218, 0.42)
 
 [node name="SoundEffect" type="AudioStreamPlayer" parent="Effects"]
 stream = ExtResource("3_lvnvj")
+volume_db = 5.0
 pitch_scale = 1.5
 bus = &"Effects"
 

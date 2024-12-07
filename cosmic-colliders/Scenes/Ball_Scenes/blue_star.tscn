@@ -51,6 +51,7 @@ process_thread_group = 1
 process_thread_group_order = 0
 process_thread_messages = 0
 stream = ExtResource("3_8m76m")
+volume_db = 5.0
 pitch_scale = 1.5
 bus = &"Effects"
 
