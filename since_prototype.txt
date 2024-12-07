@@ -17,3 +17,26 @@ Since the prototype we have added:
         - general organization and basic optimizations
         - worked on submission including itch page
         - gathered all beta-testing feedback
+
+Khubaib Ahmad:
+
+Post-Prototype Work:
+
+-Helped Jonah on showing what is being dropped:
+    -Fixed the script to show what is being dropped so it shows what wil be dropped properly
+
+- Work on the "Next Up" Feature:
+    - Integrated a fully functional "Next Up" preview system to show the next three balls that will drop after the current ball.
+    - Dynamically update the preview for the "Next Up" UI to shift when a ball is dropped.
+    - Made the Next Up easily readable and understandable for the players.
+
+- Created the Game Over Menu:
+    - Designed buttons for "Play Again" and "Exit" with fully functional signals.
+    - Updated Game Over Menu to dynamically display the final score.
+    - Connect the GameOver Menu to i thibk the orbit script, so that it it basically freezes the game and brings up the game over menu.
+    
+- Implemented How to Play Menu functionality:
+    - Designed a Button for How to Play Menu. When you click it game pauses.
+    - Designd a How to Play Menu
+    - Wrote clear and concise in-game objective and controls descriptions to improve the player experience.
+    - Added a resume button
