@@ -1,4 +1,4 @@
-[gd_scene load_steps=284 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=286 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -89,7 +89,6 @@
 [ext_resource type="AudioStream" uid="uid://chj42c8gwswms" path="res://Sounds/SoundEffects/new_ball.wav" id="88_tbypu"]
 [ext_resource type="AudioStream" uid="uid://cuad42esknq6n" path="res://Sounds/SoundEffects/MENU B_Back-[AudioTrimmer.com].wav" id="89_ah0wj"]
 [ext_resource type="Texture2D" uid="uid://dwng5vx2ix0mn" path="res://Images/Misc/windowpanenoshine.png" id="89_n6yc1"]
-[ext_resource type="Shader" path="res://Scenes/shimmer.gdshader" id="89_svr0l"]
 [ext_resource type="Texture2D" uid="uid://chcoce4ki6ilt" path="res://Images/Balls/space_dust.png" id="91_rlg2d"]
 [ext_resource type="Texture2D" uid="uid://c5lahwhthb3ge" path="res://Images/Balls/asteroid.png" id="92_vopn4"]
 [ext_resource type="Texture2D" uid="uid://cxfnkh57hixdf" path="res://Images/Balls/comet.png" id="93_717a5"]
@@ -1518,14 +1517,6 @@ animations = [{
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_utqvj"]
-shader = ExtResource("89_svr0l")
-shader_parameter/shimmer_direction = Vector2(1, 0.5)
-shader_parameter/shimmer_speed = 1.0
-shader_parameter/shimmer_width = 0.2
-shader_parameter/shimmer_intensity = 0.5
-shader_parameter/shimmer_interval = 2.0
-
 [sub_resource type="CanvasTexture" id="CanvasTexture_td1tc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qdn0f"]
@@ -1549,6 +1540,18 @@ font_size = 18
 [sub_resource type="LabelSettings" id="LabelSettings_c6lnm"]
 font = ExtResource("101_426h3")
 font_size = 61
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwmxx"]
+bg_color = Color(1, 0, 0, 0.588235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kg7io"]
+bg_color = Color(1, 0, 0, 0.196078)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dph3n"]
+bg_color = Color(1, 0, 0, 0.588235)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dt1y"]
+bg_color = Color(1, 0, 0, 0.196078)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_k26mc"]
 
@@ -1722,7 +1725,6 @@ pitch_scale = 0.5
 
 [node name="Ball Container" type="Sprite2D" parent="Satellite"]
 modulate = Color(1, 1, 1, 0.313726)
-material = SubResource("ShaderMaterial_utqvj")
 scale = Vector2(0.0707083, 0.0707083)
 texture = ExtResource("89_n6yc1")
 
@@ -2021,16 +2023,24 @@ offset_left = 352.0
 offset_top = 402.0
 offset_right = 453.0
 offset_bottom = 433.0
-scale = Vector2(2.24, 2.24)
+scale = Vector2(0.44, 0.44)
+theme_override_fonts/font = ExtResource("101_426h3")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxFlat_lwmxx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kg7io")
 text = "PLAY AGAIN"
 
 [node name="ExitButton" type="Button" parent="GameOverMenu/BackgroundLayer"]
 layout_mode = 0
-offset_left = 647.0
-offset_top = 407.0
-offset_right = 688.0
-offset_bottom = 438.0
-scale = Vector2(2.24, 2.24)
+offset_left = 660.0
+offset_top = 403.0
+offset_right = 861.0
+offset_bottom = 511.0
+scale = Vector2(0.44, 0.44)
+theme_override_fonts/font = ExtResource("101_426h3")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxFlat_dph3n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3dt1y")
 text = "Exit"
 
 [node name="ScoreLabel" type="Label" parent="GameOverMenu/BackgroundLayer"]
@@ -2308,13 +2318,13 @@ text = "8."
 label_settings = ExtResource("101_7h840")
 
 [node name="TextureRect" type="TextureRect" parent="GameOverMenu/HighScoreUI"]
-modulate = Color(1, 1, 1, 0.580392)
+modulate = Color(1, 0, 0, 0.196078)
 layout_mode = 0
-offset_left = 32.3255
-offset_top = -25.8604
-offset_right = 72.3255
-offset_bottom = 14.1396
-scale = Vector2(3.8149, 4.95447)
+offset_left = 25.1421
+offset_top = -56.0309
+offset_right = 65.1421
+offset_bottom = -16.0309
+scale = Vector2(3.8149, 5.70155)
 texture = SubResource("CanvasTexture_k26mc")
 
 [node name="NewHighScoreScreen" type="Control" parent="GameOverMenu/HighScoreUI"]
@@ -2349,6 +2359,15 @@ offset_right = 686.803
 offset_bottom = 27.2946
 text = "New High Score!"
 label_settings = SubResource("LabelSettings_c88to")
+
+[node name="HighScoresLabel" type="Label" parent="GameOverMenu/HighScoreUI"]
+layout_mode = 0
+offset_left = 48.8474
+offset_top = -50.2841
+offset_right = 144.847
+offset_bottom = -27.2841
+text = "High Scores:"
+label_settings = ExtResource("101_7h840")
 
 [connection signal="child_entered_tree" from="Balls" to="Orbit" method="_on_balls_child_entered_tree"]
 [connection signal="finished" from="Satellite/Effects/SoundEffect" to="Satellite" method="_on_sound_effect_finished"]
