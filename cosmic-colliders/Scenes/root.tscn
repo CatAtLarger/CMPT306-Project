@@ -1,4 +1,4 @@
-[gd_scene load_steps=286 format=3 uid="uid://c52tckh8ku8tv"]
+[gd_scene load_steps=287 format=3 uid="uid://c52tckh8ku8tv"]
 
 [ext_resource type="Script" path="res://Scripts/background.gd" id="1_5ewe4"]
 [ext_resource type="Texture2D" uid="uid://bqjdojgpavrwp" path="res://Images/BackgroundImages/layer0sprites/Starry background1.png" id="2_bb6ln"]
@@ -104,6 +104,7 @@
 [ext_resource type="LabelSettings" uid="uid://17c3nhrt6m0" path="res://Fonts/default_label_settings.tres" id="101_7h840"]
 [ext_resource type="FontFile" uid="uid://bah5ame2s45an" path="res://Fonts/Oxanium-ExtraBold.ttf" id="101_426h3"]
 [ext_resource type="Script" path="res://Scripts/game_over_menu.gd" id="104_b2h15"]
+[ext_resource type="Script" path="res://Scripts/game_controls_menu.gd" id="105_6i7mw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbqge"]
 animations = [{
@@ -1978,6 +1979,13 @@ offset_bottom = 111.0
 text = "3rd"
 label_settings = SubResource("LabelSettings_f3k5o")
 
+[node name="PauseButton" type="Button" parent="UI"]
+offset_left = 124.0
+offset_top = 260.0
+offset_right = 224.0
+offset_bottom = 291.0
+text = "How to Play"
+
 [node name="Orbit" type="Area2D" parent="."]
 position = Vector2(583.838, 337)
 script = ExtResource("100_d5p5r")
@@ -2368,6 +2376,32 @@ offset_right = 144.847
 offset_bottom = -27.2841
 text = "High Scores:"
 label_settings = ExtResource("101_7h840")
+
+[node name="GameControlsMenu" type="CanvasLayer" parent="."]
+script = ExtResource("105_6i7mw")
+
+[node name="Panel" type="Panel" parent="GameControlsMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameControlsMenu/Panel"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 323.0
+offset_right = 253.0
+offset_bottom = 421.0
+text = "these are instructions"
+
+[node name="ResumeButton" type="Button" parent="GameControlsMenu/Panel"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 441.0
+offset_right = 226.0
+offset_bottom = 472.0
+text = "resume button"
 
 [connection signal="child_entered_tree" from="Balls" to="Orbit" method="_on_balls_child_entered_tree"]
 [connection signal="finished" from="Satellite/Effects/SoundEffect" to="Satellite" method="_on_sound_effect_finished"]
