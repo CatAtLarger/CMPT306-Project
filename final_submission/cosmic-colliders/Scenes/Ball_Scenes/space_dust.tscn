@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo0t4t1dvy72w"]
+
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_jjjlq"]
+[ext_resource type="Texture2D" uid="uid://chcoce4ki6ilt" path="res://Images/Balls/space_dust.png" id="2_t7h50"]
+[ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="3_hpq8c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
+radius = 10.0102
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
+
+[sub_resource type="Curve" id="Curve_2wvfx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="SpaceDust" type="RigidBody2D" groups=["balls"]]
+position = Vector2(407.071, 210)
+collision_layer = 2
+collision_mask = 3
+mass = 0.1
+gravity_scale = 0.0
+contact_monitor = true
+script = ExtResource("1_jjjlq")
+gravitational_constant = 2000.0
+celestial_index = 0
+metadata/value = 2
+metadata/ball_number = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0710144, 1)
+scale = Vector2(1.13176, 1.13176)
+shape = SubResource("CircleShape2D_vad4u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.756325, 0.923437, 0.993854, 1)
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_t7h50")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-0.0710144, 0)
+scale = Vector2(-4.58926, -4.58926)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.132458)
+scale = Vector2(0.258361, 0.258361)
+shape = SubResource("CircleShape2D_aqu2e")
+debug_color = Color(0.957318, 0, 0.533218, 0.42)
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="SoundEffect" type="AudioStreamPlayer" parent="Effects"]
+stream = ExtResource("3_hpq8c")
+volume_db = 5.0
+pitch_scale = 1.5
+bus = &"Effects"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Effects"]
+scale = Vector2(0.998224, 0.995524)
+emitting = false
+amount = 60
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 31.75
+initial_velocity_max = 108.2
+scale_amount_min = 0.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_2wvfx")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="finished" from="Effects/SoundEffect" to="." method="_on_sound_effect_finished"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://bthn47s1cjswv"]
+
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_7s4co"]
+[ext_resource type="Texture2D" uid="uid://csppy12ohd2yj" path="res://Images/Balls/red_dwarf.png" id="2_5magu"]
+[ext_resource type="AudioStream" uid="uid://c5jvtqwb0x26n" path="res://Sounds/SoundEffects/phaserUp4.mp3" id="3_i3r0n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vad4u"]
+radius = 8.56744
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aqu2e"]
+
+[sub_resource type="Curve" id="Curve_hq8ib"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="RedDwarf" type="RigidBody2D" groups=["balls"]]
+position = Vector2(539.394, 206)
+collision_layer = 2
+collision_mask = 3
+mass = 0.1
+gravity_scale = 0.0
+contact_monitor = true
+script = ExtResource("1_7s4co")
+gravitational_constant = 4000.0
+celestial_index = 7
+metadata/value = 256
+metadata/ball_number = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5.20646, 5.20646)
+shape = SubResource("CircleShape2D_vad4u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(0.973014, 0.973014)
+texture = ExtResource("2_5magu")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(4.9309, 4.9309)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_aqu2e")
+debug_color = Color(0.957318, 0, 0.533218, 0.42)
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="SoundEffect" type="AudioStreamPlayer" parent="Effects"]
+stream = ExtResource("3_i3r0n")
+volume_db = 5.0
+pitch_scale = 1.5
+bus = &"Effects"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Effects"]
+scale = Vector2(0.998224, 0.995524)
+emitting = false
+amount = 60
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 0.3
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 31.75
+initial_velocity_max = 108.2
+scale_amount_min = 0.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_hq8ib")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="finished" from="Effects/SoundEffect" to="." method="_on_sound_effect_finished"]

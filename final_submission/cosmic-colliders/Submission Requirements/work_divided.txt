@@ -1,0 +1,85 @@
+Total Work Distribution:
+
+    Jonah:
+
+        Sounds:
+
+        - added background music
+        - added all sound effects
+
+        Visuals:
+
+            - created, layered, and animated background
+            - created UI elements:
+                - Up Next UI
+                - High Score and New High Score UI
+                - Score Values UI
+                - Satellite (ball drop) UI
+            - created all particle effects
+            - added all sprite images
+                - made all image elements visually consistent and deliberately pixelated
+            - changed UI so it visually consistent and easy to read (fonts, colours, background, positions, etc.)
+
+        Gameplay:
+
+            - created ball class with mutltiple ball types
+                - added collision detection with orbit
+                - added collision detection with eachother
+            - created high score functions that write to a file (LOCAL FILE)
+            - created central mass that attracts all entities towards it
+            - created orbit to check if balls leave radius
+                - created the functions to check for game over
+            - set up camera
+            - fixed satellite drag and drop so it is more intuitive
+            - general game adjustments based on feedback (size of balls, time to drop, etc.)
+            - general organization and basic optimizations
+
+        Misc:
+            - created repo and pitch powerpoint
+            - proposed and outlined all general game ideas including pivot
+                - delegated all tasks and work between group members
+            - gathered all beta-testing feedback
+            - worked on all submissions and submission requirements including itch page and video
+
+
+Khubaib Ahmad
+
+Prototype Phase:
+
+Implemented satellite node as the primary dropper mechanism for the balls.
+
+Added drag-and-drop functionality to allow the satellite to move within a circular radius with mouse.
+
+Configured cooldowns to control the dropping rate of the balls.
+
+Integrated a scoring system based on ball types, because each ball has a metadata value for accurate scorekeeping.
+
+Set up score updates for each ball dropped and combined, following the metadata values.
+
+Set up some UI with a score label and configured the ScoreTracker as a global autoload to track the player's points.
+
+Created the Image that shows how many points each ball would grant and the size diffrences of each ball.
+-Recorded game video
+
+Post-Prototype Work:
+
+-Helped Jonah on showing what is being dropped:
+    -Fixed the script to show what is being dropped so it shows what wil be dropped properly
+
+- Work on the "Next Up" Feature:
+    - Integrated a fully functional "Next Up" preview system to show the next three balls that will drop after the current ball.
+    - Dynamically update the preview for the "Next Up" UI to shift when a ball is dropped.
+    - Made the Next Up easily readable and understandable for the players.
+
+- Created the Game Over Menu:
+    - Designed buttons for "Play Again" and "Exit" with fully functional signals.
+    - Updated Game Over Menu to dynamically display the final score.
+    - Connect the GameOver Menu to i thibk the orbit script, so that it it basically freezes the game and brings up the game over menu.
+    
+- Implemented How to Play Menu functionality:
+    - Designed a Button for How to Play Menu. When you click it game pauses.
+    - Designd a How to Play Menu
+    - Wrote clear and concise in-game objective and controls descriptions to improve the player experience.
+    - Added a resume button
+
+
