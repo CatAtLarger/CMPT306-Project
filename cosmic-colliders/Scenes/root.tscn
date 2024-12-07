@@ -1689,7 +1689,7 @@ frame_progress = 0.271949
 [node name="Satellite" type="Node2D" parent="."]
 position = Vector2(570, 70)
 script = ExtResource("87_uqc33")
-drop_cooldown = 1.5
+drop_cooldown = 0.1
 
 [node name="BallImage" type="Sprite2D" parent="Satellite"]
 
@@ -2005,6 +2005,14 @@ offset_right = 688.0
 offset_bottom = 438.0
 scale = Vector2(2.24, 2.24)
 text = "Exit"
+
+[node name="ScoreLabel" type="Label" parent="GameOverMenu/BackgroundLayer"]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 573.0
+offset_right = 605.0
+offset_bottom = 596.0
+text = "Score: 0"
 
 [node name="HighScoreUI" type="Control" parent="GameOverMenu"]
 layout_mode = 3
